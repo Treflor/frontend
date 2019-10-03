@@ -4,7 +4,8 @@
         <v-row justify="center">
         <h1 class="font-weight-thin">//       Photo Gallery       //</h1>
         </v-row>
-      <v-card>
+      <v-card
+      width="1000">
         <v-container fluid>
           <v-row>
             <v-col
@@ -19,7 +20,8 @@
                   :lazy-src="`https://picsum.photos/10/6?image=${n * 5 + 10}`"
                   aspect-ratio="1"
                   class="grey lighten-2"
-                >
+                >  
+
                   <template v-slot:placeholder>
                     <v-row
                       class="fill-height ma-0"
