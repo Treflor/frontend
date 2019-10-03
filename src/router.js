@@ -28,6 +28,26 @@ export default new Router({
     {
       path: '/SignIn',
       name: 'SignIn',
+      // route level code-splitting
+      // this generates a separate chunk (about.[hash].js) for this route
+      // which is lazy-loaded when the route is visited.
+      component: function () { 
+        return import(/* webpackChunkName: "about" */ './views/SignIn.vue')
+      }      
+    },
+    {
+      path: '/SignUp',
+      name: 'SignUp',
+      // route level code-splitting
+      // this generates a separate chunk (about.[hash].js) for this route
+      // which is lazy-loaded when the route is visited.
+      component: function () { 
+        return import(/* webpackChunkName: "about" */ './views/SignUp.vue')
+      }      
+    },
+    {
+      path: '/SignIn',
+      name: 'SignIn',
       component: SignIn
     },
     {

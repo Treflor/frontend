@@ -1,5 +1,6 @@
 <template>
-<v-parallax height="1000" src="https://ak2.picdn.net/shutterstock/videos/1024941782/thumb/1.jpg">
+<div class="main">
+<v-parallax height="856" src="https://ak2.picdn.net/shutterstock/videos/1024941782/thumb/1.jpg">
   <v-row justify="center">
     <v-col cols="12" sm="10" md="8" lg="6">
       <v-card ref="form" width="360" elevation="21">
@@ -56,6 +57,7 @@
     </v-col>
   </v-row>
 </v-parallax>
+</div>
 </template>
 
 
@@ -133,6 +135,6 @@
 
 <style scoped>
 .main{
-    margin: 0 auto;
+    background-color:cornflowerblue;
 }
 </style>
