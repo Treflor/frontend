@@ -2,7 +2,7 @@
 
 <div class="main">
     <span>
-        <v-navigation-drawer app v-model="drawer" dark disable-resize-watcher>
+        <v-navigation-drawer app v-model="drawer" dark disable-resize-watcher >
             <v-list>
                 <template v-for="(item, index) in items">
                     <v-list-tile :key="index">
@@ -14,7 +14,7 @@
                 </template>
             </v-list>
         </v-navigation-drawer>
-        <v-toolbar app dark>
+        <v-toolbar app dark src="https://cdn.pixabay.com/photo/2016/01/16/01/00/blue-1142745_960_720.jpg">
             <v-toolbar-side-icon class="hidden-md-and-up" @click="drawer = !drawer"></v-toolbar-side-icon>
             <v-spacer class="hidden-md-and-up"></v-spacer>
             <router-link to="/">
@@ -64,9 +64,11 @@ export default {
 </script>
 
 <style scoped>
+/*
 .main{
     color:#000
 }
+*/
 a {
     color: white;
     text-decoration: none;
