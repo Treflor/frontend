@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import Home from './views/Home.vue'
 import SignIn from './components/SignIn'
 import SignUp from './components/SignUp'
+import SignJoin from './views/SignJoin.vue'
 
 Vue.use(Router)
 
@@ -44,6 +45,21 @@ export default new Router({
       component: function () { 
         return import(/* webpackChunkName: "about" */ './views/SignUp.vue')
       }      
+    },
+    {
+      path: '/SignJoin',
+      name: 'SignJoin',
+      // route level code-splitting
+      // this generates a separate chunk (about.[hash].js) for this route
+      // which is lazy-loaded when the route is visited.
+      component: function () { 
+        return import(/* webpackChunkName: "about" */ './views/SignJoin.vue')
+      }      
+    },
+    {
+    path: '/SignJoin',
+    name: 'SignJoin',
+    component: SignJoin
     },
     {
       path: '/SignIn',
