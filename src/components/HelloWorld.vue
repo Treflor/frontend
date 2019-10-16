@@ -12,8 +12,8 @@ justify="center"
 <h4 class="subheading">Best hiking guides in sri lanka</h4>
 </v-row>
 <v-row align="center" justify="center">
-<v-btn height="58" width="100" color="green">MAPS</v-btn>
-<v-btn height="58" width="100" color="yellow">PHOTOS</v-btn>
+<v-btn to="/Maps" height="58" width="100" color="green">MAPS</v-btn>
+<v-btn to="/Photos" height="58" width="100" color="yellow">PHOTOS</v-btn>
 
 </v-row>
 </v-parallax>
