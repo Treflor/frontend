@@ -5,7 +5,7 @@ import SignIn from './components/SignIn'
 import SignUp from './components/SignUp'
 import SignJoin from './views/SignJoin.vue'
 import Maps from './components/Maps'
-import Photos from './components/Photos'
+import Photos from './views/Photos'
 
 Vue.use(Router)
 
@@ -75,7 +75,7 @@ export default new Router({
       // this generates a separate chunk (about.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
       component: function () { 
-        return import(/* webpackChunkName: "about" */ './components/Photos.vue')
+        return import(/* webpackChunkName: "about" */ './views/Photos.vue')
       }      
     },
     {
