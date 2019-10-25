@@ -51,7 +51,7 @@
               <span>Refresh form</span>
             </v-tooltip>
           </v-slide-x-reverse-transition>
-          <v-btn color="primary" text @click="submit">Sign In</v-btn>
+          <v-btn color="primary" text @click="signin">Sign In</v-btn>
         </v-card-actions>
       </v-card>
     </v-col>
@@ -112,7 +112,7 @@
           this.$refs[f].reset()
         })
       },
-      submit () {
+ /*     submit () {
         this.formHasErrors = false
 
         Object.keys(this.form).forEach(f => {
@@ -120,7 +120,10 @@
 
           this.$refs[f].validate(true)
         })
-      },
+      },  */
+      signin: function() {
+        this.$router.replace('/SignHome');
+      }
     },
   }
 </script>

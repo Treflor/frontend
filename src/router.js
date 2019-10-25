@@ -6,6 +6,7 @@ import SignUp from './components/SignUp'
 import SignJoin from './views/SignJoin.vue'
 import Maps from './components/Maps'
 import Photos from './views/Photos'
+import SignHome from './components/SignHome'
 
 Vue.use(Router)
 
@@ -78,6 +79,21 @@ export default new Router({
         return import(/* webpackChunkName: "about" */ './views/Photos.vue')
       }      
     },
+    {
+      path: '/SignHome',
+      name: 'SignHome',
+      // route level code-splitting
+      // this generates a separate chunk (about.[hash].js) for this route
+      // which is lazy-loaded when the route is visited.
+      component: function () { 
+        return import(/* webpackChunkName: "about" */ './components/SignHome.vue')
+      }      
+    },
+    {
+      path: '/SignHome',
+      name: 'SignHome',
+      component: SignHome
+    },    
     {
       path: '/Maps',
       name: 'Maps',

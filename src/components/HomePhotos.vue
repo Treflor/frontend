@@ -1,5 +1,6 @@
 
 <template>
+<div class="main">
 <v-row align="center" justify="center">
 <v-card width="1100" color="white" elevation="21" draggable="true">
     <v-col align-self="center" >
@@ -69,6 +70,7 @@
     </v-col>
 </v-card>
 </v-row>
+</div>
 </template>
 
 <script>
@@ -76,3 +78,15 @@ export default {
     name: 'HomePhotos'
 }
 </script>
+
+
+
+
+
+<style scoped>
+.main {
+  background: linear-gradient(to bottom right, #7fD625, #009345)
+}
+
+
+</style>
