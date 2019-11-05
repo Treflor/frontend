@@ -38,17 +38,17 @@ export default {
 
 
  .ikls2 {
-   height: 1200px;
+   height: 600px;
  }
 
   
   .ikls {
-    background-image: url("https://i.imgur.com/ZvsH8or.jpg");
+    background-image: url("https://i.imgur.com/zRWBkQH.jpg");
   
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
+    width: 1400;
+    height: 600;
   }
 
   
