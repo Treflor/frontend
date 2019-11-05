@@ -43,7 +43,7 @@ export default {
 
   
   .ikls {
-    background-image: url("https://i.imgur.com/zRWBkQH.jpg");
+    background-image: url("https://i.imgur.com/RWnjgTi.jpg");
   
     top: 0;
     left: 0;
