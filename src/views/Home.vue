@@ -1,7 +1,8 @@
 <template>
     <span>
-     
+        <home-tikl></home-tikl>
         <home-palex></home-palex>
+   <!--     <home-clip></home-clip>   -->
         <home-details></home-details>
         <home-palex2></home-palex2>
         <home-treks></home-treks>
@@ -21,11 +22,15 @@ import HomePalex2 from '@/components/HomePalex2';
 import HomeProgress from '@/components/HomeProgress';
 import HomeTreks from '@/components/HomeTreks';
 import HomeHikesz from '@/components/HomeHikesz';
+//import HomeClip from '@/components/HomeClip';
 //import HomeAnime from '@/components/HomeAnime'
+import HomeTikl from '@/components/HomeTikl';
 
 export default {
     name: 'Home',
     components: {
+  //      HomeClip,
+        HomeTikl,
         HomePalex,
         HomeDetails,
         HomePalex2,
