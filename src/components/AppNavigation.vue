@@ -12,7 +12,7 @@
                 </template>
             </v-list>
         </v-navigation-drawer>
-        <v-toolbar color="blue">   
+        <v-toolbar color="white" dark>   
            
             <v-toolbar-side-icon class="hidden-md-and-up" @click="drawer = !drawer"></v-toolbar-side-icon>
             <v-spacer class="hidden-md-and-up"></v-spacer>
@@ -22,8 +22,8 @@
        <!--     <v-btn flat class="hidden-sm-and-down nav-menu" to="/menu" data-cy="menuBtn">Menu</v-btn>  -->
             <v-spacer class="hidden-sm-and-down"></v-spacer>
             <div v-if="!isAuthenticated" class="hidden-sm-and-down">
-                <v-btn flat to="/sign-in" data-cy="signinBtn">SIGN IN</v-btn>
-                <v-btn color="brown lighten-3" to="/join" class="nav-join" data-cy="joinBtn">JOIN</v-btn>
+                <v-btn flat to="/sign-in" color="brown lighten-3" data-cy="signinBtn">SIGN IN</v-btn>
+                <v-btn flat color="brown lighten-3" to="/join" class="nav-join" data-cy="joinBtn">JOIN</v-btn>
             </div>
             <div v-else>
                 <v-btn flat to="/about">PROFILE</v-btn>
@@ -63,7 +63,7 @@ export default {
 
 <style scoped>
 a {
-    color: white;
+    color: grey;
     text-decoration: none;
 }
 .transparent {

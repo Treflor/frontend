@@ -1,6 +1,6 @@
 <template>
     <div id="app">
-      <vue-particles color="#dedede"></vue-particles>
+      <vue-particles color="#4ee810"></vue-particles>
     </div>
  </template>
 
