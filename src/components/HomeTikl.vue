@@ -2,10 +2,10 @@
 <div class="ikls">
     <div id="app">
       <div class="ikls2">
-      <vue-particles color="#66f542"
+      <vue-particles color="#ffffff"
         :particleOpacity="0.7"
-        linesColor="#66f542"
-        :particlesNumber="80"
+        linesColor="#ffffff"
+        :particlesNumber="89"
         shapeType="circle"
         :particleSize="5"
         :linesWidth="2"
