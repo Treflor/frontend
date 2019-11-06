@@ -10,7 +10,9 @@
   "dependencies": {
     "axios": "^0.18.1",
     "core-js": "^2.6.5",
+    "mdbvue": "^6.0.0",
     "vue": "^2.6.10",
+    "vue-navigation-bar": "^2.0.0",
     "vue-router": "^3.0.3",
     "vue-videobg": "^2.0.0",
     "vue2-transitions": "^0.3.0",

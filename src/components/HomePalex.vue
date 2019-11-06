@@ -9,7 +9,13 @@
       justify-center
     >
       <div class="cris">
-      <h1 class="display-4 font-weight-thin mb-3 ">Treflor</h1>
+      <h1 class="display-4 font-weight-thin mb-3 ">Explore</h1>
+      </div>
+      <div class="btn">
+      <v-row align="center">
+      <v-btn large depressed color="yellow">MAPS</v-btn>
+      <v-btn large depressed color="green">PHOTOS</v-btn>
+      </v-row>
       </div>
   <!--    <div class="join">
       <h4 class="subheading font-weight-bold" >Join the CR7 community now!</h4>
