@@ -4,7 +4,7 @@
         <home-palex></home-palex>
    <!--     <home-buttons></home-buttons>  -->
    <!--     <home-clip></home-clip>   -->
-        <home-details></home-details>
+    <!--    <home-details></home-details>  -->
         <home-palex2></home-palex2>
         <home-treks></home-treks>
         <home-progress></home-progress>
@@ -18,7 +18,7 @@
 <script>
 
 import HomePalex from '@/components/HomePalex';
-import HomeDetails from '@/components/HomeDetails';
+//import HomeDetails from '@/components/HomeDetails';
 import HomePalex2 from '@/components/HomePalex2';
 import HomeProgress from '@/components/HomeProgress';
 import HomeTreks from '@/components/HomeTreks';
@@ -35,7 +35,7 @@ export default {
         HomeButtons,
         HomeTikl,
         HomePalex,
-        HomeDetails,
+  //      HomeDetails,
         HomePalex2,
         HomeProgress,
         HomeTreks,
