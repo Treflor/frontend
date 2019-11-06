@@ -1,4 +1,6 @@
 <template>
+
+
 <div class="ikls">
     <div id="app">
       <div class="ikls2">
@@ -24,6 +26,7 @@
     position: absolute;  -->
     </div>
 </div>
+   
  </template>
 
 
@@ -44,12 +47,18 @@ export default {
   
   .ikls {
     background-image: url("https://i.imgur.com/RWnjgTi.jpg");
+    
+ 
+
+
   
     top: 0;
     left: 0;
     width: 1400;
     height: 600;
+  
   }
+  
 
   
   

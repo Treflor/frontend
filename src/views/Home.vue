@@ -5,7 +5,7 @@
    <!--     <home-buttons></home-buttons>  -->
    <!--     <home-clip></home-clip>   -->
     <!--    <home-details></home-details>  -->
-        <home-palex2></home-palex2>
+    <!--    <home-palex2></home-palex2>  -->
         <home-treks></home-treks>
         <home-progress></home-progress>
         <home-hikesz></home-hikesz>
@@ -19,7 +19,7 @@
 
 import HomePalex from '@/components/HomePalex';
 //import HomeDetails from '@/components/HomeDetails';
-import HomePalex2 from '@/components/HomePalex2';
+//import HomePalex2 from '@/components/HomePalex2';
 import HomeProgress from '@/components/HomeProgress';
 import HomeTreks from '@/components/HomeTreks';
 import HomeHikesz from '@/components/HomeHikesz';
@@ -36,7 +36,7 @@ export default {
         HomeTikl,
         HomePalex,
   //      HomeDetails,
-        HomePalex2,
+//        HomePalex2,
         HomeProgress,
         HomeTreks,
         HomeHikesz,
