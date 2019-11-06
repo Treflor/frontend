@@ -9,7 +9,9 @@
       justify-center
     >
       <div class="cris">
-      <h1 class="display-4 font-weight-thin mb-3 ">Explore</h1>
+      <h1 class="display-4 font-weight-thin mb-3 "><vue-typed-js :loop='true' :strings="['Explore', 'the world']">
+  <h1 class="typing"></h1>
+</vue-typed-js></h1>
       </div>
       <div class="btn">
       <v-row align="center">
