@@ -1,8 +1,10 @@
 <template>
-
+ 
 
 <div class="ikls">
+   <div class="text-xs-center font-weight-bold">
     <div id="app">
+      
       <div class="ikls2">
       <vue-particles color="#ffffff"
         :particleOpacity="0.7"
@@ -25,8 +27,9 @@
   <!--      background-size: cover;
     position: absolute;  -->
     </div>
+   </div>
 </div>
-   
+
  </template>
 
 
@@ -41,12 +44,18 @@ export default {
 
 
  .ikls2 {
-   height: 600px;
+   /*height: 600px;*/
  }
 
   
+  
+  
+  
+  
   .ikls {
-    background-image: url("https://i.imgur.com/RWnjgTi.jpg");
+ /*   background-image: url("https://i.imgur.com/RWnjgTi.jpg");  */
+    background-image: url("https://i.imgur.com/sBctFsW.jpg");
+    background-size: cover;
     
  
 
@@ -54,9 +63,9 @@ export default {
   
     top: 0;
     left: 0;
-    width: 1400;
+ /*   width: 1400;
     height: 600;
-  
+  */
   }
   
 
