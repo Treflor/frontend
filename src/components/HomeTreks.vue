@@ -171,7 +171,7 @@
                             </div>
                         </div>
                     </v-card-text>
-                    <v-btn outline block color="green" to="/sign-in" >Explore</v-btn>
+                    <v-btn outline block color="green" to="/explore" >Explore</v-btn>
                 </v-card>
             </v-flex>
             <v-flex xs12 sm12 md4>

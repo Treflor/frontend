@@ -3,7 +3,7 @@
     
     <v-container fluid>
         <v-layout>
-        
+            <explore-maps></explore-maps>
             <home-hikesz></home-hikesz>
             
         </v-layout>
@@ -20,13 +20,13 @@
 
 <script>
 
-import HomeTreks from '@/components/HomeHikesz';
+import ExploreMaps from '@/components/ExploreMaps';
 
 export default {
     name: 'explore',
     components: {
        
-        HomeHikesz
+        ExploreMaps
     }
 };
 </script>
