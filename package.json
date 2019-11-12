@@ -12,6 +12,7 @@
   "dependencies": {
     "axios": "^0.18.1",
     "core-js": "^2.6.5",
+    "mdbootstrap": "^4.9.0",
     "mdbvue": "^6.0.0",
     "vue": "^2.6.10",
     "vue-navigation-bar": "^2.0.0",

@@ -12,6 +12,7 @@
           <p>Here you can use rows and columns here to organize your footer content.</p>
     <!--    </mdb-col>  -->
           </v-col>
+          <v-row>
           <v-col>
     <!--    <mdb-col sm="6">  -->
              
@@ -24,6 +25,7 @@
           </ul>
     <!--    </mdb-col>   -->
           </v-col>
+          </v-row>
           </v-row>
    <!--   </mdb-row>   -->
   <!--  </mdb-container>  -->

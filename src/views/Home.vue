@@ -10,7 +10,7 @@
         <home-progress></home-progress>
         <home-hikesz></home-hikesz>
         <home-footer></home-footer>
-    <!--    <home-foot></home-foot>   -->
+       <home-foot></home-foot>   
 
         
     </span>
@@ -29,7 +29,7 @@ import HomeHikesz from '@/components/HomeHikesz';
 import HomeTikl from '@/components/HomeTikl';
 import HomeButtons from '@/components/HomeButtons';
 import HomeFooter from '@/components/HomeFooter';
-//import HomeFoot from '@/components/HomeFoot';
+import HomeFoot from '@/components/HomeFoot';
 
 
 
@@ -50,7 +50,7 @@ export default {
         HomeTreks,
         HomeHikesz,
         HomeFooter,
-   //     HomeFoot
+        HomeFoot
   //      HomeAnime
     }
 };
