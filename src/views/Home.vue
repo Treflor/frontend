@@ -9,7 +9,8 @@
         <home-treks></home-treks>
         <home-progress></home-progress>
         <home-hikesz></home-hikesz>
-        
+        <home-footer></home-footer>
+    <!--    <home-foot></home-foot>   -->
 
         
     </span>
@@ -27,6 +28,14 @@ import HomeHikesz from '@/components/HomeHikesz';
 //import HomeAnime from '@/components/HomeAnime'
 import HomeTikl from '@/components/HomeTikl';
 import HomeButtons from '@/components/HomeButtons';
+import HomeFooter from '@/components/HomeFooter';
+//import HomeFoot from '@/components/HomeFoot';
+
+
+
+
+
+
 
 export default {
     name: 'Home',
@@ -40,6 +49,8 @@ export default {
         HomeProgress,
         HomeTreks,
         HomeHikesz,
+        HomeFooter,
+   //     HomeFoot
   //      HomeAnime
     }
 };
