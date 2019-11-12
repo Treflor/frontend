@@ -2,7 +2,7 @@
   <!-- Footer -->
 
   <div class="foot">
-  <mdb-footer color="indigo" class="font-small pt-0">
+  <mdb-footer class="font-small pt-0">
     <mdb-container>
       <mdb-row>
         <mdb-col md="12">
@@ -43,6 +43,13 @@
 <style>
 @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap');
 .foot {
-    background: linear-gradient(to bottom , #21211f,#32332f)
+    background: linear-gradient(to bottom , #21211f,#32332f);
 }
 </style>
+
+
+
+
+
+
+
