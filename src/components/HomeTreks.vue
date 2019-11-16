@@ -167,7 +167,7 @@
                     <v-card-text>
                         <div>
                             <h3 class="headline mb-0">Hike #1</h3>
-                            <div>The Keto diet is a high-fat, adequate-protein, low-carbohydrate diet. The diet forces the body to burn fats rather than carbohydrates by putting the body into ketosis.
+                            <div>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cupiditate temporibus et aperiam iste recusandae perspiciatis odio vero, non ex doloribus in facilis. Minima maxime repellendus quaerat perferendis eius ea blanditiis.
                             </div>
                         </div>
                     </v-card-text>
@@ -190,7 +190,7 @@
                     <v-card-text>
                         <div>
                             <h3 class="headline mb-0">Paleo</h3>
-                            <div>The Paleo diet requires the sole or predominant consumption of foods presumed to have been the only foods available to or consumed by humans during the Paleolithic era.
+                            <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum recusandae aspernatur reprehenderit fugit, ullam, at est maxime unde placeat, doloribus tempore modi quibusdam aperiam totam quam voluptatum et quo. Animi!
                             </div>
                         </div>
                     </v-card-text>
@@ -215,7 +215,7 @@
                     <v-card-text>
                         <div>
                             <h3 class="headline mb-0">Vegan</h3>
-                            <div>The vegan diet abstains from the use of animal products. The vegan diet does not consume meat, diary products, eggs or any all other animal-derived ingredients.
+                            <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis voluptate laboriosam impedit culpa. Neque sequi possimus, facere repellat nam adipisci id odit error iste eius. Perspiciatis, vitae eius. Alias, cum.
                             </div>
                         </div>
                     </v-card-text>

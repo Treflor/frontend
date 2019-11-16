@@ -5,8 +5,8 @@ import router from "./router";
 import store from "./store";
 import VideoBg from 'vue-videobg'
 import VueTypedJs from 'vue-typed-js'
-import 'bootstrap-css-only/css/bootstrap.min.css'
-import 'mdbvue/lib/css/mdb.min.css'
+//import 'bootstrap-css-only/css/bootstrap.min.css'
+//import 'mdbvue/lib/css/mdb.min.css'
 import '@fortawesome/fontawesome-free/css/all.min.css'
 
 

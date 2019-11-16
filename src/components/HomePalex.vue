@@ -9,7 +9,7 @@
       justify-center
     >
       <div class="cris">
-      <h2 class="display-4 font-weight-thin mb-3 "><vue-typed-js :typeSpeed='16' :loop='true' :strings="['your', 'world']">
+      <h2 class="display-4 font-weight-thin mb-3 "><vue-typed-js :typeSpeed='46' :loop='true' :strings="['your', 'world']">
   <h2>Explore <span class="typing"></span></h2>
 </vue-typed-js></h2>
       </div>

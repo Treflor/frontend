@@ -4,6 +4,7 @@
   <div class="foot">
   <mdb-footer class="font-small pt-0">
     <mdb-container>
+        <v-row align="center">
       <mdb-row>
         <mdb-col md="12">
           <div class="mb-5 flex-center">
@@ -16,11 +17,16 @@
           </div>
         </mdb-col>
       </mdb-row>
+        </v-row>
     </mdb-container>
     <div class="footer-copyright text-center py-3">
+        <v-row align="center">
       <mdb-container fluid>
+        
         &copy; 2018 Copyright: <a href="https://www.MDBootstrap.com"> tref.com </a>
+          
       </mdb-container>
+        </v-row>
     </div>
   </mdb-footer>
   <!-- Footer -->
@@ -41,9 +47,11 @@
 </script>
 
 <style>
-@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap');
+/*@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap');*/
 .foot {
     background: linear-gradient(to bottom , #21211f,#32332f);
+
+    color: azure;
 }
 </style>
 

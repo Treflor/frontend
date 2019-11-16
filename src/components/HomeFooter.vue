@@ -61,7 +61,7 @@
 <style scoped>
 
 .foot {
-  background: linear-gradient(to bottom , #21211f,#32332f)
+  background: linear-gradient(to bottom , #ff8503,#ff0385)
 }
 
 </style>

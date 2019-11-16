@@ -22,3 +22,6 @@ Nov 07, 2019 9:12:36 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notif
 INFO: Unsupported notification method: $/setTraceNotification
 Nov 07, 2019 9:12:36 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
 INFO: Unsupported notification method: $/setTraceNotification
+INFO  time: initialize in 3.35s
+WARN  no build tool detected in workspace 'c:\Users\Chulaka\tref4\frontend'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. 
+INFO  shutting down Metals
