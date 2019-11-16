@@ -1,16 +1,17 @@
 <template>
     
     
-    <v-container fluid>
-        <v-layout>
+ <!--   <v-container fluid>
+        <v-layout>    -->
+        <span>         
             <explore-maps></explore-maps>
             <explore-guide></explore-guide>
             <home-hikesz></home-hikesz>
-            
-        </v-layout>
+        </span>   
+ <!--       </v-layout>
    
 
-    </v-container>
+    </v-container>   -->
     
 </template>    
 
