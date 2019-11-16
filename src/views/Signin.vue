@@ -1,6 +1,6 @@
 <template>
-<v-parallax height="596" src="https://i.imgur.com/q5E1Wdt.jpg">  
-<!--<v-parallax height="596" src="https://pantheragroup.com/wp-content/uploads/2016/06/material-design-background-e1505759203405.jpg">  -->
+<!--<v-parallax height="596" src="https://i.imgur.com/q5E1Wdt.jpg">  -->  
+<v-parallax height="596" src="https://pantheragroup.com/wp-content/uploads/2016/06/material-design-background-e1505759203405.jpg">  
 <div class="main">
     <v-container fill-height>
         <v-layout align-center justify-center>
