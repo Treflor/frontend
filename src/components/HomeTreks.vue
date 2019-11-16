@@ -189,7 +189,7 @@
                     </v-responsive>
                     <v-card-text>
                         <div>
-                            <h3 class="headline mb-0">Paleo</h3>
+                            <h3 class="headline mb-0">Hike#2</h3>
                             <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum recusandae aspernatur reprehenderit fugit, ullam, at est maxime unde placeat, doloribus tempore modi quibusdam aperiam totam quam voluptatum et quo. Animi!
                             </div>
                         </div>
@@ -215,8 +215,8 @@
                     </v-responsive>
                     <v-card-text>
                         <div>
-                            <h3 class="headline mb-0">Vegan</h3>
-                            <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis voluptate laboriosam impedit culpa. Neque sequi possimus, facere repellat nam adipisci id odit error iste eius. Perspiciatis, vitae eius. Alias, cum.
+                            <h3 class="headline mb-0">Hike#3</h3>
+                            <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis voluptate laboriosam impedit culpa. Neque sequi possimusiuiuiuiuiuiuuiuiuiu, facere repellat nam adipisci id odit error iste eius. Perspiciatis, vitae eius. Alias, cum.
                             </div>
                         </div>
                     </v-card-text>

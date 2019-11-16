@@ -1,4 +1,6 @@
 <template>
+<v-parallax height="596" src="https://i.imgur.com/q5E1Wdt.jpg">  
+<!--<v-parallax height="596" src="https://pantheragroup.com/wp-content/uploads/2016/06/material-design-background-e1505759203405.jpg">  -->
 <div class="main">
     <v-container fill-height>
         <v-layout align-center justify-center>
@@ -27,6 +29,7 @@
         </v-layout>
     </v-container>
 </div>
+</v-parallax>
 </template>
 
 <script>
@@ -63,8 +66,12 @@ export default {
 </script>
 
 <style scoped>
-    .main {
+  /*  .main {
         height: 629px;
-        background: linear-gradient(to right, #44eb44,#eaf2df);
-    }
+    /*    background: linear-gradient(to right, #44eb44,#eaf2df);   */
+    /*    background-image: url("https://i.imgur.com/q5E1Wdt.jpg");
+        background-size:     cover;                      
+    background-repeat:   no-repeat;
+    background-position: center center;   
+    } */
 </style>

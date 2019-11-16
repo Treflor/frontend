@@ -10,7 +10,7 @@
         <home-progress></home-progress>
         <home-hikesz></home-hikesz>
         <home-footer></home-footer>
-       <home-foot></home-foot>   
+  <!--     <home-foot></home-foot>   -->   
 
         
     </span>
