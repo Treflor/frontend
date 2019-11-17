@@ -1,8 +1,6 @@
 <template>
-
-<div class="main">
     <span>
-        <v-navigation-drawer app v-model="drawer" dark disable-resize-watcher>
+        <v-navigation-drawer app v-model="drawer" class="brown lighten-2" dark disable-resize-watcher>
             <v-list>
                 <template v-for="(item, index) in items">
                     <v-list-tile :key="index">
@@ -14,17 +12,19 @@
                 </template>
             </v-list>
         </v-navigation-drawer>
-        <v-toolbar app dark>
+        <v-toolbar color="white">   
+           
             <v-toolbar-side-icon class="hidden-md-and-up" @click="drawer = !drawer"></v-toolbar-side-icon>
             <v-spacer class="hidden-md-and-up"></v-spacer>
             <router-link to="/">
+            
                 <v-toolbar-title data-cy="titleBtn">{{appTitle}}</v-toolbar-title>
             </router-link>
-            <v-btn flat class="hidden-sm-and-down nav-menu" to="/menu" data-cy="menuBtn">Menu</v-btn>
+       <!--     <v-btn flat class="hidden-sm-and-down nav-menu" to="/menu" data-cy="menuBtn">Menu</v-btn>  -->
             <v-spacer class="hidden-sm-and-down"></v-spacer>
             <div v-if="!isAuthenticated" class="hidden-sm-and-down">
-                <v-btn flat to="/SignIn" data-cy="signinBtn">SIGN IN</v-btn>
-                <v-btn  to="/SignUp" class="nav-join" data-cy="joinBtn">JOIN</v-btn>
+                <v-btn flat color="brown lighten-3" to="/sign-in" data-cy="signinBtn">SIGN IN</v-btn>
+                <v-btn flat color="brown lighten-3" to="/join" class="nav-join" data-cy="joinBtn">JOIN</v-btn>
             </div>
             <div v-else>
                 <v-btn flat to="/about">PROFILE</v-btn>
@@ -32,7 +32,6 @@
             </div>
         </v-toolbar>
     </span>
-</div>
 </template>
 
 <script>
@@ -40,7 +39,7 @@ export default {
     name: 'AppNavigation',
     data() {
         return {
-            appTitle: 'TREFLOR',
+            appTitle: 'Treflor',
             drawer: false,
             items: [
                 { title: 'Menu' },
@@ -64,11 +63,11 @@ export default {
 </script>
 
 <style scoped>
-.main{
-    color:#000
-}
 a {
     color: white;
     text-decoration: none;
 }
+.transparent {
+   background-color: transparent!important;
+ }
 </style>

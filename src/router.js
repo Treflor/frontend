@@ -1,39 +1,64 @@
-import Vue from 'vue'
-import Router from 'vue-router'
-import Home from './views/Home.vue'
-import SignIn from './components/SignIn'
-import SignUp from './components/SignUp'
+/*
+import Vue from "vue";
+import Router from "vue-router";
+import Home from "./views/Home.vue";
 
-Vue.use(Router)
+Vue.use(Router);
 
 export default new Router({
-  mode: 'history',
+  mode: "history",
   base: process.env.BASE_URL,
   routes: [
     {
-      path: '/',
-      name: 'home',
+      path: "/",
+      name: "home",
       component: Home
     },
     {
-      path: '/about',
-      name: 'about',
+      path: "/about",
+      name: "about",
       // route level code-splitting
       // this generates a separate chunk (about.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
-      component: function () { 
-        return import(/* webpackChunkName: "about" */ './views/About.vue')
-      }      
-    },
-    {
-      path: '/SignIn',
-      name: 'SignIn',
-      component: SignIn
-    },
-    {
-      path: '/SignUp',
-      name: 'SignUp',
-      component: SignUp
+      component: () =>
+        import(/* webpackChunkName: "about" */ /* "./views/About.vue")
     }
   ]
-})
+});
+*/
+
+import Vue from 'vue';
+import Router from 'vue-router';
+import Home from './views/Home.vue';
+Vue.use(Router);
+export default new Router({
+    mode: 'history',
+    base: process.env.BASE_URL,
+    routes: [
+        {
+            path: '/',
+            name: 'home',
+            component: Home
+        },
+        {
+            path: '/about',
+            name: 'about',
+            component: () => import('./views/About.vue')
+        },
+        {
+            path: '/explore',
+            name: 'explore',
+            component: () => import('./views/Explore.vue')
+        },
+        {
+            path: '/sign-in',
+            name: 'signin',
+            component: () => import('./views/Signin.vue')
+        },
+        {
+            path: '/join',
+            name: 'join',
+            component: () => import('./views/Join.vue')
+        }
+    ]
+});

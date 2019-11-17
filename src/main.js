@@ -1,14 +1,25 @@
-import Vue from 'vue'
-import App from './App.vue'
-import router from './router'
-import store from './store'
-import vuetify from './plugins/vuetify';
+import Vue from "vue";
+import './plugins/vuetify'
+import App from "./App.vue";
+import router from "./router";
+import store from "./store";
+import VideoBg from 'vue-videobg'
+import VueTypedJs from 'vue-typed-js'
+//import 'bootstrap-css-only/css/bootstrap.min.css'
+//import 'mdbvue/lib/css/mdb.min.css'
+import '@fortawesome/fontawesome-free/css/all.min.css'
 
-Vue.config.productionTip = false
+
+import VueParticles from 'vue-particles'
+
+Vue.use(VueTypedJs)
+Vue.use(VueParticles)
+Vue.component('video-bg', VideoBg);
+Vue.config.productionTip = false;
 
 new Vue({
   router,
   store,
-  vuetify,
-  render: function (h) { return h(App) }
-}).$mount('#app')
+  
+  render: h => h(App)
+}).$mount("#app");
