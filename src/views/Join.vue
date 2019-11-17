@@ -1,9 +1,10 @@
 <template>
+<v-parallax height="696" src="https://i.imgur.com/km4strr.jpg">
 <div class="main">
     <v-container fill-height>
         <v-layout align-center justify-center>
             <v-flex xs12 sm14 md6>
-                <v-card class="elevation-12" height="520">
+                <v-card class="elevation-19" height="520">
                     <v-toolbar dark color="#80f442">
                         <v-toolbar-title>Join Form</v-toolbar-title>
                     </v-toolbar>
@@ -33,6 +34,7 @@
         </v-layout>
     </v-container>
 </div>
+</v-parallax>
 </template>
 
 <script>
@@ -69,9 +71,9 @@ export default {
 </script>
 
 <style scoped>
- .main {
+/* .main {
         height: 629px;
         background: linear-gradient(to right, #eb8444,#eb5244);
     }
-
+*/
 </style>

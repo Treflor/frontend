@@ -5,7 +5,7 @@
     <v-container fill-height>
         <v-layout align-center justify-center>
             <v-flex xs12 sm14 md6>
-                <v-card class="elevation-12" height="336">
+                <v-card class="elevation-19" height="336">
                     <v-toolbar dark color="#80f442">
                         <v-toolbar-title>Login Form</v-toolbar-title>
                     </v-toolbar>
