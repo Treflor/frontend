@@ -27,7 +27,7 @@
                     </v-card-text>
                     <v-card-actions>
                         <v-spacer></v-spacer>
-                        <v-btn color="error" :disabled="!valid" @click="submit" data-cy="signinSubmitBtn">Join</v-btn>
+                        <v-btn color="error" :disabled="!valid" @click="submit" to="/" data-cy="signinSubmitBtn">Join</v-btn>
                     </v-card-actions>
                 </v-card>
             </v-flex>

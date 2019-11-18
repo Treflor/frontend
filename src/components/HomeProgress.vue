@@ -75,7 +75,8 @@
     data () {
       return {
         interval: {},
-        value: 0
+        value: 0,
+
       }
     },
     beforeDestroy () {
