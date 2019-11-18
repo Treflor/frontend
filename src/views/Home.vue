@@ -8,7 +8,7 @@
     <!--    <home-palex2></home-palex2>  -->
         <home-treks></home-treks>
         <home-progress></home-progress>
-        <home-hikesz></home-hikesz>
+  <!--      <home-hikesz></home-hikesz>  -->
   <!--      <home-footer></home-footer>  -->
   <!--     <home-foot></home-foot>   -->   
 
@@ -23,7 +23,7 @@ import HomePalex from '@/components/HomePalex';
 //import HomePalex2 from '@/components/HomePalex2';
 import HomeProgress from '@/components/HomeProgress';
 import HomeTreks from '@/components/HomeTreks';
-import HomeHikesz from '@/components/HomeHikesz';
+//import HomeHikesz from '@/components/HomeHikesz';
 //import HomeClip from '@/components/HomeClip';
 //import HomeAnime from '@/components/HomeAnime'
 import HomeTikl from '@/components/HomeTikl';
@@ -50,7 +50,7 @@ export default {
 //        HomePalex2,
         HomeProgress,
         HomeTreks,
-        HomeHikesz,
+  //      HomeHikesz,
   //      HomeFooter,
         HomeFoot
   //      HomeAnime
