@@ -15,8 +15,8 @@
       </div>
       <div class="btn">
       <v-row align="center">
-      <v-btn large depressed color="yellow">MAPS</v-btn>
-      <v-btn large depressed color="green">PHOTOS</v-btn>
+      <v-btn large depressed color="yellow" to='/maps'>MAPS</v-btn>
+      <v-btn large depressed color="green" to='/explore'>PHOTOS</v-btn>
       </v-row>
       </div>
   <!--    <div class="join">
