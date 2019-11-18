@@ -9,13 +9,22 @@ import VueTypedJs from 'vue-typed-js'
 //import 'mdbvue/lib/css/mdb.min.css'
 import '@fortawesome/fontawesome-free/css/all.min.css'
 
-
 import VueParticles from 'vue-particles'
+import * as VueGoogleMaps from 'vue2-google-maps'
 
 Vue.use(VueTypedJs)
 Vue.use(VueParticles)
+Vue.use(VueGoogleMaps, {
+  load: {
+    key: '',
+    libraries: 'places', 
+  },
+ 
+})
 Vue.component('video-bg', VideoBg);
 Vue.config.productionTip = false;
+
+
 
 new Vue({
   router,

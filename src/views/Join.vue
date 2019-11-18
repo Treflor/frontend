@@ -11,10 +11,10 @@
                     <v-card-text>
                         <v-form ref="form" v-model="valid" >
                             <v-text-field prepend-icon="person" name="fullname" label="Full Name" type="name"
-                                          v-model="email" :rules="emailRules" required data-cy="signinEmailField">
+                                          v-model="fulname"  >
                             </v-text-field>
                             <v-text-field prepend-icon="person" name="username" label="Username" type="name"
-                                          v-model="email" :rules="emailRules" required data-cy="signinEmailField">
+                                          v-model="usrname"  >
                             </v-text-field>
                             <v-text-field prepend-icon="email" name="email" label="Email" type="email"
                                           v-model="email" :rules="emailRules" required data-cy="signinEmailField">
@@ -27,7 +27,7 @@
                     </v-card-text>
                     <v-card-actions>
                         <v-spacer></v-spacer>
-                        <v-btn color="error" :disabled="!valid" @click="submit" data-cy="signinSubmitBtn">Join</v-btn>
+                        <v-btn color="error" :disabled="!valid" @click="submit" to="/" data-cy="signinSubmitBtn">Join</v-btn>
                     </v-card-actions>
                 </v-card>
             </v-flex>

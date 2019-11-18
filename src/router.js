@@ -30,6 +30,8 @@ export default new Router({
 import Vue from 'vue';
 import Router from 'vue-router';
 import Home from './views/Home.vue';
+
+
 Vue.use(Router);
 export default new Router({
     mode: 'history',
@@ -59,6 +61,12 @@ export default new Router({
             path: '/join',
             name: 'join',
             component: () => import('./views/Join.vue')
-        }
+        },
+        {
+          path: '/maps',
+          name: 'maps',
+          component: () => import('./views/Maps.vue')
+      },
+       
     ]
 });
