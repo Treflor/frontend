@@ -67,6 +67,16 @@ export default new Router({
           name: 'maps',
           component: () => import('./views/Maps.vue')
       },
+      {
+          path: '/admin',
+          name: 'admin',
+          component: () => import('./views/Admin.vue')
+      },
+      {
+          path: '/adminpanel',
+          name: 'admin',
+          component: () => import('./views/AdminPanel')
+      }
        
     ]
 });
