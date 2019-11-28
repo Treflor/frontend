@@ -11,9 +11,20 @@
     </div>
   </v-container>
 <v-container v-else grid-list-xl>
-   <v-row align="center"> 
+   <div class="text-xs-center">
+   <v-hover v-slot:default="{ hover }">
+     <v-card width="900" color="yellow" 
+     :elevation="hover ? 19 : 6">
+       <v-card-title> 
+         <v-row align="center">
   <h1>User Info</h1>
-   </v-row>
+  </v-row>
+       </v-card-title>
+   <v-sheet class="v-sheet--offset mx-auto"
+   color="lime"
+   elevation="12"
+   max-width="calc(100% - 32px)"
+   >
     <v-layout wrap>
       <table class="table table-hover" id="customers">
             <thead>
@@ -23,7 +34,6 @@
                 <td>full-name</td>
                 <td>mail</td>
                 <td>country</td>
-                
             </tr>
             </thead>
             <tbody>
@@ -34,11 +44,15 @@
                     <td>{{ user.mail }}</td>
                     <td><flag :iso="user.country"/></td>
             <!--        <td><v-img :src="tik.img"></v-img></td>    -->
-                    
-                </tr>
+              </tr>
             </tbody>
         </table>
   </v-layout>
+   </v-sheet>
+
+     </v-card>
+   </v-hover>
+   </div>
   </v-container>
 </template>
 
