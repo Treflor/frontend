@@ -32,7 +32,7 @@
                     <td>{{ user.usrname }}</td>
                     <td>{{ user.fulname }}</td>
                     <td>{{ user.mail }}</td>
-                    <td>{{ user.country }}</td>
+                    <td><flag :iso="user.country"/></td>
             <!--        <td><v-img :src="tik.img"></v-img></td>    -->
                     
                 </tr>
