@@ -11,6 +11,13 @@ import '@fortawesome/fontawesome-free/css/all.min.css'
 
 import VueParticles from 'vue-particles'
 import * as VueGoogleMaps from 'vue2-google-maps'
+import axios from 'axios'
+import VueAxios from 'vue-axios'
+import FlagIcon from 'vue-flag-icon'
+
+Vue.use(FlagIcon);
+ 
+Vue.use(VueAxios, axios)
 
 Vue.use(VueTypedJs)
 Vue.use(VueParticles)
