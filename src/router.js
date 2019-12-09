@@ -73,9 +73,9 @@ export default new Router({
           component: () => import('./views/Admin.vue')
       },
       {
-          path: '/adminpanel',
-          name: 'admin',
-          component: () => import('./views/AdminPanel')
+          path: '/adminpage',
+          name: 'adminpage',
+          component: () => import('./views/AdminPage')
       }
        
     ]
