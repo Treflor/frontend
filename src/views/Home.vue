@@ -8,6 +8,7 @@
     <!--    <home-palex2></home-palex2>  -->
         <home-treks></home-treks>
         <home-progress></home-progress>
+        <home-hikez></home-hikez>
   <!--      <home-hikesz></home-hikesz>  -->
   <!--      <home-footer></home-footer>  -->
   <!--     <home-foot></home-foot>   -->   
@@ -27,10 +28,10 @@ import HomeTreks from '@/components/HomeTreks';
 //import HomeClip from '@/components/HomeClip';
 //import HomeAnime from '@/components/HomeAnime'
 import HomeTikl from '@/components/HomeTikl';
-import HomeButtons from '@/components/HomeButtons';
+//import HomeButtons from '@/components/HomeButtons';
 //import HomeFooter from '@/components/HomeFooter';
-import HomeFoot from '@/components/HomeFoot';
-
+//import HomeFoot from '@/components/HomeFoot';
+import HomeHikez from '@/components/HomeHikez';
 
 
 
@@ -43,7 +44,7 @@ export default {
     name: 'Home',
     components: {
   //      HomeClip,
-        HomeButtons,
+  //      HomeButtons,
         HomeTikl,
         HomePalex,
   //      HomeDetails,
@@ -52,7 +53,8 @@ export default {
         HomeTreks,
   //      HomeHikesz,
   //      HomeFooter,
-        HomeFoot
+  //      HomeFoot,
+        HomeHikez
   //      HomeAnime
     }
 };

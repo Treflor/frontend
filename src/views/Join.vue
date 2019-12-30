@@ -1,6 +1,6 @@
 <template>
 <v-parallax height="696" src="https://i.imgur.com/km4strr.jpg">
-<div class="main">
+<div class="main6">
     <v-container fill-height>
         <v-layout align-center justify-center>
             <v-flex xs12 sm14 md6>
@@ -76,4 +76,5 @@ export default {
         background: linear-gradient(to right, #eb8444,#eb5244);
     }
 */
+
 </style>

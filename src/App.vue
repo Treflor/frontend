@@ -12,8 +12,8 @@
 </template>
 
 <script>
-import AppNavigation from '@/components/AppNavigation';
 import HomeFoot from '@/components/HomeFoot';
+import AppNavigation from '@/components/AppNavigation';
 export default {
     name: 'App',
     components: {
