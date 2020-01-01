@@ -81,6 +81,11 @@ export default new Router({
         path: '/viewguides',
         name: 'viewguides',
         component: () => import('./components/ViewGuides.vue')
+      },
+      {
+        path: '/newhike',
+        name: 'newhike',
+        component: () => import('./components/NewHike.vue')
       }
        
     ]

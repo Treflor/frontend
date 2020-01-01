@@ -1,8 +1,10 @@
 <template>
     <v-container>
         <v-layout row>
-            <v-flex xs 12 sm6>
+            <v-flex xs 12 >
                 <v-card>
+                    <v-layout row>
+                        <v-flex xs12 class="text-xs-center">
                     <v-form @submit.prevent="newcreatehike">
                       <v-layout row>
                           <v-flex xs12 sm6 offset-sm3 class="text-center"> 
@@ -25,21 +27,22 @@
                         </v-text-field>
                         
                         -->
-
-                        <v-text-field
-                        name = "img"
-                        label= "Picture"
+                         <v-text-field 
+                        v-model="img"
+                        name="Img"
                         required
-                        id = "img"
+                        label="Img"
+                        id="Img"
+                        
                         >
 
                         </v-text-field>
 
                         <v-layout row>
-                            <v-flex xs12 sm6 offset-sm3>
-                                <v-img :hidden="img == ''" height="409" :src="img">
-                                </v-img>
-                            </v-flex>
+                        <v-flex xs12 sm12 >
+                        <v-img :hidden="img == ''" height="409" :src="img">
+                        </v-img>
+                        </v-flex>
                         </v-layout>
 
                         <v-text-area
@@ -71,6 +74,8 @@
                           
                            </v-flex>
                        </v-layout>
+                    </v-flex>
+                      </v-layout>
 
                        <v-layout row>
                            <v-flex xs12 class="text-center">
@@ -87,6 +92,8 @@
 
 
                     </v-form>
+                        </v-flex>
+                    </v-layout>
 
                 </v-card>
             </v-flex>
@@ -119,7 +126,6 @@ export default {
     computed: {
         formIsValid () {
             return this.hike !== '' &&
-                   this.location !== '' &&
                    this.img !== '' &&
                    this.guide !== '' 
         },
