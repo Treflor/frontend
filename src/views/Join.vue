@@ -9,7 +9,7 @@
                         <v-toolbar-title>Join Form</v-toolbar-title>
                     </v-toolbar>
                     <v-card-text>
-                        <v-form ref="form" v-model="valid" >
+                        <v-form ref="form" v-model="valid" @click.prevent="onSignup" >
                             <v-text-field prepend-icon="person" name="fullname" label="Full Name" type="name"
                                           v-model="fulname"  >
                             </v-text-field>
@@ -68,13 +68,13 @@ export default {
         comparePasswords () {
             return this.password !== this.confirmPassword
         },
-
+/*
         user () {
             return this.$store.getters.user
         }
-
+*/
     },
-
+/*
     watch: {
         user (value) {
             if( value !== null && value !== undefined){
@@ -83,16 +83,18 @@ export default {
 
         }
     },
-
+*/
 
     methods: {
-        submit() {
+        onSignup() {
            
-                this.$store.dispatch('signUserUp', {
+      /*          this.$store.dispatch('signUserUp', {
                     email: this.email,
                     password: this.password
                 })
-            
+        */
+       console.log(this.email , this.password)
+
         }
     }
 };

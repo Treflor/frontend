@@ -76,6 +76,11 @@ export default new Router({
           path: '/adminpage',
           name: 'adminpage',
           component: () => import('./views/AdminPage')
+      },
+      {
+        path: '/viewguides',
+        name: 'viewguides',
+        component: () => import('./components/ViewGuides.vue')
       }
        
     ]

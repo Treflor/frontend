@@ -10,12 +10,12 @@ export default new Vuex.Store({
         apiUrl: 'https://api.edamam.com/search',
 
         hikez: [
-            {img: 'https://www.srilankatravelandtourism.com/places-sri-lanka/ella/ella-images/ella-1-sri-lanka.jpg', id: '1111', title: 'Ella', height: '618m'},
-            {img: 'https://www.tripsavvy.com/thmb/dAjVDb033cOIBYtAC3Y_S7Ld5p8=/960x0/filters:no_upscale():max_bytes(150000):strip_icc()/hikinginspain-f7d12abd58584697ae354500d31ee07f.jpg', id: '2222', title: 'Bible Rock', height: '418m'},
-            {img: 'https://veggievagabonds.com/wp-content/uploads/2019/08/IMG_20180923_094155722_HDR-1-01.jpeg', id: '4444', title: 'Knuckles', height: '818m'},
+            {img: 'https://www.srilankatravelandtourism.com/places-sri-lanka/ella/ella-images/ella-1-sri-lanka.jpg', id: '1111', title: 'Ella', height: '618m', guide: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident ipsa voluptatem cupiditate sapiente at id numquam inventore fuga iure quisquam.' },
+            {img: 'https://www.tripsavvy.com/thmb/dAjVDb033cOIBYtAC3Y_S7Ld5p8=/960x0/filters:no_upscale():max_bytes(150000):strip_icc()/hikinginspain-f7d12abd58584697ae354500d31ee07f.jpg', id: '2222', title: 'Bible Rock', height: '418m', guide: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident ipsa voluptatem cupiditate sapiente at id numquam inventore fuga iure quisquam.'},
+            {img: 'https://veggievagabonds.com/wp-content/uploads/2019/08/IMG_20180923_094155722_HDR-1-01.jpeg', id: '4444', title: 'Knuckles', height: '818m', guide: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident ipsa voluptatem cupiditate sapiente at id numquam inventore fuga iure quisquam.'},
         ],
 
-        user: null
+  //      user: null
     },
 
 
@@ -24,9 +24,9 @@ export default new Vuex.Store({
         setRecipes(state, payload) {
             state.recipes = payload;
         },
-        setUser (state, pay) {
+    /*    setUser (state, pay) {
             state.user = pay
-        }
+        }  */
     },
 
 
@@ -47,7 +47,7 @@ export default new Vuex.Store({
             } catch (error) {
                 commit('setRecipes', []);
             }
-        },
+        },  /*
         signUserup ({commit}, pay){
             user => {
                 const newUser = {
@@ -57,7 +57,7 @@ export default new Vuex.Store({
             }
 
             commit ('setUser', newUser)
-        }
+        }  */
     },
 
 
@@ -71,10 +71,10 @@ export default new Vuex.Store({
         f_hikez (state, getters) {
             return getters.hikez.slice(0,5)
 
-        },
+        }, /*
         user(state) {
             return state.user
-        }
+        }  */
     }
 });
 

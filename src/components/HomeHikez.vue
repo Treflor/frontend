@@ -8,8 +8,8 @@
         </v-flex>
         </v-layout>
         <v-layout row>
-            <v-flex ml2 xs12 sm4 v-for="hike in hikez" :key="hike.id">
-                <v-card>
+            <v-flex ml2 xs12 sm4 v-for="hike in hikez" :key="hike.id" class="text-xs-center">
+                <v-card @click="hikeclick()">
                     <v-img height="468" :src="hike.img"></v-img>
                     <v-card-title class="font-weight-black">{{hike.title}}</v-card-title>
                     <v-card-text class="font-weight-light">{{hike.height}}</v-card-text>
@@ -27,6 +27,12 @@ export default {
     computed: {
         hikez () {
             return this.$store.getters.f_hikez
+        }
+    },
+
+    methods: {
+        hikeclick() {
+            this.$router.push('/viewguides')
         }
     }
 
