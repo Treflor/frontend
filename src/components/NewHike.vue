@@ -45,14 +45,16 @@
                         </v-flex>
                         </v-layout>
 
-                        <v-text-area
-                        name = "guide"
-                        label= "Guide"
+                       
+                        <v-textarea
+                        v-model="guide"
+                        name="guide"
+                        label="Guide"
                         required
-                        id = "guide"
-                        >
-                        </v-text-area>
-
+                        id="Guide"
+                        > </v-textarea> 
+                      
+                    
 
                           </v-flex>
                       </v-layout>
@@ -150,7 +152,7 @@ export default {
                 date: this.whensub
             }
             this.$store.dispatch('createnewhike')
-            this.$router.push('/hikes')
+            this.$router.push('/viewguides')
         }
     }
 }

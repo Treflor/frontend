@@ -47,7 +47,7 @@
 
 <script>
 //import ViewMeetups from '@/components/ViewMeetups';
-import 'vue-material-design-icons/styles.css';
+//import 'vue-material-design-icons/styles.css';
 export default {
 
   name: 'AppNav',
@@ -61,9 +61,9 @@ export default {
   computed: {
     Items () {
       Items = [
-        {icon:'mdi-face' ,title:'Sign Up' , to: '/join'},        
-        {icon:'mdi-account' ,title:'Sign In' , to: '/sign-in' },
-        {icon: 'mdi-airballon' ,title:'Create Hike' , to: '/createhike'}
+        {title:'Sign Up' , to: '/join'},        
+        {title:'Sign In' , to: '/sign-in' },
+        {title:'Create Hike' , to: '/createhike'}
 
       ]
  /*     if (this.userIsauthenticated ) {
@@ -76,10 +76,10 @@ export default {
       }  */
       return Items
     },
-    userIsauthenticated () {
+  /*  userIsauthenticated () {
       return this.$store.getters.user !== null && this.$store.getters.user !== undefined
     }
-
+*/
   },
 
 
