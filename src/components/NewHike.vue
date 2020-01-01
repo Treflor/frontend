@@ -92,3 +92,58 @@
         </v-layout>
     </v-container>
 </template>
+
+
+<script>
+import moment from 'moment';
+export default {
+    name: 'NewHike',
+
+    data () {
+        return {
+            hike: '',
+            location: '',
+            img: '',
+            guide: '',
+            date: new Date()
+        }
+    },
+
+    created: function () {
+        const dateTime = moment()
+        this.date = dateTime.format('YYYY-MM-DD')
+    },
+
+    computed: {
+        formIsValid () {
+            return this.hike !== '' &&
+                   this.location !== '' &&
+                   this.img !== '' &&
+                   this.guide !== '' 
+        },
+
+        whensub () {
+            const date = new Date(this,date)
+            return date
+        }
+    },
+
+
+    methods: {
+        newcreatehike () {
+            if (!this.formIsValid) {
+                return
+            }
+            const hikedetails = {
+                hike: this.hike,
+                location: this.location,
+                img: this.img,
+                guide: this.guide,
+                date: this.whensub
+            }
+            this.$store.dispatch('createnewhike')
+            this.$router.push('/hikes')
+        }
+    }
+}
+</script>
