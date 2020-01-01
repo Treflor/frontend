@@ -3,18 +3,19 @@
         <v-layout v-for="hike in guides" :key="hike.title" class="mb-2">
             <v-flex xs12>
                 <v-card>
+                    <v-container fluid>
                     <v-layout row>
-                        <v-flex xs11 sm6>
+                        <v-flex xs5 sm5>
                             <v-img height="298" :src="hike.img">
                             </v-img>
 
                         </v-flex>
                         <v-flex xs11 sm8 md7>
                             <v-card-title primary-title>
-                                <h3 class="white--text">{{hike.title}}</h3>
+                                <h3>{{hike.title}}</h3>
                                 <div>Hiked on {{hike.date}} </div>
                             </v-card-title>
-                            <v-card-text>
+                            <v-card-text class="text">
                                 {{hike.guide}}
                             </v-card-text>
 
@@ -27,7 +28,7 @@
 
                         </v-flex>
                     </v-layout>
-                    
+                    </v-container>
 
                 </v-card>
             </v-flex>
@@ -56,5 +57,10 @@ export default {
 .btn{
     position: absolute;
     bottom: 8px;
+}
+
+.text{
+    position: relative;
+    left: 5px;
 }
 </style>

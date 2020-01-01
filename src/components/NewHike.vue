@@ -7,14 +7,14 @@
                       <v-layout row>
                           <v-flex xs12 sm6 offset-sm3 class="text-center"> 
                         <v-text-field
-                        name = "hike"
+                        name = "title"
                         label= "Hike"
                         required
-                        id = "hike"
+                        id = "title"
                         >
 
                         </v-text-field>
-
+<!--
                         <v-text-field
                         name = "location"
                         label= "Location"
@@ -23,6 +23,8 @@
                         >
 
                         </v-text-field>
+                        
+                        -->
 
                         <v-text-field
                         name = "img"
@@ -101,8 +103,8 @@ export default {
 
     data () {
         return {
-            hike: '',
-            location: '',
+            title: '',
+            
             img: '',
             guide: '',
             date: new Date()
