@@ -23,6 +23,10 @@
                                           data-cy="signinPasswordField" v-model="password"
                                           :rules="passwordRules" required>
                             </v-text-field>
+                             <v-text-field prepend-icon="lock" name="confirmPasswords" label="Confirm Password" type="password"
+                                          data-cy="signinPasswordField" v-model="password"
+                                          :rules="[comparePasswords]" required>
+                            </v-text-field>
                         </v-form>
                     </v-card-text>
                     <v-card-actions>
@@ -45,6 +49,8 @@ export default {
             valid: false,
             email: '',
             password: '',
+            fulname:'',
+            usrname:'',
             emailRules: [
                 v => !!v || 'E-mail is required',
                 v => /.+@.+/.test(v) || 'E-mail must be valid'
@@ -57,14 +63,36 @@ export default {
             ]
         };
     },
+
+    muted: {
+        comparePasswords () {
+            return this.password !== this.confirmPassword
+        },
+
+        user () {
+            return this.$store.getters.user
+        }
+
+    },
+
+    watch: {
+        user (value) {
+            if( value !== null && value !== undefined){
+                this.$router.push('/')
+            }
+
+        }
+    },
+
+
     methods: {
         submit() {
-            if (this.$refs.form.validate()) {
-                this.$store.dispatch('userLogin', {
+           
+                this.$store.dispatch('signUserUp', {
                     email: this.email,
                     password: this.password
-                });
-            }
+                })
+            
         }
     }
 };
