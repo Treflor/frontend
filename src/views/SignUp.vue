@@ -4,7 +4,8 @@
 
 <v-layout row class="form"> 
     <v-flex xs12 sm6 offset-sm3 >
-        <v-card>
+        <v-hover v-slot:default="{ hover }">
+        <v-card :elevation="hover ? 19 : 1" :color="hover ? 'green' : 'white'" >
             <v-card-text>
                 <v-container>
                     <v-form @submit.prevent="onSignup">
@@ -75,6 +76,7 @@
             </v-card-text>
 
         </v-card>
+        </v-hover>
 
     </v-flex>
 
