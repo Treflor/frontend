@@ -1,13 +1,17 @@
 <template>
     <v-container>
         <v-layout row>
-            <v-flex xs 12 >
+            <v-flex xs12 class="text-xs-center">
                 <v-card>
+                    <v-layout row>
+                        <v-flex xs12 class="text-xs-center display-1 font-weight-black my-5">Create new guide</v-flex>
+                    </v-layout>
+
                     <v-layout row>
                         <v-flex xs12 class="text-xs-center">
                     <v-form @submit.prevent="newcreatehike">
                       <v-layout row>
-                          <v-flex xs12 sm6 offset-sm3 class="text-center"> 
+                          <v-flex xs12 sm6 offset-sm3> 
                         <v-text-field
                         name = "title"
                         label= "Hike"
