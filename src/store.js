@@ -70,6 +70,24 @@ export default new Vuex.Store({
                 }
             )
             
+        },
+
+        signUserin ({commit}, pay) {
+            firebase.auth().signInWithEmailAndPassword(pay.email, pay.password)
+            .then (
+                user => {
+                    const newUser = {
+                        id: user.user.uid,
+                    }
+                    commit('setUser', newUser)
+                }
+            )
+
+            .catch (
+                error => {
+                    console.log(error)
+                }
+            )
         }
         
         

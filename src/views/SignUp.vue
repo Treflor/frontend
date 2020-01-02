@@ -12,6 +12,7 @@
                         <v-layout row>
                             <v-flex xs12 offeset-sm3>
                                 <v-text-field
+                                prepend-icon="person"
                                     name="email"
                                     label="Mail"
                                     id="email"
@@ -27,6 +28,7 @@
                         <v-layout row>
                             <v-flex xs12 offeset-sm3>
                                 <v-text-field
+                                prepend-icon="lock"
                                     name="password"
                                     label="Password"
                                     id="password"
@@ -43,6 +45,7 @@
                         <v-layout row>
                             <v-flex xs12 offeset-sm3>
                                 <v-text-field
+                                prepend-icon="lock"
                                     name="confirmPassword"
                                     label="Confirm Password"
                                     id="confirmPassword"
@@ -58,7 +61,7 @@
                         </v-layout>
 
                         <v-layout row>
-                            <v-flex xs12>
+                            <v-flex xs12 class="text-xs-center">
                              <v-btn color="yellow" type="submit">
                                     SignUp</v-btn>
 
