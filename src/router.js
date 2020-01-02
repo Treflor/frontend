@@ -88,10 +88,18 @@ export default new Router({
         component: () => import('./components/NewHike.vue')
       },
       {
+        path: '/guides/:id',
+        name: 'Hike',
+        props: true,
+        component: () => import('./components/Guide.vue')
+
+      },
+      {
         path: '/signup',
         name: 'signup',
         component: () => import('./views/SignUp.vue')
     },
+
        
     ]
 });

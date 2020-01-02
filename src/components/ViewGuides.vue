@@ -22,7 +22,7 @@
                             </v-card-text>
 
                             <v-card-actions class="btn">
-                                <v-btn :to="'/'"  >
+                                <v-btn :to="'/guides/' + hike.id">  
                                 View {{hike.title}} guide
                                 </v-btn>
 
