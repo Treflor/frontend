@@ -2,7 +2,9 @@
     <v-container>
         <v-layout v-for="hike in guides" :key="hike.title" class="mb-2">
             <v-flex xs12>
-                <v-card>
+
+                <v-hover v-slot:default="{hover}">
+                <v-card :elevation="hover ? 10 : 1" :color="hover ? '#f0e859' : white">
                     <v-container fluid>
                     <v-layout row>
                         <v-flex xs5 sm5>
@@ -31,6 +33,7 @@
                     </v-container>
 
                 </v-card>
+                </v-hover>
             </v-flex>
 
         </v-layout>
