@@ -3,9 +3,18 @@
 <v-container>
 <v-layout row class="form"> 
     <v-flex xs12 sm6 offset-sm3>
-        <v-card>
+      
+
+         <v-hover v-slot:default="{ hover }">
+        <v-card :elevation="hover ? 19 : 1" :color="hover ? 'green' : 'white'" >
             <v-card-text>
-                <v-container>
+                <v-container>  
+                    
+                    <v-layout row>
+                        <v-flex xs12 class="text-xs-center display-1 font-weight-black my-5">Sign In</v-flex>
+                    </v-layout>
+
+
                     <v-form @submit.prevent="onSignin">
                         <v-layout row>
                             <v-flex xs12 offeset-sm3>
@@ -43,7 +52,7 @@
                        
 
                         <v-layout row>
-                            <v-flex xs12>
+                            <v-flex xs12 class="text-xs-center">
                                 <v-btn color="yellow" type="submit">
                                     SignIn</v-btn>
 
@@ -61,6 +70,7 @@
             </v-card-text>
 
         </v-card>
+         </v-hover>
 
     </v-flex>
 

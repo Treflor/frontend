@@ -3,11 +3,18 @@
 <v-container>
 
 <v-layout row class="form"> 
-    <v-flex xs12 sm6 offset-sm3 >
+    <v-flex xs12 sm6 offset-sm3 class="text-xs-center">
+     
+
         <v-hover v-slot:default="{ hover }">
         <v-card :elevation="hover ? 19 : 1" :color="hover ? 'green' : 'white'" >
             <v-card-text>
-                <v-container>
+                <v-container>  
+
+                      <v-layout row>
+                    <v-flex xs12 class="text-xs-center display-1 font-weight-black my-5">Sign Up</v-flex>
+                    </v-layout> 
+
                     <v-form @submit.prevent="onSignup">
                         <v-layout row>
                             <v-flex xs12 offeset-sm3>

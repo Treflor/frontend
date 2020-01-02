@@ -22,7 +22,7 @@
             <v-spacer class="hidden-md-and-up"></v-spacer>
             <router-link to="/">
             
-                <v-toolbar-title data-cy="titleBtn" class="blue lighten-1">{{appTitle}}</v-toolbar-title>
+                <v-toolbar-title data-cy="titleBtn" class="blue--text">{{appTitle}}</v-toolbar-title>
             </router-link>
        <!--     <v-btn flat class="hidden-sm-and-down nav-menu" to="/menu" data-cy="menuBtn">Menu</v-btn>  -->
             <v-spacer class="hidden-sm-and-down"></v-spacer>
