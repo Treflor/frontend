@@ -1,38 +1,41 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
-import axios from 'axios';
+import firebase from 'firebase';
+//import axios from 'axios';
 
 Vue.use(Vuex);
 
 export default new Vuex.Store({
     state: {
-        recipes: [],
+     /*   recipes: [],
         apiUrl: 'https://api.edamam.com/search',
-
+    */ 
         hikez: [
             {img: 'https://www.srilankatravelandtourism.com/places-sri-lanka/ella/ella-images/ella-1-sri-lanka.jpg', id: '1111', title: 'Ella', height: '618m', guide: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident ipsa voluptatem cupiditate sapiente at id numquam inventore fuga iure quisquam.' },
             {img: 'https://www.tripsavvy.com/thmb/dAjVDb033cOIBYtAC3Y_S7Ld5p8=/960x0/filters:no_upscale():max_bytes(150000):strip_icc()/hikinginspain-f7d12abd58584697ae354500d31ee07f.jpg', id: '2222', title: 'Bible Rock', height: '418m', guide: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident ipsa voluptatem cupiditate sapiente at id numquam inventore fuga iure quisquam.'},
             {img: 'https://veggievagabonds.com/wp-content/uploads/2019/08/IMG_20180923_094155722_HDR-1-01.jpeg', id: '4444', title: 'Knuckles', height: '818m', guide: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident ipsa voluptatem cupiditate sapiente at id numquam inventore fuga iure quisquam.'},
         ],
 
-  //      user: null
+        user: null
     },
 
 
 
     mutations: {
-        setRecipes(state, payload) {
+    /*    setRecipes(state, payload) {
             state.recipes = payload;
-        },
-    /*    setUser (state, pay) {
+        },   */
+
+        setUser (state, pay) {
             state.user = pay
-        }  */
+        }  
+
+
     },
 
 
-
     actions: {
-        async getRecipes({ state, commit }, plan) {
+/*        async getRecipes({ state, commit }, plan) {
             try {
                 let response = await axios.get(`${state.apiUrl}`, {
                     params: {
@@ -47,17 +50,29 @@ export default new Vuex.Store({
             } catch (error) {
                 commit('setRecipes', []);
             }
-        },  /*
-        signUserup ({commit}, pay){
-            user => {
-                const newUser = {
-                    id: user.usrname,
-                    hikesCreated: []
-                }
-            }
+        },  */
 
-            commit ('setUser', newUser)
-        }  */
+        signUserup ({commit}, pay){
+            firebase.auth().createUserWithEmailAndPassword(pay.email,pay.password)
+            .then(
+                user => {
+                    const newUser = {
+                        id: user.user.uid                        
+                    }
+
+                    commit ('setUser', newUser)
+                }
+            )
+           
+            .catch(
+                error => {
+                console.log(error)
+                }
+            )
+            
+        }
+        
+        
     },
 
 
@@ -71,12 +86,13 @@ export default new Vuex.Store({
         f_hikez (state, getters) {
             return getters.hikez.slice(0,5)
 
-        }, /*
-        user(state) {
+        }, 
+
+        user (state) {
             return state.user
-        }  */
+        }
     }
-});
+})
 
 
 

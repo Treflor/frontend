@@ -9,7 +9,7 @@
                         <v-toolbar-title>Join Form</v-toolbar-title>
                     </v-toolbar>
                     <v-card-text>
-                        <v-form ref="form" v-model="valid" @click.prevent="onSignup" >
+                        <v-form ref="form" v-model="valid" @submit.prevent="onSignup" >
                             <v-text-field prepend-icon="person" name="fullname" label="Full Name" type="name"
                                           v-model="fulname"  >
                             </v-text-field>
@@ -17,21 +17,22 @@
                                           v-model="usrname"  >
                             </v-text-field>
                             <v-text-field prepend-icon="email" name="email" label="Email" type="email"
-                                          v-model="email" :rules="emailRules" required data-cy="signinEmailField">
+                                          v-model="email" :rules="emailRules" required >
                             </v-text-field>
                             <v-text-field prepend-icon="lock" name="password" label="Password" type="password"
-                                          data-cy="signinPasswordField" v-model="password"
+                                           v-model="password"
                                           :rules="passwordRules" required>
                             </v-text-field>
                              <v-text-field prepend-icon="lock" name="confirmPasswords" label="Confirm Password" type="password"
-                                          data-cy="signinPasswordField" v-model="password"
+                                           v-model="confirmpassword"
                                           :rules="[comparePasswords]" required>
                             </v-text-field>
                         </v-form>
                     </v-card-text>
                     <v-card-actions>
                         <v-spacer></v-spacer>
-                        <v-btn color="error" :disabled="!valid" @click="submit" to="/" data-cy="signinSubmitBtn">Join</v-btn>
+                        <v-btn color="yellow" type="submit">
+                                    SignUp</v-btn>
                     </v-card-actions>
                 </v-card>
             </v-flex>
@@ -68,13 +69,13 @@ export default {
         comparePasswords () {
             return this.password !== this.confirmPassword
         },
-/*
+
         user () {
             return this.$store.getters.user
         }
-*/
+
     },
-/*
+
     watch: {
         user (value) {
             if( value !== null && value !== undefined){
@@ -83,19 +84,14 @@ export default {
 
         }
     },
-*/
+
 
     methods: {
         onSignup() {
-           
-      /*          this.$store.dispatch('signUserUp', {
-                    email: this.email,
-                    password: this.password
-                })
-        */
-       console.log(this.email , this.password)
+           this.$store.dispatch('signUserup', {email:this.email, password: this.password})
 
         }
+
     }
 };
 </script>

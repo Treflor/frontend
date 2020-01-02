@@ -24,7 +24,7 @@
             <v-spacer class="hidden-sm-and-down"></v-spacer>
             <div v-if="!isAuthenticated" class="hidden-sm-and-down">
                 <v-btn flat color="brown lighten-3" to="/sign-in" data-cy="signinBtn">SIGN IN</v-btn>
-                <v-btn flat color="brown lighten-3" to="/join" class="nav-join" data-cy="joinBtn">JOIN</v-btn>
+                <v-btn flat color="brown lighten-3" to="/signup" class="nav-join" data-cy="joinBtn">JOIN</v-btn>
             </div>
             <div v-else>
                 <v-btn flat to="/about">PROFILE</v-btn>

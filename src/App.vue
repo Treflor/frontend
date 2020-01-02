@@ -3,6 +3,7 @@
   <app-navigation></app-navigation>  
     <!--    <app-nav></app-nav>    -->
         
+    <home-appnav></home-appnav>
 
         <v-content transition="slide-x-transition">
             <router-view></router-view>
@@ -19,9 +20,12 @@ import AppNavigation from '@/components/AppNavigation';
 export default {
     name: 'App',
     components: {
-        AppNavigation,
+     AppNavigation,
         HomeFoot,
+
   //      AppNav
+    
+
     }
 };
 </script>

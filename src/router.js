@@ -86,7 +86,12 @@ export default new Router({
         path: '/newhike',
         name: 'newhike',
         component: () => import('./components/NewHike.vue')
-      }
+      },
+      {
+        path: '/signup',
+        name: 'signup',
+        component: () => import('./views/SignUp.vue')
+    },
        
     ]
 });
