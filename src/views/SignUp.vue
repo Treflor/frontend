@@ -1,5 +1,5 @@
 <template>
-<v-parallax height="809" src="https://www.oxygenna.com/wp-content/uploads/2015/11/18.jpg">
+<v-parallax height="969" src="https://hdqwalls.com/wallpapers/material-design-stock-4k-y7.jpg">
 <v-container>
 
 <v-layout row class="form"> 
@@ -124,16 +124,9 @@ export default {
                 this.$router.push('/')
             }
 
-        },
-          loader () {
-        const l = this.loader
-        this[l] = !this[l]
-
-        setTimeout(() => (this[l] = false), 3000)
-
-        this.loader = null
-      }
-    },
+        }
+  
+      },
 
 
     methods: {
@@ -142,9 +135,7 @@ export default {
 
         },
 
-        oncan () {
-            console.log('can alert')
-        }
+      
     }
 }
 </script>

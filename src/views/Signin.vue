@@ -1,6 +1,7 @@
 <template>
+<v-parallax height="969" src="https://i.imgur.com/M0BwxSq.png">
 <v-container>
-<v-layout row> 
+<v-layout row class="form"> 
     <v-flex xs12 sm6 offset-sm3>
         <v-card>
             <v-card-text>
@@ -65,7 +66,7 @@
 
 </v-layout>
 </v-container>
-
+</v-parallax>
 </template>
 
 <script>
@@ -104,3 +105,9 @@ export default {
 }
 </script>
 
+<style scoped>
+.form {
+    position: relative;
+    top: 169px
+}
+</style>

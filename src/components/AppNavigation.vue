@@ -5,7 +5,11 @@
                 <template v-for="item in items">
                     <v-list-tile :key="item.title">
                         <v-list-tile-content>
+                            <v-btn 
+                            flat
+                            :to="item.to">
                             {{item.title}}
+                            </v-btn>
                         </v-list-tile-content>
                     </v-list-tile>
                     <v-divider :key="`divider-${item.title}`"></v-divider>
