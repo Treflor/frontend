@@ -1,4 +1,5 @@
 <template>
+<div class="main">
     <v-container>
         <v-layout row wrap>
             <v-flex xs12>
@@ -26,6 +27,7 @@
 
 
     </v-container>
+</div>
 </template>
 
 <script>
@@ -40,3 +42,8 @@ export default {
 }
 </script>
 
+<style scoped>
+.main {
+    background-image: url("https://img.pngio.com/forest-background-the-linux-foundation-forest-background-1800_1013.jpg")
+}
+</style>
