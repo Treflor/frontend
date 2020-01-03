@@ -33,10 +33,10 @@
 <script>
 export default {
     name: 'Guide.vue',
-    props: ['id'],
+    props: ['title'],
     computed: {
         hike() {
-            return this.$store.getters.DoneHike(this.id)
+            return this.$store.getters.DoneHike(this.title)
         }
     }
 }
@@ -47,3 +47,9 @@ export default {
     background-image: url("https://img.pngio.com/forest-background-the-linux-foundation-forest-background-1800_1013.jpg")
 }
 </style>
+
+
+
+
+
+

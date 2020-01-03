@@ -88,7 +88,7 @@ export default new Router({
         component: () => import('./components/NewHike.vue')
       },
       {
-        path: '/guides/:id',
+        path: '/guides/:title',
         name: 'Hike',
         props: true,
         component: () => import('./components/Guide.vue')

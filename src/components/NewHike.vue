@@ -9,10 +9,11 @@
 
                     <v-layout row>
                         <v-flex xs12 class="text-xs-center">
-                    <v-form @submit.prevent="newcreatehike">
+                    <v-form @submit.prevent="createnewhike">
                       <v-layout row>
                           <v-flex xs12 sm6 offset-sm3> 
                         <v-text-field
+                        v-model="title"
                         name = "title"
                         label= "Hike"
                         required
@@ -60,8 +61,6 @@
                       
                     
 
-                          </v-flex>
-                      </v-layout>
 
                       <v-layout row>
                     <v-flex xs12 sm6 offset-sm3>
@@ -74,14 +73,26 @@
 
                        <v-layout row>
                            <v-flex xs12 class="text-center mb-2" >
-                                  <v-date-picker v-model="date"></v-date-picker>
- 
- 
-                          
+                                  <v-date-picker v-model="date"></v-date-picker>                          
                            </v-flex>
                        </v-layout>
-                    </v-flex>
-                      </v-layout>
+
+                       <v-layout row>
+                           <v-flex xs12 class="text-xs-center">
+
+                                <v-select
+                                v-model="temp"
+                                :items="items"
+                                 label="How was the weather"
+                                ></v-select>
+                           </v-flex>
+                       </v-layout>
+
+                               
+
+                        
+
+
 
                        <v-layout row>
                            <v-flex xs12 class="text-center">
@@ -93,6 +104,12 @@
                                </v-btn>
                            </v-flex>
                        </v-layout>
+
+                    </v-flex>
+                      </v-layout>
+
+                          </v-flex>
+                      </v-layout>
 
 
 
@@ -120,7 +137,10 @@ export default {
             
             img: '',
             guide: '',
-            date: new Date()
+            date: new Date(),
+          temp: '',
+
+            items: ['Sunny','Rainy','Cloudy','Cold']
         }
     },
 
@@ -131,33 +151,40 @@ export default {
 
     computed: {
         formIsValid () {
-            return this.hike !== '' &&
+            return this.title !== '' &&
                    this.img !== '' &&
-                   this.guide !== '' 
+                   this.guide !== '' // &&
+          //         this.temp !== ''
         },
 
         whensub () {
-            const date = new Date(this,date)
+            const date = new Date(this.date)
             return date
         }
     },
 
 
     methods: {
-        newcreatehike () {
+        createnewhike () {
             if (!this.formIsValid) {
                 return
             }
             const hikedetails = {
-                hike: this.hike,
-                location: this.location,
+                title: this.title,
                 img: this.img,
                 guide: this.guide,
+            //    temp: this.temp,
                 date: this.whensub
             }
-            this.$store.dispatch('createnewhike')
+            this.$store.dispatch('createnewhike', hikedetails)
             this.$router.push('/viewguides')
-        }
+        },
+
+  /*      tempcomputed (temp) {
+            if (temp == "Sunny"){
+                return '../assets/temp/Sunny.png'
+            }
+        }   */
     }
 }
 </script>

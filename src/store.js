@@ -25,11 +25,13 @@ export default new Vuex.Store({
     /*    setRecipes(state, payload) {
             state.recipes = payload;
         },   */
+        createnewhike (state, pay) {
+            state.hikez.push(pay)
+        },
 
         setUser (state, pay) {
             state.user = pay
         }  
-
 
     },
 
@@ -51,6 +53,16 @@ export default new Vuex.Store({
                 commit('setRecipes', []);
             }
         },  */
+
+        createnewhike ({ commit }, pay) {
+            const hike = {
+                title: pay.title,
+                img: pay.img,
+                guide: pay.guide,
+                date: pay.date.toISOString()
+            }
+            commit('createnewhike', hike)
+        },
 
         signUserup ({commit}, pay){
             firebase.auth().createUserWithEmailAndPassword(pay.email,pay.password)
@@ -107,9 +119,9 @@ export default new Vuex.Store({
 
         },
         DoneHike (state) {
-            return (hikeid) => {
+            return (hiketitle) => {
                 return state.hikez.find((hike) => {
-                    return hike.id == hikeid
+                    return hike.title == hiketitle
                 })
             }
         },
