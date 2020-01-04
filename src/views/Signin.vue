@@ -99,7 +99,12 @@ export default {
     watch: {
         user (value) {
             if (value !== null && value !== undefined) {
+                if(this.email == "admin@uyuyuy.com"){
+                    this.$router.push('/adminpage')
+                }
+                else{
                 this.$router.push('/')
+                }
             }
 
         }
