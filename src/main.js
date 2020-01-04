@@ -37,6 +37,9 @@ Vue.config.productionTip = false;
 new Vue({
   router,
   store,
+
+
+
   
   render: h => h(App),
   created () {
@@ -49,5 +52,6 @@ new Vue({
     messagingSenderId: "663827794693",
     appId: "1:663827794693:web:35446beeae401b294f856c"
     })
+    this.$store.dispatch('guidesfetch')
   }
 }).$mount("#app");

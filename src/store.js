@@ -25,6 +25,9 @@ export default new Vuex.Store({
     /*    setRecipes(state, payload) {
             state.recipes = payload;
         },   */
+        guidesset (state, pay) {
+            state.hikez = pay
+        },
         createnewhike (state, pay) {
             state.hikez.push(pay)
         },
@@ -54,6 +57,29 @@ export default new Vuex.Store({
             }
         },  */
 
+        guidesfetch ({commit}) {
+            firebase.database().ref('guides').once('value')
+            .then((data) => {
+                const guides = []
+                const obj = data.val()
+                for(let key in obj) {
+                    guides.push({
+                        id: key,
+                        title: obj[key].title,
+                        guide: obj[key].guide,
+                        img: obj[key].img,
+                        date: obj[key].date
+                    })
+                }
+                commit('guidesset',guides)
+            })
+            .catch(
+                (error) => {
+                    console.log(error)
+                }
+            )
+        },
+
         createnewhike ({ commit }, pay) {
             const hike = {
                 title: pay.title,
@@ -61,7 +87,22 @@ export default new Vuex.Store({
                 guide: pay.guide,
                 date: pay.date.toISOString()
             }
-            commit('createnewhike', hike)
+         //   commit('createnewhike', hike)
+
+            firebase.database().ref('guides').push(hike)
+            .then((data) => {
+                const key = data.key
+
+                commit('createnewhike', {
+                    ...hike,
+                    id: key
+                })
+            })
+            .catch((error) => {
+                console.log(error)
+            })
+       
+       
         },
 
         signUserup ({commit}, pay){
