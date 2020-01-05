@@ -70,9 +70,36 @@ export default {
 
         userIsauthenticated () {
             return this.$store.getters.user !== null && this.$store.getters.user !== undefined
+        },
+        invaliduser (to) {
+            if (this.$store.getters.user) {
+                this.$router.push('' + to)
+
+            } else {
+                this.$router.push('/sign-in')
+
+            }
+        },
+        validuser (to) {
+            this.$router.push('/' + to)
+            
         }
+     
     },
-   
+
+    methods: {
+
+
+       routing (to) {  
+        if(item.title = "Create Guide") {
+                        invaliduser(to)
+                    } else {
+                        validuser (to)
+                    }
+
+        }
+    }
+    
 };
 </script>
 

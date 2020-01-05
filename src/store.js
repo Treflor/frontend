@@ -198,6 +198,10 @@ export default new Vuex.Store({
                     console.log(error)
                 }
             )
+        },
+
+        SignInauto ({commit}, pay) {
+            commit ('setUser', {id: pay.uid})
         }
         
         

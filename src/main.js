@@ -52,6 +52,11 @@ new Vue({
     messagingSenderId: "663827794693",
     appId: "1:663827794693:web:35446beeae401b294f856c"
     })
+    firebase.auth().onAuthStateChanged((user) => {
+      if (user) {
+        this.$store.dispatch('SignInauto', user)
+      }
+    })
     this.$store.dispatch('guidesfetch')
     this.$store.dispatch('guidesfetchfinl')
   }

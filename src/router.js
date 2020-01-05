@@ -30,6 +30,7 @@ export default new Router({
 import Vue from 'vue';
 import Router from 'vue-router';
 import Home from './views/Home.vue';
+import AuGuard from './AuGuard';
 
 
 Vue.use(Router);
@@ -85,8 +86,21 @@ export default new Router({
       {
         path: '/newhike',
         name: 'newhike',
-        component: () => import('./components/NewHike.vue')
-      },
+        component: () => import('./components/NewHike.vue'),
+     /*   beforeEnter(to, from, next){
+         
+          if (store.getters.user) {
+            next()
+          } else {
+            next({
+              name: "signin" // back to safety route //
+            });
+          }
+        }  
+
+        */
+ 
+  },
       {
         path: '/guides/:title',
         name: 'Hike',
@@ -102,7 +116,7 @@ export default new Router({
 
       },
       {
-        path: '/waiting',
+        path: '/adminpage/waiting',
         name: 'Waiting',
         component: () => import('./components/Waiting.vue')
 
