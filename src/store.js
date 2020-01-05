@@ -202,6 +202,12 @@ export default new Vuex.Store({
 
         SignInauto ({commit}, pay) {
             commit ('setUser', {id: pay.uid})
+        },
+
+        loggingout ({commit}) {
+            firebase.auth().signOut()
+            commit('setUser', null)
+
         }
         
         

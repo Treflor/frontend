@@ -10,10 +10,29 @@
                             :to="item.to">
                             {{item.title}}
                             </v-btn>
+                            
                         </v-list-tile-content>
+                        
                     </v-list-tile>
                     <v-divider :key="`divider-${item.title}`"></v-divider>
                 </template>
+                <template v-if="userIsauthenticated">
+                    <v-list-tile >
+                        <v-list-tile-content>
+                            <v-btn 
+                            flat
+                            @click="onlogout"
+                            to="/"
+                            >
+                            Log-Out
+                            </v-btn>
+                            
+                        </v-list-tile-content>
+                        
+                    </v-list-tile>
+                    
+                </template>
+
             </v-list>
         </v-navigation-drawer>
         <v-toolbar color="white">   
@@ -34,6 +53,9 @@
                 :to="item.to"
                 >
                 {{item.title}}
+                </v-btn>
+                <v-btn v-if="userIsauthenticated" @click="onlogout" to="/">
+                    Log-Out
                 </v-btn>
             </v-toolbar-items>
         </v-toolbar>
@@ -97,6 +119,10 @@ export default {
                         validuser (to)
                     }
 
+        },
+
+        onlogout () {
+            this.$store.dispatch('loggingout')
         }
     }
     
