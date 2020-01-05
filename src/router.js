@@ -95,6 +95,25 @@ export default new Router({
 
       },
       {
+        path: '/waiting/:title',
+        name: 'Wait',
+        props: true,
+        component: () => import('./components/Guide2.vue')
+
+      },
+      {
+        path: '/waiting',
+        name: 'Waiting',
+        component: () => import('./components/Waiting.vue')
+
+      },
+      {
+        path: '/viewguidesfinl',
+        name: 'ViewGuidesFinl',
+        component: () => import('./components/ViewGuidesfinl.vue')
+
+      },
+      {
         path: '/signup',
         name: 'signup',
         component: () => import('./views/SignUp.vue')

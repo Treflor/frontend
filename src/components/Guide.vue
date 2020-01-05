@@ -36,7 +36,7 @@ export default {
     props: ['title'],
     computed: {
         hike() {
-            return this.$store.getters.DoneHike(this.title)
+            return this.$store.getters.DoneHikefinl(this.title)
         }
     }
 }

@@ -15,6 +15,7 @@ export default new Vuex.Store({
             {img: 'https://www.tripsavvy.com/thmb/dAjVDb033cOIBYtAC3Y_S7Ld5p8=/960x0/filters:no_upscale():max_bytes(150000):strip_icc()/hikinginspain-f7d12abd58584697ae354500d31ee07f.jpg', id: '2222', title: 'Bible Rock', height: '418m', guide: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident ipsa voluptatem cupiditate sapiente at id numquam inventore fuga iure quisquam.'},
             {img: 'https://veggievagabonds.com/wp-content/uploads/2019/08/IMG_20180923_094155722_HDR-1-01.jpeg', id: '4444', title: 'Knuckles', height: '818m', guide: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident ipsa voluptatem cupiditate sapiente at id numquam inventore fuga iure quisquam.'},
         ],
+        hikezfinl: [],
 
         user: null
     },
@@ -25,11 +26,19 @@ export default new Vuex.Store({
     /*    setRecipes(state, payload) {
             state.recipes = payload;
         },   */
+        
+        
         guidesset (state, pay) {
             state.hikez = pay
         },
+        guidessetfinl (state, pay) {
+            state.hikezfinl = pay
+        },
         createnewhike (state, pay) {
             state.hikez.push(pay)
+        },
+        createnewhikefinl (state, pay) {
+            state.hikezfinl.push(pay)
         },
 
         setUser (state, pay) {
@@ -80,6 +89,29 @@ export default new Vuex.Store({
             )
         },
 
+        guidesfetchfinl ({commit}) {
+            firebase.database().ref('guidesfinl').once('value')
+            .then((data) => {
+                const guides = []
+                const obj = data.val()
+                for(let key in obj) {
+                    guides.push({
+                        id: key,
+                        title: obj[key].title,
+                        guide: obj[key].guide,
+                        img: obj[key].img,
+                     //   date: obj[key].date
+                    })
+                }
+                commit('guidessetfinl',guides)
+            })
+            .catch(
+                (error) => {
+                    console.log(error)
+                }
+            )
+        },
+
         createnewhike ({ commit }, pay) {
             const hike = {
                 title: pay.title,
@@ -94,6 +126,31 @@ export default new Vuex.Store({
                 const key = data.key
 
                 commit('createnewhike', {
+                    ...hike,
+                    id: key
+                })
+            })
+            .catch((error) => {
+                console.log(error)
+            })
+       
+       
+        },
+
+        createnewhikefinl ({ commit }, pay) {
+            const hike = {
+                title: pay.title,
+                img: pay.img,
+                guide: pay.guide,
+            //    date: pay.date.toISOString()
+            }
+         //   commit('createnewhike', hike)
+
+            firebase.database().ref('guidesfinl').push(hike)
+            .then((data) => {
+                const key = data.key
+
+                commit('createnewhikefinl', {
                     ...hike,
                     id: key
                 })
@@ -155,6 +212,11 @@ export default new Vuex.Store({
                 return hikeA > hikeB
             })
         },
+        hikezfinl (state) {
+            return state.hikezfinl.sort((hikeA,hikeB)=>{
+                return hikeA > hikeB
+            })
+        },
         f_hikez (state, getters) {
             return getters.hikez.slice(0,5)
 
@@ -165,6 +227,13 @@ export default new Vuex.Store({
                     return hike.title == hiketitle
                 })
             }
+        },
+        DoneHikefinl (state) {
+                return (hiketitle) => {
+                    return state.hikezfinl.find((hike) => {
+                        return hike.title == hiketitle
+                    })
+                }
         },
         
 

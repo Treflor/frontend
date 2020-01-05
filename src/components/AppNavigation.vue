@@ -59,7 +59,7 @@ export default {
 
             if(this.userIsauthenticated ){
                 items = [                    
-                {title: 'View Guides' , to: '/viewguides'},
+                {title: 'View Guides' , to: '/viewguidesfinl'},
                 {title: 'Create Guide' , to: '/newhike'},
                 {title: 'Profile' , to: '/profile'},
 

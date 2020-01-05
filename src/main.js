@@ -53,5 +53,6 @@ new Vue({
     appId: "1:663827794693:web:35446beeae401b294f856c"
     })
     this.$store.dispatch('guidesfetch')
+    this.$store.dispatch('guidesfetchfinl')
   }
 }).$mount("#app");
