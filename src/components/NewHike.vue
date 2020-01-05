@@ -32,16 +32,23 @@
                         </v-text-field>
                         
                         -->
-                         <v-text-field 
-                        v-model="img"
-                        name="Img"
-                        required
-                        label="Img"
-                        id="Img"
-                        
-                        >
+                        <div class="img font-weight-light">
+                            Img
+                        </div>
+                        <div class="pik">
+                        <v-layout row>
+                            <v-flex xs12 sm6 offset-sm3>
 
-                        </v-text-field>
+                        <v-btn @click="onpickfile" color="blue">Pick File
+                        </v-btn>
+                        <input type="file" style="display: none" ref="fileinput" @change="onfilepicked">
+                            </v-flex>
+                        </v-layout>
+                        </div>
+                   
+
+                     
+                          
 
                         <v-layout row>
                         <v-flex xs12 sm12 >
@@ -49,6 +56,9 @@
                         </v-img>
                         </v-flex>
                         </v-layout>
+
+
+
 
                        
                         <v-textarea
@@ -174,11 +184,32 @@ export default {
                 img: this.img,
                 guide: this.guide,
             //    temp: this.temp,
-                date: this.whensub
+                date: this.whensub,
+                imgfile: ''
             }
             this.$store.dispatch('createnewhike', hikedetails)
             this.$router.push('/viewguides')
         },
+
+        onfilepicked (event) {
+            const files = event.target.files
+            let imgname = files[0].name
+            if (imgname.lastIndexOf('.') <= 0) {
+                return alert('No file')
+            }
+            const fileReader = new FileReader()
+            fileReader.addEventListener('load', () => {
+                this.img = fileReader.result
+            })
+            fileReader.readAsDataURL(files[0])
+            this.imgfile = files[0]
+
+        },
+
+        onpickfile () {
+            this.$refs.fileinput.click()
+        },
+        
 
   /*      tempcomputed (temp) {
             if (temp == "Sunny"){
@@ -188,3 +219,15 @@ export default {
     }
 }
 </script>
+
+<style scoped>
+.img {
+    position: relative;
+    left: -269px
+}
+
+.pik {
+    position: relative;
+    left: -248px
+}
+</style>

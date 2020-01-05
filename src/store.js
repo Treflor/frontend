@@ -100,6 +100,7 @@ export default new Vuex.Store({
                         title: obj[key].title,
                         guide: obj[key].guide,
                         img: obj[key].img,
+                        creatorId: obj[key].creatorId
                      //   date: obj[key].date
                     })
                 }
@@ -137,12 +138,14 @@ export default new Vuex.Store({
        
         },
 
-        createnewhikefinl ({ commit }, pay) {
+        createnewhikefinl ({ commit, getters }, pay) {
             const hike = {
                 title: pay.title,
                 img: pay.img,
                 guide: pay.guide,
+                creatorId: getters.user.id 
             //    date: pay.date.toISOString()
+
             }
          //   commit('createnewhike', hike)
 
