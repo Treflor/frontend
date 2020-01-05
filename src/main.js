@@ -43,12 +43,16 @@ new Vue({
   
   render: h => h(App),
   created () {
+
+
+
     firebase.initializeApp ({
       apiKey: "AIzaSyBgC6WB-VroJvvnJp2llGaKrUo32Jn0Zus",
     authDomain: "treflor-26f34.firebaseapp.com",
     databaseURL: "https://treflor-26f34.firebaseio.com",
     projectId: "treflor-26f34",
-    storageBucket: "treflor-26f34.appspot.com",
+    //storageBucket: "treflor-26f34.appspot.com",
+    storageBucket:"gs://treflor-26f34.appspot.com",
     messagingSenderId: "663827794693",
     appId: "1:663827794693:web:35446beeae401b294f856c"
     })

@@ -118,7 +118,8 @@ export default new Vuex.Store({
                 title: pay.title,
                 img: pay.img,
                 guide: pay.guide,
-                date: pay.date.toISOString()
+                date: pay.date.toISOString(), 
+             //   creatorId: getters.user.user.uid 
             }
          //   commit('createnewhike', hike)
 
@@ -143,7 +144,7 @@ export default new Vuex.Store({
                 title: pay.title,
                 img: pay.img,
                 guide: pay.guide,
-                creatorId: getters.user.id 
+               
             //    date: pay.date.toISOString()
 
             }
@@ -255,7 +256,4 @@ export default new Vuex.Store({
         }
     }
 })
-
-
-
 

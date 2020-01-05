@@ -32,7 +32,7 @@
                         </v-text-field>
                         
                         -->
-                        <div class="img font-weight-light">
+              <!--          <div class="img font-weight-light">
                             Img
                         </div>
                         <div class="pik">
@@ -45,10 +45,21 @@
                             </v-flex>
                         </v-layout>
                         </div>
-                   
+                  --> 
+
+
+
 
                      
-                          
+                                  <v-text-field
+                                  name = "Img"
+                                  v-model="img"
+                                  label="Img"
+                                  required
+                                  id="Img"
+                                  >
+                                  </v-text-field>
+                        
 
                         <v-layout row>
                         <v-flex xs12 sm12 >
@@ -149,6 +160,7 @@ export default {
             guide: '',
             date: new Date(),
           temp: '',
+        //  imgfile: null,
 
             items: ['Sunny','Rainy','Cloudy','Cold']
         }
@@ -179,16 +191,21 @@ export default {
             if (!this.formIsValid) {
                 return
             }
-            const hikedetails = {
+            // if(!this.imgfile){
+            //     return
+            // }
+             const hikedetails = {
                 title: this.title,
                 img: this.img,
+            
                 guide: this.guide,
             //    temp: this.temp,
                 date: this.whensub,
-                imgfile: ''
+            //    imgfile: this.imgfile
             }
             this.$store.dispatch('createnewhike', hikedetails)
-            this.$router.push('/viewguides')
+            this.$router.push('/viewguidesfinl')
+            // need to create the landing page
         },
 
         onfilepicked (event) {

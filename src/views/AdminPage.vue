@@ -1,11 +1,14 @@
 <template>
+<div class="main">
   <span>
+    <admin-info1></admin-info1> 
     <admin-panel></admin-panel>
-   <admin-info1></admin-info1> 
+   
    <admin-profs1></admin-profs1>
    <admin-chrt></admin-chrt>
   <!-- <admin-info2></admin-info2>  --> 
   </span>
+</div>
 </template>
 
 <script>
@@ -26,6 +29,13 @@ export default {
 //}
 }
 </script>
+
+
+<style scoped>
+.main {
+  background-color: #615f58
+}
+</style>
 
 
 

@@ -1,5 +1,4 @@
 <template>
-<div class="text-xs-center">
  <v-container v-if="loading">
   
     <div class="text-xs-center">
@@ -11,10 +10,15 @@
       </v-progress-circular>     
     </div>
   </v-container>
-<v-container v-else grid-list-xl>
-   <div class="text-xs-center">
-   <v-hover v-slot:default="{ hover }">
-     <v-card width="900" color="yellow" 
+
+  <v-container v-else>
+    <v-layout row>
+      <v-flex xs12 class="text-xs-center">
+
+        
+<v-hover v-slot:default="{hover}">
+     <v-card 
+     width="916" color="yellow" 
      :elevation="hover ? 19 : 6">
        <v-card-title> 
          <v-row align="center">
@@ -54,11 +58,16 @@
 
      </v-card>
    </v-hover>
-   </div>
-  </v-container>
-</div>
-</template>
 
+
+      </v-flex>
+
+    </v-layout>
+
+  </v-container>
+
+
+</template>
 
 
 
