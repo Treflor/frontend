@@ -1,6 +1,6 @@
 <template>
   <!-- Footer -->
-
+ <div class="text-xs-center">
   <div class="foot">
   <mdb-footer class="font-small pt-0">
     <mdb-container>
@@ -30,6 +30,7 @@
     </div>
   </mdb-footer>
   <!-- Footer -->
+  </div>
   </div>
 </template>
 

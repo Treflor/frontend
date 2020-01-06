@@ -11,10 +11,10 @@
                     <v-card-text>
                         <v-form ref="form" v-model="valid" @submit.prevent="onSignup" >
                             <v-text-field prepend-icon="person" name="fullname" label="Full Name" type="name"
-                                          v-model="fulname"  >
+                                          v-model="fulname" :rules='FullnmeRules' >
                             </v-text-field>
                             <v-text-field prepend-icon="person" name="username" label="Username" type="name"
-                                          v-model="usrname"  >
+                                          v-model="usrname" :rules='usrnmeRules' >
                             </v-text-field>
                             <v-text-field prepend-icon="email" name="email" label="Email" type="email"
                                           v-model="email" :rules="emailRules" required >
@@ -61,6 +61,18 @@ export default {
                 v =>
                     v.length >= 6 ||
                     'Password must be greater than 6 characters'
+            ],
+            usrnmeRules: [
+                 v => !!v || 'User-name is required',
+                 v =>
+                    v.length >= 4 ||
+                    'User-name must be greater than 4 characters'
+            ],
+            FullnmeRules: [
+                v => !!v || 'Full-name is required',
+                 v =>
+                    v.length >= 8 ||
+                    'Full-name must be greater than 8 characters'
             ]
         };
     },
