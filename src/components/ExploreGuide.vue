@@ -1,34 +1,58 @@
 <template>
-    <v-container grid-list-lg>
-        <v-layout row>
-            <v-flex xs12 class="text-xs-center display-1 font-weight-black my-5">Ella Hike Map</v-flex>
-        </v-layout>
-        <v-layout row wrap class="meal-plans">
-            <v-flex xs12 sm12 md12>
-                <v-card height="600">
-                    <v-card-title>Map</v-card-title>
-                    <v-responsive>
-             <!--           <v-img src="https://www.saltinourhair.com/wp-content/uploads/2016/11/Things-to-do-Ella-Sri-Lanka-Nine-arch-bridge-view.jpg" height="400px"> 
-                            <v-container fill-height fluid>
-                                <v-layout fill-height>
-                                    <v-flex xs12 align-end flexbox>
-                                        <span class="headline white--text">Ella</span>
-                                    </v-flex>
-                                </v-layout>
-                            </v-container>
-                        </v-img>    -->
-                    </v-responsive>
-                </v-card>
-            </v-flex>
-        </v-layout>
-   </v-container>
+   <v-container>
+  <div class="text-xs-center font-weight-bold">
+      <v-flex xs12 sm12 md12>
+    <v-card elevation="21" color="white" width="1229" height="606px">    
+          <v-card-title>
+      Ella Route
+    </v-card-title>
+    <div class="map">
+  
+                <GmapMap
+  v-bind:center="{lat:7, lng:80}"
+  v-bind:zoom="10"
+  map-type-id="terrain"
+  style="width: 1200px; height: 576px"
+>
+  <GmapMarker
+    v-bind:key="index"
+    v-for="(m, index) in markers"
+    v-bind:position="m.position"
+    v-bind:clickable="true"
+    v-bind:draggable="true"
+    @click="center=m.position"
+  />
+</GmapMap>
 
+        
+
+    
+    </div>
+
+    </v-card>
+      </v-flex>
+  </div>
+   </v-container>
 </template>
 
 
 
 <script>
 export default {
-    name: 'ExploreGuide'
+    name: 'ExploreGuide',
+ data() {
+        return {
+            center: { lat: 80.0, lng: 80.0 },
+            markers: [
+                {
+                    position: { lat: 7.2563578, lng: 80.6276345 }
+                },
+                {
+                    position: { lat: 7.294544, lng: 80.5907618 }
+                }
+             
+            ],
+        }
+ }
 }
 </script>
