@@ -8,6 +8,7 @@ import VueTypedJs from 'vue-typed-js'
 //import 'bootstrap-css-only/css/bootstrap.min.css'
 //import 'mdbvue/lib/css/mdb.min.css'
 import '@fortawesome/fontawesome-free/css/all.min.css'
+import firebase from 'firebase';
 
 import VueParticles from 'vue-particles'
 import * as VueGoogleMaps from 'vue2-google-maps'
@@ -36,6 +37,31 @@ Vue.config.productionTip = false;
 new Vue({
   router,
   store,
+
+
+
   
-  render: h => h(App)
+  render: h => h(App),
+  created () {
+
+
+
+    firebase.initializeApp ({
+      apiKey: "AIzaSyBgC6WB-VroJvvnJp2llGaKrUo32Jn0Zus",
+    authDomain: "treflor-26f34.firebaseapp.com",
+    databaseURL: "https://treflor-26f34.firebaseio.com",
+    projectId: "treflor-26f34",
+    //storageBucket: "treflor-26f34.appspot.com",
+    storageBucket:"gs://treflor-26f34.appspot.com",
+    messagingSenderId: "663827794693",
+    appId: "1:663827794693:web:35446beeae401b294f856c"
+    })
+    firebase.auth().onAuthStateChanged((user) => {
+      if (user) {
+        this.$store.dispatch('SignInauto', user)
+      }
+    })
+    this.$store.dispatch('guidesfetch')
+    this.$store.dispatch('guidesfetchfinl')
+  }
 }).$mount("#app");

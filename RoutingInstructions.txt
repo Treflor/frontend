@@ -1,0 +1,15 @@
+/                   ==    Home
+/viewguidesfinl     ==    Admin aproved guides
+/guides/name        ==    above guides on single form
+
+
+Admins      (Only one mail for now   admin@uyuyuy.com password- uiuiui )
+
+go to /adminpage
+
+/waiting            ==    Guides waiting for admins 
+                          List of waiting guides is there. Can click single one to go to the single one page
+                          Admin can click publish to make them go public
+                          They get send to /viewguidesfinl
+
+/waiting/name       ==    When click one from the above list                          

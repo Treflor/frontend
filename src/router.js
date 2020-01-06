@@ -30,6 +30,7 @@ export default new Router({
 import Vue from 'vue';
 import Router from 'vue-router';
 import Home from './views/Home.vue';
+import AuGuard from './AuGuard';
 
 
 Vue.use(Router);
@@ -73,10 +74,65 @@ export default new Router({
           component: () => import('./views/Admin.vue')
       },
       {
-          path: '/adminpanel',
-          name: 'admin',
-          component: () => import('./views/AdminPanel')
-      }
+          path: '/adminpage',
+          name: 'adminpage',
+          component: () => import('./views/AdminPage')
+      },
+      {
+        path: '/viewguides',
+        name: 'viewguides',
+        component: () => import('./components/ViewGuides.vue')
+      },
+      {
+        path: '/newhike',
+        name: 'newhike',
+        component: () => import('./components/NewHike.vue'),
+     /*   beforeEnter(to, from, next){
+         
+          if (store.getters.user) {
+            next()
+          } else {
+            next({
+              name: "signin" // back to safety route //
+            });
+          }
+        }  
+
+        */
+ 
+  },
+      {
+        path: '/guides/:title',
+        name: 'Hike',
+        props: true,
+        component: () => import('./components/Guide.vue')
+
+      },
+      {
+        path: '/waiting/:title',
+        name: 'Wait',
+        props: true,
+        component: () => import('./components/Guide2.vue')
+
+      },
+      {
+        path: '/adminpage/waiting',
+        name: 'Waiting',
+        component: () => import('./components/Waiting.vue')
+
+      },
+      {
+        path: '/viewguidesfinl',
+        name: 'ViewGuidesFinl',
+        component: () => import('./components/ViewGuidesfinl.vue')
+
+      },
+      {
+        path: '/signup',
+        name: 'signup',
+        component: () => import('./views/SignUp.vue')
+    },
+
        
     ]
 });

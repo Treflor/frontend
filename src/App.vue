@@ -1,7 +1,9 @@
 <template>
     <v-app>
-        <app-navigation></app-navigation>
+  <app-navigation></app-navigation>  
+    <!--    <app-nav></app-nav>    -->
         
+    <home-appnav></home-appnav>
 
         <v-content transition="slide-x-transition">
             <router-view></router-view>
@@ -12,13 +14,18 @@
 </template>
 
 <script>
-import AppNavigation from '@/components/AppNavigation';
 import HomeFoot from '@/components/HomeFoot';
+import AppNavigation from '@/components/AppNavigation';
+//import AppNav from '@/components/AppNav.vue';
 export default {
     name: 'App',
     components: {
-        AppNavigation,
-        HomeFoot
+     AppNavigation,
+        HomeFoot,
+
+  //      AppNav
+    
+
     }
 };
 </script>

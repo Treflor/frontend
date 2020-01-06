@@ -11,11 +11,15 @@
   },
   "dependencies": {
     "axios": "^0.18.1",
+    "chart.js": "^2.9.3",
     "core-js": "^2.6.5",
+    "firebase": "^7.6.1",
     "mdbootstrap": "^4.9.0",
     "mdbvue": "^6.0.0",
+    "moment": "^2.24.0",
     "vue": "^2.6.10",
     "vue-axios": "^2.1.5",
+    "vue-chartjs": "^3.5.0",
     "vue-flag-icon": "^1.0.6",
     "vue-navigation-bar": "^2.0.0",
     "vue-router": "^3.0.3",
@@ -24,7 +28,7 @@
     "vue2-google-maps": "^0.10.7",
     "vue2-transitions": "^0.3.0",
     "vuetify": "^1.5.5",
-    "vuex": "^3.0.1"
+    "vuex": "^3.1.2"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.7.0",

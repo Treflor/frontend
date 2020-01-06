@@ -1,6 +1,6 @@
 <template>
 <v-parallax height="696" src="https://i.imgur.com/km4strr.jpg">
-<div class="main">
+<div class="main6">
     <v-container fill-height>
         <v-layout align-center justify-center>
             <v-flex xs12 sm14 md6>
@@ -9,7 +9,7 @@
                         <v-toolbar-title>Join Form</v-toolbar-title>
                     </v-toolbar>
                     <v-card-text>
-                        <v-form ref="form" v-model="valid" >
+                        <v-form ref="form" v-model="valid" @submit.prevent="onSignup" >
                             <v-text-field prepend-icon="person" name="fullname" label="Full Name" type="name"
                                           v-model="fulname" :rules='FullnmeRules' >
                             </v-text-field>
@@ -17,17 +17,22 @@
                                           v-model="usrname" :rules='usrnmeRules' >
                             </v-text-field>
                             <v-text-field prepend-icon="email" name="email" label="Email" type="email"
-                                          v-model="email" :rules="emailRules" required data-cy="signinEmailField">
+                                          v-model="email" :rules="emailRules" required >
                             </v-text-field>
                             <v-text-field prepend-icon="lock" name="password" label="Password" type="password"
-                                          data-cy="signinPasswordField" v-model="password"
+                                           v-model="password"
                                           :rules="passwordRules" required>
+                            </v-text-field>
+                             <v-text-field prepend-icon="lock" name="confirmPasswords" label="Confirm Password" type="password"
+                                           v-model="confirmpassword"
+                                          :rules="[comparePasswords]" required>
                             </v-text-field>
                         </v-form>
                     </v-card-text>
                     <v-card-actions>
                         <v-spacer></v-spacer>
-                        <v-btn color="error" :disabled="!valid" @click="submit" to="/" data-cy="signinSubmitBtn">Join</v-btn>
+                        <v-btn color="yellow" type="submit">
+                                    SignUp</v-btn>
                     </v-card-actions>
                 </v-card>
             </v-flex>
@@ -45,6 +50,8 @@ export default {
             valid: false,
             email: '',
             password: '',
+            fulname:'',
+            usrname:'',
             emailRules: [
                 v => !!v || 'E-mail is required',
                 v => /.+@.+/.test(v) || 'E-mail must be valid'
@@ -69,15 +76,34 @@ export default {
             ]
         };
     },
-    methods: {
-        submit() {
-            if (this.$refs.form.validate()) {
-                this.$store.dispatch('userLogin', {
-                    email: this.email,
-                    password: this.password
-                });
-            }
+
+    muted: {
+        comparePasswords () {
+            return this.password !== this.confirmPassword
+        },
+
+        user () {
+            return this.$store.getters.user
         }
+
+    },
+
+    watch: {
+        user (value) {
+            if( value !== null && value !== undefined){
+                this.$router.push('/')
+            }
+
+        }
+    },
+
+
+    methods: {
+        onSignup() {
+           this.$store.dispatch('signUserup', {email:this.email, password: this.password})
+
+        }
+
     }
 };
 </script>
@@ -88,4 +114,5 @@ export default {
         background: linear-gradient(to right, #eb8444,#eb5244);
     }
 */
+
 </style>
