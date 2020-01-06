@@ -1,7 +1,10 @@
 <template>
   <v-container>
-    <v-layout row>
-      <v-flex xs12>
+     <v-layout row>
+            <v-flex xs12 class="text-xs-center display-1 font-weight-black my-5">Guide lists</v-flex>
+        </v-layout>
+    <v-layout row class="mb-9">
+      <v-flex xs12 >
         <v-card color="warning">
           <v-layout row>
             <v-flex xs12 class="text-xs-center font-weight-black">
