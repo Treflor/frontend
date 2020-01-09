@@ -22,6 +22,8 @@
     "vue-chartjs": "^3.5.0",
     "vue-flag-icon": "^1.0.6",
     "vue-google-signin-button": "^1.0.4",
+    "vue-google-signin-button-directive": "^1.0.3",
+    "vue-images": "^1.1.0",
     "vue-navigation-bar": "^2.0.0",
     "vue-router": "^3.0.3",
     "vue-typed-js": "^0.1.2",

@@ -9,12 +9,17 @@ import VueTypedJs from 'vue-typed-js'
 //import 'mdbvue/lib/css/mdb.min.css'
 import '@fortawesome/fontawesome-free/css/all.min.css'
 import firebase from 'firebase';
+import vueImages from 'vue-images/dist/vue-images';
 
 import VueParticles from 'vue-particles'
 import * as VueGoogleMaps from 'vue2-google-maps'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
 import FlagIcon from 'vue-flag-icon'
+import GSignInButton from 'vue-google-signin-button'
+import { Script } from "vm";
+
+Vue.use(GSignInButton);
 
 Vue.use(FlagIcon);
  
@@ -22,6 +27,8 @@ Vue.use(VueAxios, axios)
 
 Vue.use(VueTypedJs)
 Vue.use(VueParticles)
+
+Vue.use(vueImages)
 Vue.use(VueGoogleMaps, {
   load: {
     key: "AIzaSyA_UeV4hwzgEG2h2iT0rwoYvgHv6snP9jM",
@@ -65,3 +72,7 @@ new Vue({
     this.$store.dispatch('guidesfetchfinl')
   }
 }).$mount("#app");
+
+
+
+

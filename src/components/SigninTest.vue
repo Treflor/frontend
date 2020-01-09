@@ -1,3 +1,4 @@
+
 <template>
 <v-parallax height="969" src="https://i.imgur.com/M0BwxSq.png">
 <v-container>
@@ -59,6 +60,13 @@
                             </v-flex>
                         </v-layout>
 
+                        <v-layout row>
+                            <v-flex xs12 class="text-xs-center">
+                               <button v-google-signin-button="clientId" class="google-signin-button"> Continue with Google</button>
+
+                            </v-flex>
+                        </v-layout>
+
 
 
                     </v-form>
@@ -80,21 +88,45 @@
 </template>
 
 <script>
+import GoogleSignInButton from 'vue-google-signin-button-directive';
+
 export default {
     name: 'SignIn',
 
-    data () {
-        return {
-            sign : {}
-        }
-    },
+    data: () => ({
+
+        sign: {},
+    clientId: '375151907681-p5mv02plrs46p63jjjqk1ji7btd5ussd.apps.googleusercontent.com'
+  }),
+
+        
     methods : {
         signin () {
             let uri = 'https://api-treflor.herokuapp.com/oauth/signin';
             this.axios.post(uri, this.sign).then((response) => {
               console.log(response);
             });
-        }
+        },
+
+        onSignInSuccess (googleUser) {
+      // `googleUser` is the GoogleUser object that represents the just-signed-in user.
+      // See https://developers.google.com/identity/sign-in/web/reference#users
+      const profile = googleUser.getBasicProfile() // etc etc
+    },
+
+     onSignInError (error) {
+      // `error` contains any error occurred.
+      console.log('OH NOES', error)
+    },
+    OnGoogleAuthSuccess (idToken) {
+      // Receive the idToken and make your magic with the backend
+    },
+    OnGoogleAuthFail (error) {
+      console.log(error)
+    }
+
+
+
     }
 
 }
@@ -104,5 +136,15 @@ export default {
 .form {
     position: relative;
     top: 169px
+}
+
+.google-signin-button {
+  color: white;
+  background-color: red;
+  height: 50px;
+  font-size: 16px;
+  border-radius: 10px;
+  padding: 10px 20px 25px 20px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 </style>

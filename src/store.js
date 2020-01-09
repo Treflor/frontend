@@ -23,8 +23,39 @@ export default new Vuex.Store({
 
         
         galleries : [
-                {title: 'knuckles',img1 : 'https://saltinourhair.com/wp-content/uploads/2018/04/Things-to-do-Ella-Sri-Lanka-Nine-arch-bridge-couple-view.jpg' , img2 : 'https://www.tripsavvy.com/thmb/dAjVDb033cOIBYtAC3Y_S7Ld5p8=/960x0/filters:no_upscale():max_bytes(150000):strip_icc()/hikinginspain-f7d12abd58584697ae354500d31ee07f.jpg' , img3 : 'https://veggievagabonds.com/wp-content/uploads/2019/08/IMG_20180923_094155722_HDR-1-01.jpeg'}
+                {title: 'knuckles',img1 : 'https://saltinourhair.com/wp-content/uploads/2018/04/Things-to-do-Ella-Sri-Lanka-Nine-arch-bridge-couple-view.jpg' , img2 : 'https://www.tripsavvy.com/thmb/dAjVDb033cOIBYtAC3Y_S7Ld5p8=/960x0/filters:no_upscale():max_bytes(150000):strip_icc()/hikinginspain-f7d12abd58584697ae354500d31ee07f.jpg' , img3 : 'https://veggievagabonds.com/wp-content/uploads/2019/08/IMG_20180923_094155722_HDR-1-01.jpeg' , img4 : '' , img5 : ''},
+                {title: 'knuckles',img1 : 'https://saltinourhair.com/wp-content/uploads/2018/04/Things-to-do-Ella-Sri-Lanka-Nine-arch-bridge-couple-view.jpg' , img2 : 'https://www.tripsavvy.com/thmb/dAjVDb033cOIBYtAC3Y_S7Ld5p8=/960x0/filters:no_upscale():max_bytes(150000):strip_icc()/hikinginspain-f7d12abd58584697ae354500d31ee07f.jpg' , img3 : 'https://veggievagabonds.com/wp-content/uploads/2019/08/IMG_20180923_094155722_HDR-1-01.jpeg' , img4 : '' , img5 : ''}
+      
             ],
+
+        galleries1 : [
+            {title: 'knuckles', img : ['https://saltinourhair.com/wp-content/uploads/2018/04/Things-to-do-Ella-Sri-Lanka-Nine-arch-bridge-couple-view.jpg' ,  'https://www.tripsavvy.com/thmb/dAjVDb033cOIBYtAC3Y_S7Ld5p8=/960x0/filters:no_upscale():max_bytes(150000):strip_icc()/hikinginspain-f7d12abd58584697ae354500d31ee07f.jpg' ,  'https://veggievagabonds.com/wp-content/uploads/2019/08/IMG_20180923_094155722_HDR-1-01.jpeg' , '' , '' ]},
+            {title: 'knuckles', img : ['https://saltinourhair.com/wp-content/uploads/2018/04/Things-to-do-Ella-Sri-Lanka-Nine-arch-bridge-couple-view.jpg' ,  'https://www.tripsavvy.com/thmb/dAjVDb033cOIBYtAC3Y_S7Ld5p8=/960x0/filters:no_upscale():max_bytes(150000):strip_icc()/hikinginspain-f7d12abd58584697ae354500d31ee07f.jpg' ,  'https://veggievagabonds.com/wp-content/uploads/2019/08/IMG_20180923_094155722_HDR-1-01.jpeg' , '' , '' ]},
+      
+        ],
+
+        knuckles : [
+            {
+                imageUrl:'' ,
+                caption: 'knuckles'
+            },
+            {
+                imageUrl:'' ,
+                caption: 'knuckles'
+            },
+            {
+                imageUrl:'' ,
+                caption: 'knuckles'
+            },
+            {
+                imageUrl:'' ,
+                caption: 'knuckles'
+            },
+            {
+                imageUrl:'' ,
+                caption: 'knuckles'
+            },
+        ]
     },
 
 
