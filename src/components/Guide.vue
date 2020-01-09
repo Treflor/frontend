@@ -15,7 +15,7 @@
                     </v-card-text>
                     <v-card-actions>
                         <v-spacer></v-spacer>
-                        <v-btn color="yellow" >
+                        <v-btn color="yellow" to="/imggallery">
                             View photo gallery
                         </v-btn>
                     </v-card-actions>

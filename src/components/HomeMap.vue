@@ -14,14 +14,8 @@
   map-type-id="terrain"
   style="width: 1200px; height: 576px"
 >
-  <GmapMarker
-    v-bind:key="index"
-    v-for="(m, index) in markers"
-    v-bind:position="m.position"
-    v-bind:clickable="true"
-    v-bind:draggable="true"
-    @click="center=m.position"
-  />
+  <gmap-polyline v-bind:path.sync="path" v-bind:options="{ strokeColor:'#008000'}">
+         </gmap-polyline>
 </GmapMap>
 
         
@@ -136,9 +130,11 @@ export default {
                     position: { lat: 7.256631, lng: 80.4151643 }
                 }
               
-            ]
-        };
-    },
+            ],
+            
+            }
+        
+        },
     methods: {
       login: function() {
         this.$router.replace('about')

@@ -115,7 +115,15 @@ export default {
         onSignin () {
             this.$store.dispatch('signUserin', {email: this.email, password: this.password})
 
-        }
+        },
+
+/*
+        SignIn () {
+            let uri = 'http://localhost:4000/tiks1/new';
+            this.axios.post(uri, this.email , this.password).then((response) => {
+              console.log(response);
+            });
+        }    */
     }
 }
 </script>

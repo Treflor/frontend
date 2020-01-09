@@ -24,8 +24,8 @@ Vue.use(VueTypedJs)
 Vue.use(VueParticles)
 Vue.use(VueGoogleMaps, {
   load: {
-    key: '',
-    libraries: 'places', 
+    key: "AIzaSyA_UeV4hwzgEG2h2iT0rwoYvgHv6snP9jM",
+    libraries: "places", 
   },
  
 })

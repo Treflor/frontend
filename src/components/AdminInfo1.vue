@@ -13,7 +13,7 @@
           </v-card-text>
             </v-flex>
           </v-layout>
-        <v-btn block width="256" color="warning" dark>WAITING GUIDES</v-btn>
+        <v-btn to="/adminpage/waiting" block width="256" color="warning" dark>WAITING GUIDES</v-btn>
         </v-card>
 
       </v-flex>
@@ -29,7 +29,7 @@
           </v-card-text>
             </v-flex>
           </v-layout>
-        <v-btn block width="256" color="info" dark>PUBLISHED GUIDES</v-btn>
+        <v-btn to="viewguidesfinl" block width="256" color="info" dark>PUBLISHED GUIDES</v-btn>
         </v-card>
 
       </v-flex>

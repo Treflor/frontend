@@ -30,7 +30,7 @@ export default new Router({
 import Vue from 'vue';
 import Router from 'vue-router';
 import Home from './views/Home.vue';
-import AuGuard from './AuGuard';
+//import AuGuard from './AuGuard';
 
 
 Vue.use(Router);
@@ -132,6 +132,22 @@ export default new Router({
         name: 'signup',
         component: () => import('./views/SignUp.vue')
     },
+    {
+      path: '/signtest',
+      name: 'signtest',
+      component: () => import('./components/SigninTest.vue')
+  },
+   {
+    path: '/imggallery',
+    name: 'imggallery',
+    component: () => import('./components/ImgGallery.vue')
+},
+  {
+    path: '/signuptest',
+    name: 'signuptest',
+    component: () => import('./components/SignupTest.vue')
+},
+
 
        
     ]

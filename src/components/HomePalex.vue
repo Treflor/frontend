@@ -9,14 +9,19 @@
       justify-center
     >
       <div class="cris">
+        <v-flex xs10 class="text-xs-center">
       <h2 class="display-4 font-weight-thin mb-3 "><vue-typed-js :typeSpeed='46' :loop='true' :strings="['your', 'world']">
-  <h2>Explore <span class="typing"></span></h2>
+  <h2>Explore<span class="typing"></span></h2>
+  
 </vue-typed-js></h2>
+        </v-flex>
+
+
       </div>
       <div class="btn">
       <v-row align="center">
       <v-btn large depressed color="yellow" to='/maps'>MAPS</v-btn>
-      <v-btn large depressed color="green" to='/explore'>PHOTOS</v-btn>
+      <v-btn large depressed color="green" to='/imggallery'>PHOTOS</v-btn>
       </v-row>
       </div>
   <!--    <div class="join">

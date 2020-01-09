@@ -17,7 +17,14 @@ export default new Vuex.Store({
         ],
         hikezfinl: [],
 
-        user: null
+        
+
+        user: null ,
+
+        
+        galleries : [
+                {title: 'knuckles',img1 : 'https://saltinourhair.com/wp-content/uploads/2018/04/Things-to-do-Ella-Sri-Lanka-Nine-arch-bridge-couple-view.jpg' , img2 : 'https://www.tripsavvy.com/thmb/dAjVDb033cOIBYtAC3Y_S7Ld5p8=/960x0/filters:no_upscale():max_bytes(150000):strip_icc()/hikinginspain-f7d12abd58584697ae354500d31ee07f.jpg' , img3 : 'https://veggievagabonds.com/wp-content/uploads/2019/08/IMG_20180923_094155722_HDR-1-01.jpeg'}
+            ],
     },
 
 
@@ -139,7 +146,7 @@ export default new Vuex.Store({
        
         },
 
-        createnewhikefinl ({ commit, getters }, pay) {
+        createnewhikefinl ({ commit /*, getters */}, pay) {
             const hike = {
                 title: pay.title,
                 img: pay.img,
@@ -253,6 +260,10 @@ export default new Vuex.Store({
 
         user (state) {
             return state.user
+        },
+
+        galleries (state) {
+            return state.galleries
         }
     }
 })
