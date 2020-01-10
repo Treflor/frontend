@@ -18,6 +18,12 @@ import VueAxios from 'vue-axios'
 import FlagIcon from 'vue-flag-icon'
 import GSignInButton from 'vue-google-signin-button'
 import { Script } from "vm";
+import VueExpandableImage from 'vue-expandable-image'
+
+
+
+
+Vue.use(VueExpandableImage)
 
 Vue.use(GSignInButton);
 

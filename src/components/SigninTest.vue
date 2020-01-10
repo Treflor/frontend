@@ -112,6 +112,12 @@ export default {
       // `googleUser` is the GoogleUser object that represents the just-signed-in user.
       // See https://developers.google.com/identity/sign-in/web/reference#users
       const profile = googleUser.getBasicProfile() // etc etc
+      const id_token = googleUser.getAuthResponse().id_token
+
+      let uri = 'https://api-treflor.herokuapp.com/oauth/google';
+            this.axios.post(uri, this.id_token).then((response) => {
+              console.log(response);
+            });
     },
 
      onSignInError (error) {
@@ -120,6 +126,7 @@ export default {
     },
     OnGoogleAuthSuccess (idToken) {
       // Receive the idToken and make your magic with the backend
+      console.log(idToken)
     },
     OnGoogleAuthFail (error) {
       console.log(error)
