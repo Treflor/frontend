@@ -4,7 +4,7 @@
     <v-flex xs12  v-for="gallery in galleries" :key="gallery.title">
         <v-card color="#f5c242" >
             <v-card-title class="font-weight-black headline">{{ gallery.title }}</v-card-title>
-            <v-layout row wrap class="text-xs-center">
+            <v-layout row wrap>
                 <v-flex xs12 sm3 mb-2 ml-1 mr-1>
                     <expandable-image :src="gallery.img1"></expandable-image>
                 </v-flex>
@@ -39,6 +39,7 @@
                 <v-flex xs12 sm3 v-if="gallery.img10 != null" mb-2 ml-1 mr-1>
                     <expandable-image :src="gallery.img10"></expandable-image>
                 </v-flex>
+                
             </v-layout>
 
         </v-card>

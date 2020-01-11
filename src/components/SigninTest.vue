@@ -24,7 +24,7 @@
                                     name="email"
                                     label="Mail"
                                     id="email"
-                                    v-model="sign.email"
+                                    v-model="email"
                                     type="email"
                                     required
                                     >
@@ -40,7 +40,7 @@
                                     name="password"
                                     label="Password"
                                     id="password"
-                                    v-model="sign.password"
+                                    v-model="password"
                                     type="password"
                                     required
                                     >
@@ -96,17 +96,75 @@ export default {
     data: () => ({
 
         sign: {},
+        email: '',
+        password: '',
+        token: '',
     clientId: '375151907681-p5mv02plrs46p63jjjqk1ji7btd5ussd.apps.googleusercontent.com'
   }),
 
+    computed: {
+            user () {
+                return this.$store.getters.user
+            }
+
+        },
+
+    watch: {
+            user (value) {
+                if (value !== null && value !== undefined) {
+                    if(this.email == "admin@uyuyuy.com"){
+                        this.$router.push('/adminpage')
+                    }
+                    else{
+                    this.$router.push('/')
+                    }
+                }
+
+            }
+        },
+
+
         
     methods : {
-        signin () {
-            let uri = 'https://api-treflor.herokuapp.com/oauth/signin';
-            this.axios.post(uri, this.sign).then((response) => {
-              console.log(response);
-            });
+
+        signin() {
+             this.$store.dispatch('signin', {email: this.email, password: this.password})
         },
+
+        //This Work
+
+ /*       signin () {
+            console.log(this.email)
+            let uri = 'https://api-treflor.herokuapp.com/oauth/signin';
+            this.axios.post(uri, /*this.sign*/   
+          /*   {email: this.email ,
+             password: this.password
+             } )
+             .then((response) => {
+              this.token = response.data.token;
+              console.log(this.token)
+            })
+            .catch((error) => {
+                console.log(error)
+            })
+        },                             
+        */
+ 
+/*
+async signin() {
+  try {
+    const response = await axios.post('https://api-treflor.herokuapp.com/oauth/signin', {
+      email: this.email,
+      password: this.password,
+    });
+
+    console.log(response);
+
+  } catch (e) {
+    console.log(e);
+  }
+},
+*/
 
         onSignInSuccess (googleUser) {
       // `googleUser` is the GoogleUser object that represents the just-signed-in user.
