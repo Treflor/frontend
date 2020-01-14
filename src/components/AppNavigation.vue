@@ -64,6 +64,11 @@
 
 <script>
 export default {
+ //   userchecker () {
+   //     let user = JSON.parse(localStorage.getItem('user'));
+     //   return user !== null
+   // },
+
     name: 'AppNavigation',
     data() {
         return {
@@ -91,7 +96,15 @@ export default {
         },
 
         userIsauthenticated () {
-            return this.$store.getters.user !== null && this.$store.getters.user !== undefined
+           
+       //    return userchecker()
+
+       //     return this.$store.getters.user !== null && this.$store.getters.user !== undefined
+       if (localStorage.getItem('token')){
+           return true
+       }else {
+           return false
+       }
         },
         invaliduser (to) {
             if (this.$store.getters.user) {

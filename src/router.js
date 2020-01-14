@@ -142,6 +142,15 @@ export default new Router({
     name: 'imggallery',
     component: () => import('./components/ImgGallery.vue')
 },
+{
+  path: '/newhiketest',
+  name: 'newhiketest',
+  component: () => import('./components/NewHiketest.vue'),
+},
+  
+  
+  
+  
   {
     path: '/signuptest',
     name: 'signuptest',

@@ -89,6 +89,7 @@
 
 <script>
 import GoogleSignInButton from 'vue-google-signin-button-directive';
+import axios from 'axios'
 
 export default {
     name: 'SignIn',
@@ -128,8 +129,39 @@ export default {
     methods : {
 
         signin() {
-             this.$store.dispatch('signin', {email: this.email, password: this.password})
-        },
+          //   this.$store.dispatch('signin', {email: this.email, password: this.password})
+
+         //    signin ({commit}, pay) {
+        //    console.log(this.email)
+            let uri = 'https://api-treflor.herokuapp.com/oauth/signin';
+            axios.post(uri, /*this.sign*/   
+             {email: this.email ,
+             password: this.password
+             } )
+             .then((response) => {
+              const token = response.data.token;              
+              const newUser = {
+                    id: token,
+                }
+           //     commit('setUser', newUser)
+                const parsed = JSON.stringify(token);
+                localStorage.setItem('token', parsed);
+        })
+
+
+            
+            .catch((error) => {
+                console.log(error)
+            })
+//        }
+
+
+
+
+  
+  
+  
+  },
 
         //This Work
 

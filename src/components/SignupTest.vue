@@ -23,7 +23,7 @@
                                     name="email"
                                     label="Mail"
                                     id="email"
-                                    v-model="signupinfo.email"
+                                    v-model="email"
                                     type="email"
                                     required
                                     >
@@ -39,7 +39,7 @@
                                     name="password"
                                     label="Password"
                                     id="password"
-                                    v-model="signupinfo.password"
+                                    v-model="password"
                                     type="password"
                                     required
                                     >
@@ -48,12 +48,46 @@
                             </v-flex>
                         </v-layout>
 
+
+
+
+                         <v-layout row>
+                            <v-flex xs12 offeset-sm3>
+                                <v-text-field
+                                prepend-icon="lock"
+                                    name="password2"
+                                    label="Confirm Password"
+                                    id="password2"
+                                    v-model="password2"
+                                    type="password"
+                                    required
+                                    >
+
+                                </v-text-field>
+                            </v-flex>
+                        </v-layout>
+
+                          <div class="img font-weight-light">
+                            Img
+                        </div>
+                        <div class="pik">
+                        <v-layout row>
+                            <v-flex xs12 sm6 offset-sm3>
+
+                        <v-btn @click="onpickfile" color="blue">Pick File
+                        </v-btn>
+                        <input type="file" style="display: none" ref="fileinput" @change="onfilepicked">
+                            </v-flex>
+                        </v-layout>
+                        </div>
+
+
                         <v-layout row>
                         <v-flex xs12 offset sm-3>
                             <v-text-field
                             name= "family_name"
                             label="family name"
-                            v-model="signupinfo.family_name"
+                            v-model="family_name"
                             id="family_name"
                             required
                             type= text
@@ -68,7 +102,7 @@
                             <v-text-field
                             name= "given_name"
                             label="given name"
-                            v-model="signupinfo.given_name"
+                            v-model="given_name"
                             id="given_name"
                             required
                             type= text
@@ -86,7 +120,7 @@
                             <v-text-field
                             name= "img"
                             label="Img"
-                            v-model="signupinfo.photo"
+                            v-model="photo"
                             id="img"
                             type= text
                             >
@@ -145,12 +179,21 @@
 </template>
 
 <script>
+import axios from 'axios';
+
 export default {
     name: 'SignUp',
 
     data () {
         return {
-            signupinfo: {}
+            signupinfo: {},
+
+            email : '',
+            password: '',
+            password2: '',
+            family_name: '',
+            given_name: '',
+            photo: ''
     
     }
     },
@@ -160,7 +203,7 @@ export default {
 
     computed: {
         comparePasswords () {
-            return this.password !== this.confirmPassword ? 'Passwords do not match' : ''
+            return this.password !== this.Password2 ? 'Passwords do not match' : ''
         },
         user () {
             return this.$store.getters.user
@@ -183,17 +226,75 @@ export default {
 
 
     methods: {
-        onSignup () {
-            this.$store.dispatch('signUserup', {email: this.email, password: this.password})
+       // signup () {
+         //   this.$store.dispatch('signup', {email: this.email, password: this.password, password2: this.password2, photo: this.photo, family_name: this.family_name, given_name: this.given_name})
+
+            signup () {
+            //    console.log(this.email)
+                let uri = 'https://api-treflor.herokuapp.com/oauth/signup';
+                axios.post(uri, /*this.sign*/   
+                 {email: this.email ,
+                 password: this.password,
+                 password2: this.password2,
+                 photo: this.photo,
+                 family_name: this.family_name,
+                 given_name: this.given_name
+                 } )
+                 .then((response) => {
+                  const token = response.data.token;              
+           //       const newUser = {
+             //           id: token,
+               //     }
+               //     commit('setUser', newUser)
+                    const parsed = JSON.stringify(token);
+                    localStorage.setItem('state.user', parsed);
+            })
+    
+    
+                
+                .catch((error) => {
+                    console.log(error)
+                })
+            
+     
+            
 
         },
 
-        signup () {
-            let uri = 'https://api-treflor.herokuapp.com/oauth/signup';
-            this.axios.post(uri, this.signupinfo).then((response) => {
-              console.log(response);
-            });
-        }
+         onfilepicked (event) {
+            const files = event.target.files
+            let imgname = files[0].name
+            if (imgname.lastIndexOf('.') <= 0) {
+                return alert('No file')
+            }
+            const fileReader = new FileReader()
+            fileReader.addEventListener('load', () => {
+                this.img = fileReader.result
+            })
+            fileReader.readAsDataURL(files[0])
+            this.imgfile = files[0]
+
+            const image2base64 = require('image-to-base64');
+           
+           image2base64(this.imgfile) // you can also to use url
+           .then(
+              (response) => {
+                  this.photo = response; //cGF0aC90by9maWxlLmpwZw==
+              }
+            )
+           .catch(
+               (error) => {
+                  console.log(error); //Exepection error....
+              }
+            )
+
+              },
+
+        onpickfile () {
+            this.$refs.fileinput.click()
+        },
+        
+
 
       
     }

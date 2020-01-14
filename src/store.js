@@ -126,6 +126,51 @@ export default new Vuex.Store({
             )
         },
 
+        createnewhikebak ({commit}, pay) {
+          
+       //         title: pay.title,
+         //       img: pay.img,
+           //     guide: pay.guide,
+       // const  date: pay.date.toISOString(), 
+             //   creatorId: getters.user.user.uid 
+         const hike = {
+             date: pay.date.toISOString()
+         }
+         //   commit('createnewhike', hike)
+
+    //        firebase.database().ref('guides').push(hike)
+
+    let config = {
+        headers: {
+          Authorization: localStorage.getItem('token'),
+        }
+      }
+      let uri = 'https://api-treflor.herokuapp.com/guides';
+            axios.post(uri, /*this.sign*/   
+             {title: pay.title,
+                img: pay.img,
+                guide: pay.guide,
+                date: hike.date
+             }, config )
+             .then((response) => {
+             console.log(response)
+             console.log(localStorage.getItem('token'))
+        })
+
+
+            
+            .catch((error) => {
+                console.log(error)
+                console.log(localStorage.getItem('token'))
+            })
+        },
+
+
+
+      
+    
+
+
         createnewhike ({ commit }, pay) {
             const hike = {
                 title: pay.title,
@@ -222,9 +267,13 @@ export default new Vuex.Store({
         },
 
         loggingout ({commit}) {
-            firebase.auth().signOut()
-            commit('setUser', null)
+      /*      firebase.auth().signOut()
+            commit('setUser', null) */
 
+           // localStorage.setItem('token', null);
+
+           localStorage.removeItem('token')
+        
         },
 
 
@@ -240,8 +289,9 @@ export default new Vuex.Store({
               const newUser = {
                     id: token,
                 }
-                commit('setUser', newUser)
-            
+           //     commit('setUser', newUser)
+                const parsed = JSON.stringify(token);
+                localStorage.setItem('state.user', parsed);
         })
 
 
@@ -253,6 +303,7 @@ export default new Vuex.Store({
  
         
         
+            
     },
 
 
@@ -296,6 +347,8 @@ export default new Vuex.Store({
         galleries (state) {
             return state.galleries
         }
+        
+
+        
     }
 })
-

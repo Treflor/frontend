@@ -23,6 +23,7 @@ import VueExpandableImage from 'vue-expandable-image'
 
 
 
+
 Vue.use(VueExpandableImage)
 
 Vue.use(GSignInButton);
@@ -74,8 +75,13 @@ new Vue({
         this.$store.dispatch('SignInauto', user)
       }
     })
+    
+
+
     this.$store.dispatch('guidesfetch')
     this.$store.dispatch('guidesfetchfinl')
+
+  //  axios.defaults.withCredentials = true
   }
 }).$mount("#app");
 
