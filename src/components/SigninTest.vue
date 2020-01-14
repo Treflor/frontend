@@ -89,6 +89,7 @@
 
 <script>
 import GoogleSignInButton from 'vue-google-signin-button-directive';
+import axios from 'axios'
 
 export default {
     name: 'SignIn',
@@ -102,34 +103,76 @@ export default {
     clientId: '375151907681-p5mv02plrs46p63jjjqk1ji7btd5ussd.apps.googleusercontent.com'
   }),
 
-    computed: {
-            user () {
-                return this.$store.getters.user
-            }
+  computed: {
+        user () {
+            return this.$store.getters.token
+        }
 
-        },
+    },
 
     watch: {
-            user (value) {
-                if (value !== null && value !== undefined) {
-                    if(this.email == "admin@uyuyuy.com"){
-                        this.$router.push('/adminpage')
-                    }
-                    else{
-                    this.$router.push('/')
-                    }
+        user (value) {
+            if (value !== null && value !== undefined) {
+                if(this.email == "admin@uyuyuy.com"){
+                    this.$router.push('/adminpage')
                 }
-
+                else{
+                this.$router.push('/')
+                }
             }
-        },
 
+        }
+    },
 
         
     methods : {
 
         signin() {
-             this.$store.dispatch('signin', {email: this.email, password: this.password})
-        },
+            this.$store.dispatch('signin', {email: this.email, password: this.password})
+
+          //   this.$store.dispatch('signin', {email: this.email, password: this.password})
+
+         //    signin ({commit}, pay) {
+        //    console.log(this.email)
+     /*       let uri = 'https://api-treflor.herokuapp.com/oauth/signin';
+            axios.post(uri, /*this.sign*/   
+       /*      {email: this.email ,
+             password: this.password
+             } )
+             .then((response) => {
+              const token = response.data.token;              
+              const newUser = {
+                    id: token,
+                }
+           //     commit('setUser', newUser)
+                const parsed = JSON.stringify(token);
+                localStorage.setItem('token', parsed);
+
+
+
+                if(localStorage.getItem('token')) {
+                    this.$router.push('/') 
+                    vm.$forceUpdate();
+                }else{
+                     this.$router.push('/wrong')
+                }
+
+        })
+
+
+            
+            .catch((error) => {
+                console.log(error)
+            })
+//        }
+
+
+
+*/
+  
+  
+  
+  },   
 
         //This Work
 

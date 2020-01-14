@@ -32,7 +32,7 @@
                         </v-text-field>
                         
                         -->
-              <!--          <div class="img font-weight-light">
+                     <div class="img font-weight-light">
                             Img
                         </div>
                         <div class="pik">
@@ -45,13 +45,13 @@
                             </v-flex>
                         </v-layout>
                         </div>
-                  --> 
+                  
 
 
 
 
                      
-                                  <v-text-field
+                          <!--        <v-text-field
                                   name = "Img"
                                   v-model="img"
                                   label="Img"
@@ -67,6 +67,9 @@
                         </v-img>
                         </v-flex>
                         </v-layout>
+
+
+                        -->
 
 
 
@@ -151,7 +154,7 @@
 <script>
 import moment from 'moment';
 export default {
-    name: 'NewHike',
+    name: 'NewHiketest',
 
     data () {
         return {
@@ -204,7 +207,7 @@ export default {
                 date: this.whensub,
             //    imgfile: this.imgfile
             }
-            this.$store.dispatch('createnewhike', hikedetails)
+            this.$store.dispatch('createnewhikebak', hikedetails)
             this.$router.push('/viewguidesfinl')
             // need to create the landing page
         },
@@ -222,7 +225,21 @@ export default {
             fileReader.readAsDataURL(files[0])
             this.imgfile = files[0]
 
-        },
+            const image2base64 = require('image-to-base64');
+           
+           image2base64(this.imgfile) // you can also to use url
+           .then(
+              (response) => {
+                  this.img = response; //cGF0aC90by9maWxlLmpwZw==
+              }
+            )
+           .catch(
+               (error) => {
+                  console.log(error); //Exepection error....
+              }
+            )
+
+              },
 
         onpickfile () {
             this.$refs.fileinput.click()

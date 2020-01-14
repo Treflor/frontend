@@ -17,7 +17,7 @@ export default new Vuex.Store({
         ],
         hikezfinl: [],
 
-        
+        token: localStorage.getItem('token') || null,
 
         user: null ,
 
@@ -56,12 +56,100 @@ export default new Vuex.Store({
 
         setUser (state, pay) {
             state.user = pay
-        }  
+        },
+        
+        setToken (state, pay) {
+            state.token = pay.token
+            localStorage.setItem('token', pay.token)
+        }
 
     },
 
 
     actions: {
+        signin ({commit}, pay) {
+            let uri = 'https://api-treflor.herokuapp.com/oauth/signin';
+              axios.post(uri, /*this.sign*/   
+               {email: pay.email ,
+               password: pay.password
+               } )
+              
+            .then((response) => {
+                const newtoken = {
+                    token: response.data.token
+                }
+                commit('setToken', newtoken)
+            }).catch((error) => {
+                console.log(error)
+            })
+        },
+
+
+            signup({commit}, pay) {
+                let uri = 'https://api-treflor.herokuapp.com/oauth/signup';
+                axios.post(uri, /*this.sign*/   
+                 {email: pay.email ,
+                 password: pay.password,
+                 password2: pay.password2,
+                 family_name: pay.family_name, 
+                 photo: pay.photo, 
+                 given_name:pay.given_name
+                 } )
+                
+              .then((response) => {
+                  const newtoken = {
+                      token: response.data.token
+                  }
+                  commit('setToken', newtoken)
+              }).catch((error) => {
+                  console.log(error)
+              })  
+            },
+
+        
+            //   this.$store.dispatch('signin', {email: this.email, password: this.password})
+  
+           //    signin ({commit}, pay) {
+          //    console.log(this.email)
+  /*            let uri = 'https://api-treflor.herokuapp.com/oauth/signin';
+              axios.post(uri, /*this.sign*/   
+    /*           {email: this.email ,
+               password: this.password
+               } )
+               .then((response) => {
+                const token = response.data.token;              
+                const newUser = {
+                      id: token,
+                  }
+             //     commit('setUser', newUser)
+                  const parsed = JSON.stringify(token);
+                  localStorage.setItem('token', parsed);
+  
+  
+  
+                  if(localStorage.getItem('token')) {
+                      this.$router.push('/') 
+                      vm.$forceUpdate();
+                  }else{
+                       this.$router.push('/wrong')
+                  }
+  
+          })
+  
+  
+              
+              .catch((error) => {
+                  console.log(error)
+              })
+  //        }
+  
+  
+  
+  
+    
+    */
+    
+    
 /*        async getRecipes({ state, commit }, plan) {
             try {
                 let response = await axios.get(`${state.apiUrl}`, {
@@ -125,6 +213,51 @@ export default new Vuex.Store({
                 }
             )
         },
+
+        createnewhikebak ({commit}, pay) {
+          
+       //         title: pay.title,
+         //       img: pay.img,
+           //     guide: pay.guide,
+       // const  date: pay.date.toISOString(), 
+             //   creatorId: getters.user.user.uid 
+         const hike = {
+             date: pay.date.toISOString()
+         }
+         //   commit('createnewhike', hike)
+
+    //        firebase.database().ref('guides').push(hike)
+
+    let config = {
+        headers: {
+          Authorization: localStorage.getItem('token'),
+        }
+      }
+      let uri = 'https://api-treflor.herokuapp.com/guides';
+            axios.post(uri, /*this.sign*/   
+             {title: pay.title,
+                img: pay.img,
+                guide: pay.guide,
+                date: hike.date
+             }, config )
+             .then((response) => {
+             console.log(response)
+             console.log(localStorage.getItem('token'))
+        })
+
+
+            
+            .catch((error) => {
+                console.log(error)
+                console.log(localStorage.getItem('token'))
+            })
+        },
+
+
+
+      
+    
+
 
         createnewhike ({ commit }, pay) {
             const hike = {
@@ -222,26 +355,32 @@ export default new Vuex.Store({
         },
 
         loggingout ({commit}) {
-            firebase.auth().signOut()
-            commit('setUser', null)
+      /*      firebase.auth().signOut()
+            commit('setUser', null) */
 
+           // localStorage.setItem('token', null);
+
+           localStorage.removeItem('token')
+        //   this.$router.push('/')
+        
         },
 
-
-        signin ({commit}, pay) {
+/*
+        signin ( pay) {
         //    console.log(this.email)
             let uri = 'https://api-treflor.herokuapp.com/oauth/signin';
             axios.post(uri, /*this.sign*/   
-             {email: pay.email ,
+  /*           {email: pay.email ,
              password: pay.password
              } )
              .then((response) => {
               const token = response.data.token;              
-              const newUser = {
-                    id: token,
-                }
-                commit('setUser', newUser)
-            
+       //       const newUser = {
+         //           id: token,
+           //     }
+           //     commit('setUser', newUser)
+                const parsed = JSON.stringify(token);
+                localStorage.setItem('state.user', parsed);
         })
 
 
@@ -249,10 +388,11 @@ export default new Vuex.Store({
             .catch((error) => {
                 console.log(error)
             })
-        },
+        },  */
  
         
         
+            
     },
 
 
@@ -295,7 +435,15 @@ export default new Vuex.Store({
 
         galleries (state) {
             return state.galleries
+        },
+        
+        token (state) {
+            return state.token
         }
+
+        
     }
 })
+
+
 
