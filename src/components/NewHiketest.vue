@@ -24,7 +24,7 @@
 
                         <v-layout row>
                             <v-flex xs12 sm6 offset-sm3>
-                         <div class="my-8">
+                         <div>
       <image-uploader
         :preview="true"
         :className="['fileinput', { 'fileinput--loaded': hasImage }]"

@@ -21,6 +21,8 @@ export default new Vuex.Store({
 
         user: null ,
 
+        usercurrent: null,
+
         guidez: [{img: 'https://saltinourhair.com/wp-content/uploads/2018/04/Things-to-do-Ella-Sri-Lanka-Nine-arch-bridge-couple-view.jpg', id: '1111', title: 'Ella', height: '618m', guide: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident ipsa voluptatem cupiditate sapiente at id numquam inventore fuga iure quisquam.' }],
 
         
@@ -67,12 +69,38 @@ export default new Vuex.Store({
 
         setGuidez (state, guidez) {
             state.guidez.push(guidez)
+        },
+
+        setCurrentUser (state, pay) {
+            state.usercurrent.push(pay)
         }
 
     },
 
 
     actions: {
+
+        userfetch ({commit}) {
+            let config = {
+                headers: {
+                  Authorization: getters.token
+                }
+              }
+              let uri = 'https://api-treflor.herokuapp.com/user/';
+                    axios.get(uri, /*this.sign*/   
+                     config )
+                     .then((response) => {
+                         commit('setCurrentUser',response.data)
+                     }).catch((error) => {
+                         console.log(error)
+                     })
+        },
+
+
+
+        
+
+
         signin ({commit}, pay) {
             let uri = 'https://api-treflor.herokuapp.com/oauth/signin';
               axios.post(uri, /*this.sign*/   
@@ -471,6 +499,10 @@ export default new Vuex.Store({
         
         token (state) {
             return state.token
+        },
+
+        usercurrent (state) {
+            return state.usercurrent
         }
 
         

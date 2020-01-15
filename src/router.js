@@ -168,6 +168,11 @@ export default new Router({
   name: 'TestImg',
   component: () => import('./components/TestImg.vue'),
 },
+{
+  path: '/profile',
+  name: 'Profile',
+  component: () => import('./components/Profile.vue'),
+},
 
 
        

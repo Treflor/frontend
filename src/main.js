@@ -86,6 +86,8 @@ new Vue({
     this.$store.dispatch('guidesfetchfinl')
 
     this.$store.dispatch('guidezfetch')
+    
+    this.$store.dispatch('userfetch')
   //  this.$store.dispatch('guidezfetchfinl')
 
   //  axios.defaults.withCredentials = true
