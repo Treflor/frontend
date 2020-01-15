@@ -157,6 +157,18 @@ export default new Router({
     component: () => import('./components/SignupTest.vue')
 },
 
+{
+  path: '/waitingtest',
+  name: 'waitingtest',
+  component: () => import('./components/WaitingTest.vue'),
+},
+
+{
+  path: '/testimg',
+  name: 'TestImg',
+  component: () => import('./components/TestImg.vue'),
+},
+
 
        
     ]

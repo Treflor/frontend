@@ -21,6 +21,8 @@ export default new Vuex.Store({
 
         user: null ,
 
+        guidez: [{img: 'https://saltinourhair.com/wp-content/uploads/2018/04/Things-to-do-Ella-Sri-Lanka-Nine-arch-bridge-couple-view.jpg', id: '1111', title: 'Ella', height: '618m', guide: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident ipsa voluptatem cupiditate sapiente at id numquam inventore fuga iure quisquam.' }],
+
         
         galleries : [
                 {title: 'knuckles',img1 : 'https://saltinourhair.com/wp-content/uploads/2018/04/Things-to-do-Ella-Sri-Lanka-Nine-arch-bridge-couple-view.jpg' , img2 : 'https://www.tripsavvy.com/thmb/dAjVDb033cOIBYtAC3Y_S7Ld5p8=/960x0/filters:no_upscale():max_bytes(150000):strip_icc()/hikinginspain-f7d12abd58584697ae354500d31ee07f.jpg' , img3 : 'https://veggievagabonds.com/wp-content/uploads/2019/08/IMG_20180923_094155722_HDR-1-01.jpeg' , img4 : '' , img5 : '' , img10 : 'https://veggievagabonds.com/wp-content/uploads/2019/08/IMG_20180923_094155722_HDR-1-01.jpeg'},
@@ -61,6 +63,10 @@ export default new Vuex.Store({
         setToken (state, pay) {
             state.token = pay.token
             localStorage.setItem('token', pay.token)
+        },
+
+        setGuidez (state, guidez) {
+            state.guidez.push(guidez)
         }
 
     },
@@ -166,6 +172,22 @@ export default new Vuex.Store({
                 commit('setRecipes', []);
             }
         },  */
+
+        guidezfetch ({commit}) {
+            let config = {
+                headers: {
+                  Authorization: getters.token
+                }
+              }
+              let uri = 'https://api-treflor.herokuapp.com/guides';
+                    axios.get(uri, /*this.sign*/   
+                     config )
+                     .then((response) => {
+                         commit('setGuidez',response.data.guides)
+                     }).catch((error) => {
+                         console.log(error)
+                     })
+        },
 
         guidesfetch ({commit}) {
             firebase.database().ref('guides').once('value')
@@ -406,6 +428,14 @@ export default new Vuex.Store({
                 return hikeA > hikeB
             })
         },
+
+        guidez (state) {
+            return state.guidez.sort((guide1,guide2) => {
+                return guide1.date > guide2.date
+            })
+        },
+
+
         hikezfinl (state) {
             return state.hikezfinl.sort((hikeA,hikeB)=>{
                 return hikeA > hikeB

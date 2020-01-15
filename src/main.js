@@ -10,7 +10,6 @@ import VueTypedJs from 'vue-typed-js'
 import '@fortawesome/fontawesome-free/css/all.min.css'
 import firebase from 'firebase';
 import vueImages from 'vue-images/dist/vue-images';
-
 import VueParticles from 'vue-particles'
 import * as VueGoogleMaps from 'vue2-google-maps'
 import axios from 'axios'
@@ -19,7 +18,12 @@ import FlagIcon from 'vue-flag-icon'
 import GSignInButton from 'vue-google-signin-button'
 import { Script } from "vm";
 import VueExpandableImage from 'vue-expandable-image'
+import ImageUploader from 'vue-image-upload-resize'
 
+
+
+
+Vue.use(ImageUploader);
 
 
 
@@ -80,6 +84,9 @@ new Vue({
 
     this.$store.dispatch('guidesfetch')
     this.$store.dispatch('guidesfetchfinl')
+
+    this.$store.dispatch('guidezfetch')
+  //  this.$store.dispatch('guidezfetchfinl')
 
   //  axios.defaults.withCredentials = true
   }
