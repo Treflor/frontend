@@ -183,11 +183,11 @@ export default {
           //         this.temp !== ''
         },
 
-        whensub () {
-            const date = new Date(this.date)
-            return date
-        }
-    },
+      //  whensub () {
+        //    const date = new Date(this.date)
+          //  return date
+       // }
+   },
 
 
     methods: {
@@ -198,13 +198,14 @@ export default {
             // if(!this.imgfile){
             //     return
             // }
+             const datefinl = moment(this.date).format('YYYYMMDD')
              const hikedetails = {
                 title: this.title,
                 img: this.img,
             
                 guide: this.guide,
             //    temp: this.temp,
-                date: this.whensub,
+                date: datefinl,
             //    imgfile: this.imgfile
             }
             this.$store.dispatch('createnewhikebak', hikedetails)

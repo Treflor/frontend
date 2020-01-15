@@ -214,23 +214,25 @@ export default new Vuex.Store({
             )
         },
 
-        createnewhikebak ({commit}, pay) {
+        createnewhikebak ({getters}, pay) {
           
        //         title: pay.title,
          //       img: pay.img,
            //     guide: pay.guide,
        // const  date: pay.date.toISOString(), 
              //   creatorId: getters.user.user.uid 
-         const hike = {
+   /*      const hike = {
              date: pay.date.toISOString()
          }
-         //   commit('createnewhike', hike)
+     */    //   commit('createnewhike', hike)
 
     //        firebase.database().ref('guides').push(hike)
 
+   // let date= pay.date.toISOString()
+
     let config = {
         headers: {
-          Authorization: localStorage.getItem('token'),
+          Authorization: getters.token
         }
       }
       let uri = 'https://api-treflor.herokuapp.com/guides';
@@ -238,18 +240,18 @@ export default new Vuex.Store({
              {title: pay.title,
                 img: pay.img,
                 guide: pay.guide,
-                date: hike.date
+                date: pay.date
              }, config )
              .then((response) => {
              console.log(response)
-             console.log(localStorage.getItem('token'))
+         console.log(getters.token)
         })
 
 
             
             .catch((error) => {
                 console.log(error)
-                console.log(localStorage.getItem('token'))
+             //   console.log(localStorage.getItem('token'))
             })
         },
 
