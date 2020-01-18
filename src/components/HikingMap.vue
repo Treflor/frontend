@@ -1,11 +1,21 @@
 <template>
-
-<gmap-map v-bind:center="center" v-bind:zoom="12" style="width: 800px; height:500px" >
+<v-container>
+    <v-layout row>
+        <v-flex xs12 class="text-xs-center font-weight-black headline">
+            Ella
+        </v-flex>
+    </v-layout>
+    <v-layout row>
+        <v-flex xs12 class="text-xs-center">
+            <v-card elevation="19">
+<gmap-map v-bind:center="center" v-bind:zoom="12" style="width: 1200px; height: 576px" >
         <gmap-polyline v-bind:path.sync="path" v-bind:options="{ strokeColor:'#008000'}">
          </gmap-polyline>
       </gmap-map>
-
-    
+            </v-card>
+        </v-flex>
+    </v-layout>
+</v-container>    
 </template>
 
 <script>
