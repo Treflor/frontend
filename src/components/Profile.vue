@@ -6,14 +6,18 @@
 
     <v-layout row>
         <v-flex xs12 sm6 offset-sm4 class="text-xs-center">
+            <v-layout row>
             <v-flex xs12 sm6 class="text-xs-center" >
+          <!--      <v-card-actions>
             <v-btn block @click="use1" :hidden="given_name != ''">View my profile</v-btn>
+                </v-card-actions>   -->
             </v-flex>
-            <v-card height="619" width="419" :hidden="render = false" color="#fcba03">
+            </v-layout>
+            <v-card height="619" width="419" :hidden="render = false" color="#319fa3">
                 <v-layout row>
                     <v-flex xs12 class="text-xs-center font-weight-black">
                         
-                        <v-img class="mb-8" position="top"  height="319" :src="this.photo"></v-img>
+                        <v-img class="mb-8" position="top"  height="319" :src="photo"></v-img>
                          <v-progress-circular
                          position = "center"
       :hidden="given_name != ''"                   
@@ -44,7 +48,9 @@
                         
                     </v-flex>
                 </v-layout>
-               
+                  <v-card-actions>
+            <v-btn block @click="use1" :hidden="given_name != ''">View my profile</v-btn>
+                </v-card-actions>
             </v-card>
         </v-flex>
     </v-layout>

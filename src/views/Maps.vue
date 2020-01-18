@@ -1,7 +1,7 @@
 <template>
   <span>
     <hiking-map></hiking-map>
-    <home-map></home-map>
+  <!--  <home-map></home-map>   -->
     
   </span>
 </template>
