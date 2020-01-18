@@ -42,7 +42,7 @@ Vue.use(VueParticles)
 Vue.use(vueImages)
 Vue.use(VueGoogleMaps, {
   load: {
-    key: "AIzaSyA_UeV4hwzgEG2h2iT0rwoYvgHv6snP9jM",
+    key: "AIzaSyCVluAGL43uqSqE0Z5BDcUEMPKnlQbgO28",
     libraries: "places", 
   },
  

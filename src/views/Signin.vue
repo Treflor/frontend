@@ -133,4 +133,8 @@ export default {
     position: relative;
     top: 169px
 }
+body {
+    margin: 0
+}
+
 </style>

@@ -1,24 +1,27 @@
 <template>
-<v-container>
+
+    <v-parallax src="https://img5.goodfon.com/wallpaper/nbig/1/a4/plants-botanical-garden-greenhouse-green-interior-nature.jpg" height="719">
+<v-container >
  
 
     <v-layout row>
-        <v-flex xs12 sm6 offset-sm3 class="text-xs-center">
-            <v-card height="619">
+        <v-flex xs12 sm6 offset-sm4 class="text-xs-center">
+            <v-flex xs12 sm6 class="text-xs-center" >
+            <v-btn block @click="use1" :hidden="given_name != ''">View my profile</v-btn>
+            </v-flex>
+            <v-card height="619" width="419" :hidden="render = false" color="#fcba03">
                 <v-layout row>
                     <v-flex xs12 class="text-xs-center font-weight-black">
                         
-                        <v-flex xs12 sm6 offset-sm3 v-if="this.progressing">
-                             <v-progress-circular
-                             :size="70"
-                             :width="7"
-                             color="purple"
-                             indeterminate
-                             ></v-progress-circular>
-
-                        </v-flex>
-                        <v-btn @click="use1"></v-btn>
-                        <v-img class="mb-8" position="top"  height="319" src="https://cnet4.cbsistatic.com/img/yg8EAhsi9ZAsVQw4_h3RKxgLVrc=/1092x0/2019/05/17/5ed9cc7e-9c1f-4768-bebf-a4a3fbf41c6f/gettyimages-michael-s-schwartz-633606580.jpg"></v-img>
+                        <v-img class="mb-8" position="top"  height="319" :src="this.photo"></v-img>
+                         <v-progress-circular
+                         position = "center"
+      :hidden="given_name != ''"                   
+      :size="70"
+      :width="7"
+      color="purple"
+      indeterminate
+    ></v-progress-circular>
                         <div class="headline text-xs-center mb-3 mt-2">                 
                             {{this.given_name}}
                         </div>
@@ -33,7 +36,11 @@
                         </div>
                         <div class="headline text-xs-center mb-3">                 
                             {{this.country}}
+                        </div>     
+                        <div class="headline text-xs-center mb-3">                 
+                            {{this.privilege}}
                         </div>
+                   
                         
                     </v-flex>
                 </v-layout>
@@ -41,10 +48,12 @@
             </v-card>
         </v-flex>
     </v-layout>
-
+   
 
 </v-container>
     
+
+ </v-parallax>
 </template>
 
 <script>
@@ -61,7 +70,10 @@ export default {
        country: '',
        gender: '',
        family_name: '',
-       progressing: 'true'
+       privilege: '',
+       photo: '',
+       render: false
+
        }
 
    },
@@ -70,6 +82,7 @@ export default {
             return this.$store.getters.usercurrent
         }
     },*/
+    
 
     mounted: {
           use1 () {
@@ -83,13 +96,16 @@ export default {
                      config )
                      .then((response) => {
                         // commit('setCurrentUser',response.data)
+                        this.render = true
                         console.log(response.data)
                         this.given_name = response.data.given_name
                         this.family_name = response.data.family_name
                         this.gender = response.data.gender
                         this.country = response.data.country
                         this.email = response.data.email
-                        this.progressing = false
+                        this.photo = response.data.photo
+                        this.privilege = response.data.privilege
+                     
                      }).catch((error) => {
                          console.log(error)
                      })
@@ -124,3 +140,20 @@ export default {
     }       
 }
 </script>
+
+<style>
+.main {
+    
+    position: fixed;
+    bottom: 0px;
+
+}
+
+
+
+
+
+body {
+    margin: 0
+}
+</style>
