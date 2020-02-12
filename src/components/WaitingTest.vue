@@ -1,6 +1,7 @@
 <template>
-<v-container v-if="loading">
-  
+<v-container >
+<!--v-if="loading">  -->
+  <!--
     <div class="text-xs-center">
       <v-progress-circular
         indeterminate
@@ -25,24 +26,62 @@
             <div>
               <h2>{{item.title}}</h2>
               <div>Year: {{item.guide}}</div>
-             <!-- <div>Type: {{item.Type}}</div>
-              <div>IMDB-id: {{item.imdbID}}</div>  -->
             </div>
           </v-card-title>
 <v-card-actions class="justify-center">
-           <!-- <v-btn flat
-              color="green"
-              @click="singleMovie(item.imdbID)"
-              >View</v-btn>    -->
+           
           </v-card-actions>
 </v-card>
       </v-flex>
-  </v-layout>
+  </v-layout>    -->    
+
+
+
+
+ <v-layout v-for="item in wholeResponse" :key="item.index" class="mb-2">
+            <v-flex xs12>
+
+                <v-hover v-slot:default="{hover}">
+                <v-card :elevation="hover ? 10 : 1" :color="hover ? '#f0e859' : white">
+                    <v-container fluid>
+                    <v-layout row>
+                        <v-flex xs5 sm5>
+                            <v-img height="298" :src="item.img">
+                            </v-img>
+
+                        </v-flex>
+                        <v-flex xs11 sm8 md7>
+                            <v-card-title primary-title>
+                                <h3>{{item.title}}</h3>
+                            <!--    <div>Hiked on {{hike.date}} </div>   -->
+                            </v-card-title>
+                            <v-card-text class="text">
+                                {{item.guide}}
+                            </v-card-text>
+
+                            <v-card-actions class="btn">
+                                <v-btn :to="'/waiting/' + item.title">  
+                                View {{item.title}} guide
+                                </v-btn>
+
+                            </v-card-actions>
+
+                        </v-flex>
+                    </v-layout>
+                    </v-container>
+
+                </v-card>
+                </v-hover>
+            </v-flex>
+
+        </v-layout>
+
+
+
+
+
   </v-container>
 </template>
-
-
-
 
 
 
