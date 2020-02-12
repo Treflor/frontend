@@ -1,9 +1,9 @@
 <template>
 <div class="main">
     <v-container>
-        <v-layout row wrap>
+      <!--  <v-layout row wrap>
             <v-flex xs12>
-                <v-card>
+          -->      <v-card>
                     <v-card-title>
                         <h1 class="blue--text"> {{hike.title}} </h1>
                     </v-card-title>
@@ -20,9 +20,9 @@
                         </v-btn>
                     </v-card-actions>
                 </v-card>
-            </v-flex>
+        <!--    </v-flex>
         </v-layout>
-
+-->
 
 
 

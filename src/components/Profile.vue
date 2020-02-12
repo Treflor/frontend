@@ -17,7 +17,7 @@
                 <v-layout row>
                     <v-flex xs12 class="text-xs-center font-weight-black">
                         
-                        <v-img class="mb-8" position="top"  height="319" :src="photo"></v-img>
+                        <v-img class="mb-8" position="top" height="319" :src="this.photo"></v-img>
                          <v-progress-circular
                          position = "center"
       :hidden="given_name != ''"                   
@@ -139,6 +139,7 @@ export default {
                         this.gender = response.data.gender
                         this.country = response.data.country
                         this.email = response.data.email
+                        this.photo = response.data.photo
                      }).catch((error) => {
                          console.log(error)
                      })

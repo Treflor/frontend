@@ -174,6 +174,12 @@ export default new Router({
   component: () => import('./components/Profile.vue'),
 },
 
+{
+  path: '/creategallery',
+  name: 'creategallery',
+  component: () => import('./components/CreateGallery.vue')
+},
+
 
        
     ]
