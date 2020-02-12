@@ -17,6 +17,8 @@ export default new Vuex.Store({
         ],
         hikezfinl: [],
 
+        hikezfinl1: [],
+
         token: localStorage.getItem('token') || null,
 
         user: null ,
@@ -488,6 +490,13 @@ export default new Vuex.Store({
                 }
         },
         
+        DoneHikefinl1 (state) {
+            return (hiketitle) => {
+                return state.hikezfinl1.find((hike) => {
+                    return hike.title == hiketitle
+                })
+            }
+    },
 
         user (state) {
             return state.user

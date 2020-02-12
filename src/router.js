@@ -108,6 +108,7 @@ export default new Router({
         component: () => import('./components/Guide.vue')
 
       },
+      
       {
         path: '/waiting/:title',
         name: 'Wait',
@@ -115,6 +116,16 @@ export default new Router({
         component: () => import('./components/Guide2.vue')
 
       },
+
+      {
+        path: '/waitingtest/:title',
+        name: 'Wait',
+        props: true,
+        component: () => import('./components/SingleGuide.vue')
+
+      },
+
+
       {
         path: '/adminpage/waiting',
         name: 'Waiting',

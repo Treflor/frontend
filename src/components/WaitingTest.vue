@@ -60,7 +60,7 @@
                             </v-card-text>
 
                             <v-card-actions class="btn">
-                                <v-btn :to="'/waiting/' + item.title">  
+                                <v-btn :to="'/waitingtest/' + item.title">  
                                 View {{item.title}} guide
                                 </v-btn>
 
@@ -105,6 +105,7 @@ export default {
       .then(response => {
       this.wholeResponse = response.data
       this.loading = false
+      this.$store.state.hikezfinl1 = this.wholeResponse
     })
     .catch(error => {
       console.log(error)
