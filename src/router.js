@@ -151,7 +151,7 @@ export default new Router({
    {
     path: '/imggallery',
     name: 'imggallery',
-    component: () => import('./components/ImgGallery.vue')
+    component: () => import('./components/ImgGallery1.vue')
 },
 {
   path: '/newhiketest',
@@ -189,6 +189,11 @@ export default new Router({
   path: '/creategallery',
   name: 'creategallery',
   component: () => import('./components/CreateGallery.vue')
+},
+{
+  path: '/imggallery1',
+  name: 'imggallery1',
+  component: () => import('./components/ImgGallery1.vue')
 },
 
 

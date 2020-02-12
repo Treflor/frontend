@@ -2,15 +2,15 @@
     <v-container>
         <v-layout row>
             <v-layout row>
-                        <v-flex xs12 class="text-xs-center title font-weight-thin">
+                        <v-flex xs12 class="text-xs-center title font-weight-thin .my-10">
                             Create Gallery
                         </v-flex>
                     </v-layout>
         </v-layout>
-        <v-layout row>
-        </v-layout>
-        <v-layout row>
-            <v-flex xs12 sm6 class="text-xs-center">
+        <v-layout row class="my-10">
+            
+            <v-flex xs12 sm6 class="text-xs-center my-10">
+                <v-card color="green">
                 <v-form>
                     
                     
@@ -182,6 +182,7 @@
     </div>
     
                 </v-form>
+            </v-card>
             </v-flex>
         </v-layout>
     </v-container>
