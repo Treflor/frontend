@@ -9,6 +9,7 @@
     <create-gallery-icon></create-gallery-icon>
         <home-treks></home-treks>
         <home-progress></home-progress>
+        <google-download></google-download>
         <home-hikez></home-hikez>
   <!--      <home-hikesz></home-hikesz>  -->
   <!--      <home-footer></home-footer>  -->
@@ -34,6 +35,7 @@ import HomeTikl from '@/components/HomeTikl';
 //import HomeFoot from '@/components/HomeFoot';
 import HomeHikez from '@/components/HomeHikez';
 import CreateGalleryIcon from '@/components/CreateGalleryIcon';
+import GoogleDownload from '@/components/GoogleDownload';
 
 
 
@@ -57,7 +59,8 @@ export default {
   //      HomeFooter,
   //      HomeFoot,
         HomeHikez,
-        CreateGalleryIcon
+        CreateGalleryIcon,
+        GoogleDownload
   //      HomeAnime
 
 

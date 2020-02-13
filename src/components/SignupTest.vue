@@ -147,7 +147,7 @@
                         
                         
 
-                        
+                   <!--     
                         <v-layout row>
                         <v-flex xs12 offset sm-3>
                             <v-text-field
@@ -160,7 +160,7 @@
                             </v-text-field>
                         </v-flex>
                         </v-layout>
-
+-->
 
 
                         

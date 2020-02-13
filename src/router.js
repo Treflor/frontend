@@ -56,7 +56,7 @@ export default new Router({
         {
             path: '/sign-in',
             name: 'signin',
-            component: () => import('./views/Signin.vue')
+            component: () => import('./components/SigninTest.vue')
         },
         {
             path: '/join',
@@ -86,7 +86,7 @@ export default new Router({
       {
         path: '/newhike',
         name: 'newhike',
-        component: () => import('./components/NewHike.vue'),
+        component: () => import('./components/NewHiketest.vue'),
      /*   beforeEnter(to, from, next){
          
           if (store.getters.user) {
@@ -141,7 +141,7 @@ export default new Router({
       {
         path: '/signup',
         name: 'signup',
-        component: () => import('./views/SignUp.vue')
+        component: () => import('./components/SignupTest.vue')
     },
     {
       path: '/signtest',

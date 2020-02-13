@@ -2,22 +2,27 @@
     <v-container>
         <v-layout row>
             <v-layout row>
-                        <v-flex xs12 class="text-xs-center title font-weight-thin .my-10">
-                            Create Gallery
+                        <v-flex xs12 class="text-xs-center title font-weight-black my-10">
+                            <h1>Create Gallery</h1>
+                            <v-spacer></v-spacer>
+                            <h2>Please select upto 5</h2>
+                
                         </v-flex>
                     </v-layout>
         </v-layout>
         <v-layout row class="my-10">
             
-            <v-flex xs12 sm6 class="text-xs-center my-10">
-                <v-card color="green">
+            <v-flex xs12 class="text-xs-center my-10">
+              
                 <v-form>
                     
                     
                         <div class="pik">
                         <v-layout row class="mb-12">
                              <div class="img font-weight-light text-xs-center">
+                            <v-flex xs12 class="text-xs-center">   
                             Img-1
+                            </v-flex>
                         </div>
                             <v-flex xs12 sm6 offset-sm3 class="mb-12">
 
@@ -52,13 +57,13 @@
       </image-uploader>
                             </v-flex>
                             
-                    <!--    </v-layout>
+                      </v-layout>
 
 
 
 
 
-                        <v-layout row>     -->
+                        <v-layout row>     
                              <div class="img font-weight-light">
                             Img-2
                         </div>
@@ -182,7 +187,6 @@
     </div>
     
                 </v-form>
-            </v-card>
             </v-flex>
         </v-layout>
     </v-container>

@@ -62,7 +62,7 @@
 
                         <v-layout row>
                             <v-flex xs12 class="text-xs-center">
-                               <button v-google-signin-button="clientId" class="google-signin-button"> Continue with Google</button>
+                               <button color="white" v-google-signin-button="clientId" class="google-signin-button"> <v-img height="60" width="60" src="https://launchpad.phmschools.org/sites/lp.phmschools.org/files/Google-G-icon256.png"></v-img></button>
 
                             </v-flex>
                         </v-layout>
