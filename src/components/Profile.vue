@@ -13,7 +13,7 @@
                 </v-card-actions>   -->
             </v-flex>
             </v-layout>
-            <v-card height="619" width="419" :hidden="render = false" color="#319fa3">
+            <v-card height="619" width="419" :hidden="render = false" color="#319fa3" class="rounded-card">
                 <v-layout row>
                     <v-flex xs12 class="text-xs-center font-weight-black">
                         
@@ -158,7 +158,9 @@ export default {
 
 
 
-
+.rounded-card{
+    border-radius:50px;
+}
 
 body {
     margin: 0
