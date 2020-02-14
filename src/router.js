@@ -195,7 +195,11 @@ export default new Router({
   name: 'imggallery1',
   component: () => import('./components/ImgGallery1.vue')
 },
-
+{
+  path: '/convertmap',
+  name: 'convert',
+  component: () => import('./components/ConvertMap.vue')
+},
 
        
     ]

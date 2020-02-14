@@ -23,6 +23,8 @@ import ImageUploader from 'vue-image-upload-resize'
 
 
 
+var polyline = require( 'google-polyline' )
+Vue.use(polyline);
 Vue.use(ImageUploader);
 
 
