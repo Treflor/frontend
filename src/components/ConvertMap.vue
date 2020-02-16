@@ -41,6 +41,10 @@
 <gmap-map v-bind:center="center" v-bind:zoom="12" style="width: 1200px; height: 576px" >
         <gmap-polyline v-bind:path.sync="path1" v-bind:options="{ strokeColor:'#008000'}">
          </gmap-polyline>
+
+          <gmap-polyline v-bind:path.sync="pathtracked" v-bind:options="{ strokeColor:'purple'}">
+         </gmap-polyline>
+
       </gmap-map>
             </v-card>
         </v-flex>
@@ -63,6 +67,16 @@
         <v-flex xs12 class="text-xs-center">
             <v-card elevation="19">
 <gmap-map v-bind:center="center" v-bind:zoom="12" style="width: 1200px; height: 576px" >
+
+     <GmapMarker
+    v-bind:key="index"
+    v-for="(m, index) in favorites3"
+    v-bind:position="m.position"
+    v-bind:clickable="true"
+    v-bind:draggable="true"
+    @click="center=m.position"
+  />
+
         <gmap-polyline v-bind:path.sync="path1" v-bind:options="{ strokeColor:'#008000'}">
          </gmap-polyline>
       </gmap-map>
@@ -178,7 +192,13 @@ export default {
             path5_info: [],
             path6_info: [],
 
-            pathtracked: []
+            pathtracked: [],
+
+            favorites3: [
+            {
+               position: { lat: 7.48021 , lng: 80.35033 }
+            }
+            ]
         }
     },
       mounted () {
@@ -202,8 +222,10 @@ export default {
         this.pathtracked = decodePolyline(this.wholeResponse[3].tracked_locations);
         console.log(this.pathtracked)
 //        if(this.wholeResponse[5].direction.points){
-//        this.path3 = decodePolyline(this.wholeResponse[5].direction.points);
-//        }
+        this.path3 = decodePolyline(this.wholeResponse[0].direction.points);
+        this.pathtracked3 = decodePolyline(this.wholeResponse[0].tracked_locations);
+        this.favorite3 = decodePolyline(this.wholeResponse[0].user.favorites);
+//       }
 //        this.path4 = decodePolyline(this.wholeResponse[6].direction.points);
 //        this.path5 = decodePolyline(this.wholeResponse[7].direction.points);
 //        this.path6 = decodePolyline(this.wholeResponse[8].direction.points);
