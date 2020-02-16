@@ -177,6 +177,8 @@ export default {
             path4_info: [],
             path5_info: [],
             path6_info: [],
+
+            pathtracked: []
         }
     },
       mounted () {
@@ -197,6 +199,8 @@ export default {
 
         this.path1 = decodePolyline(this.wholeResponse[4].direction.points);
         this.path = decodePolyline(this.wholeResponse[3].direction.points);
+        this.pathtracked = decodePolyline(this.wholeResponse[3].tracked_locations);
+        console.log(this.pathtracked)
 //        if(this.wholeResponse[5].direction.points){
 //        this.path3 = decodePolyline(this.wholeResponse[5].direction.points);
 //        }
