@@ -312,7 +312,7 @@ export default {
             
 
         },    */
-
+/* 
          onfilepicked (event) {
             const files = event.target.files
             let imgname = files[0].name
@@ -345,7 +345,7 @@ export default {
         onpickfile () {
             this.$refs.fileinput.click()
         },
-        
+         */
 
 
       

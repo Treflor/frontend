@@ -73,3 +73,9 @@ INFO  time: initialize in 2.64s
 WARN  no build tool detected in workspace 'c:\Users\Chulaka\tref4-4\frontend'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. 
 INFO  time: initialize in 3.24s
 WARN  no build tool detected in workspace 'c:\Users\Chulaka\tref4-4\frontend'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. 
+INFO  time: initialize in 4.7s
+WARN  no build tool detected in workspace 'c:\Users\Chulaka\tref4-4\frontend'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. 
+INFO  time: initialize in 3.33s
+WARN  no build tool detected in workspace 'c:\Users\Chulaka\tref4-4\frontend'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. 
+INFO  time: initialize in 3.15s
+WARN  no build tool detected in workspace 'c:\Users\Chulaka\tref4-4\frontend'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. 

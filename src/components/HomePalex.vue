@@ -20,7 +20,7 @@
       </div>
       <div class="btn">
       <v-row align="center">
-      <v-btn large depressed color="yellow" to='/maps'>MAPS</v-btn>
+      <v-btn large depressed color="yellow" to='/convertmap'>MAPS</v-btn>
       <v-btn large depressed color="green" to='/imggallery'>PHOTOS</v-btn>
       </v-row>
       </div>

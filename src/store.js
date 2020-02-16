@@ -82,6 +82,20 @@ export default new Vuex.Store({
 
     actions: {
 
+        sendforpass ({pay}){
+            let uri = 'https://api-treflor.herokuapp.com/user/';
+                axios.post(uri, 
+                    {email:pay.email}
+                    )
+                    .then((response) => {
+                    console.log(response)}
+                    )
+                    .catch((error) => { 
+                        console.log(error)}
+                    )
+
+        },
+
         userfetch ({commit}) {
             let config = {
                 headers: {

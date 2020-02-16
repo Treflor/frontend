@@ -59,6 +59,15 @@
                             </v-flex>
                         </v-layout>
 
+                        
+                        <v-layout row>
+                            <v-flex xs12 class="text-xs-center">
+                                <v-btn color="yellow" to="/PasswordForg">
+                                    I lost password</v-btn>
+
+                            </v-flex>
+                        </v-layout>
+
 
 
                     </v-form>

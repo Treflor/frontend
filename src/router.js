@@ -200,6 +200,11 @@ export default new Router({
   name: 'convert',
   component: () => import('./components/ConvertMap.vue')
 },
+{
+  path: '/passwordforg',
+  name: 'passwordforg',
+  component: () => import('./components/PasswordForg.vue')
+},
 
        
     ]
