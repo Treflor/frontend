@@ -7,7 +7,7 @@
       
 
          <v-hover v-slot:default="{ hover }">
-        <v-card :elevation="hover ? 19 : 1" :color="hover ? 'green' : 'white'" >
+        <v-card :elevation="hover ? 19 : 1" :color="hover ? 'white' : '#eceff1'" >
             <v-card-text>
                 <v-container>  
                     
@@ -54,7 +54,7 @@
 
                         <v-layout row>
                             <v-flex xs12 class="text-xs-center">
-                                <v-btn color="yellow" type="submit">
+                                <v-btn color="#00574b" type="submit" dark>
                                     SignIn</v-btn>
 
                             </v-flex>
@@ -66,15 +66,20 @@
 
                             </v-flex>
                         </v-layout>
-
+<!-- 
                           <v-layout row>
                             <v-flex xs12 class="text-xs-center">
                                 <v-btn color="#d4402c" to="/PasswordForg">
-                                    I lost my password</v-btn>
+                                    Forgot password?</v-btn>
 
                             </v-flex>
-                        </v-layout>
+                        </v-layout> -->
 
+                        <v-layout row>
+                            <v-flex xs12 class="text-xs-center passwordbtn">
+                                <a href="http://localhost:8080/PasswordForg">Forgot password?</a>
+                            </v-flex>
+                        </v-layout>
 
 
                     </v-form>
@@ -256,11 +261,15 @@ async signin() {
 
 .google-signin-button {
   color: white;
-  background-color: red;
+  background-color: #eeeeee;
   height: 50px;
   font-size: 16px;
   border-radius: 10px;
   padding: 10px 20px 25px 20px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.passwordbtn a {
+    color: black;
 }
 </style>

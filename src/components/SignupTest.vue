@@ -7,7 +7,7 @@
      
 
         <v-hover v-slot:default="{ hover }">
-        <v-card :elevation="hover ? 19 : 1" :color="hover ? 'green' : 'white'" >
+        <v-card :elevation="hover ? 19 : 1" :color="hover ? 'white' : '#eceff1'" >
             <v-card-text>
                 <v-container>  
 
@@ -185,7 +185,7 @@
 -->
                         <v-layout row>
                             <v-flex xs12 class="text-xs-center">
-                             <v-btn color="yellow" type="submit">
+                             <v-btn color="#00574b" type="submit" dark>
                                     SignUp</v-btn>
 
                             </v-flex>

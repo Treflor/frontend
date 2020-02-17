@@ -205,6 +205,11 @@ export default new Router({
   name: 'passwordforg',
   component: () => import('./components/PasswordForg.vue')
 },
+{
+  path: '/galleryview',
+  name: 'galleryview',
+  component: () => import('./components/GalleryView.vue')
+},
 
        
     ]

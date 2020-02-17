@@ -13,7 +13,7 @@
                 </v-card-actions>   -->
             </v-flex>
             </v-layout>
-            <v-card height="619" width="419" :hidden="render = false" color="#319fa3" class="rounded-card">
+            <v-card height="619" width="419" :hidden="render = false" color="white" class="rounded-card">
                 <v-layout row>
                     <v-flex xs12 class="text-xs-center font-weight-black">
                         

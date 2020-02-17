@@ -158,7 +158,7 @@
                            <v-flex xs12 class="text-center">
                                <v-btn 
                                type="submit"
-                               color="yellow"
+                               color="#51bfb6"
                                :disabled="!formIsValid">
                                Create
                                </v-btn>
