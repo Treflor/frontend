@@ -202,7 +202,7 @@
                 <v-container>  
 
                       <v-layout row>
-                    <v-flex xs12 class="text-xs-center display-1 font-weight-black my-5">Sign Up</v-flex>
+                    <v-flex xs12 class="text-xs-center display-1 font-weight-black my-5">Create Gallery</v-flex>
                     </v-layout> 
 
                     <v-form @submit.prevent="create">
@@ -213,8 +213,8 @@
                                     name="title"
                                     label="Title"
                                     id="title"
-                                    v-model="title"
-                                    type="title"
+                                    v-model="hike"
+                                    type="text"
                                     required
                                     >
 
@@ -535,6 +535,7 @@ data() {
           hasImage5: false,
       
       title: '',
+      hike: '',
 
       img1: null,
       imgstringfinl1: null,
@@ -649,9 +650,14 @@ data() {
         create() {
           console.log(this.imgstringfinl1);
           console.log(this.imgstringfinl2);
-          console.log(this.imgstringfinl13);
+          console.log(this.imgstringfinl3);
           console.log(this.imgstringfinl4);
-          console.log(this.imgstringfinl15);
+          console.log(this.imgstringfinl5);
+          console.log(this.hike);
+
+          this.$store.dispatch('creategallery', {title:this.hike, img0:this.imgstringfinl1 , img1:this.imgstringfinl2 , img2:this.imgstringfinl3 , img3:this.imgstringfinl4 , img4:this.imgstringfinl5 })
+
+
         }
 
 

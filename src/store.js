@@ -82,6 +82,35 @@ export default new Vuex.Store({
 
     actions: {
 
+        creategallery ({getters},pay){
+            let config = {
+                headers: {
+                  Authorization: getters.token
+                }
+              }
+
+            let uri = 'https://api-treflor.herokuapp.com/images/';
+            axios.post(uri, 
+                {
+                 title: pay.title,
+                 img0: pay.img0,
+                 img1: pay.img1,
+                 img2: pay.img2,
+                 img3: pay.img3,
+                 img4: pay.img4,
+                
+                }, config
+                )
+                .then((response) => {
+                console.log(response)}
+                )
+                .catch((error) => { 
+                    console.log(error)}
+                )
+
+
+        },
+
         sendforpass ({pay}){
             let uri = 'https://api-treflor.herokuapp.com/user/';
                 axios.post(uri, 
