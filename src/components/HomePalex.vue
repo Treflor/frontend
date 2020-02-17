@@ -21,7 +21,7 @@
       <div class="btn">
       <v-row align="center">
       <v-btn large depressed color="#51bfb6" to='/convertmap'>MAPS</v-btn>
-      <v-btn large depressed color="#97d9f1" to='/imggallery'>PHOTOS</v-btn>
+      <v-btn large depressed color="#97d9f1" to='/galleryview'>PHOTOS</v-btn>
       </v-row>
       </div>
   <!--    <div class="join">

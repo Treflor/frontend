@@ -210,7 +210,16 @@ export default new Router({
   name: 'galleryview',
   component: () => import('./components/GalleryView.vue')
 },
-
+{
+  path: '/panel',
+  name: 'panel',
+  component: () => import('./components/JourneyPanel.vue')
+},
+{
+  path: '/panelfinl',
+  name: 'panelfinl',
+  component: () => import('./views/Panel.vue')
+},
        
     ]
 });
