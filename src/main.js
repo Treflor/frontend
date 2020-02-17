@@ -9,12 +9,30 @@ import VueTypedJs from 'vue-typed-js'
 //import 'mdbvue/lib/css/mdb.min.css'
 import '@fortawesome/fontawesome-free/css/all.min.css'
 import firebase from 'firebase';
-
+import vueImages from 'vue-images/dist/vue-images';
 import VueParticles from 'vue-particles'
 import * as VueGoogleMaps from 'vue2-google-maps'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
 import FlagIcon from 'vue-flag-icon'
+import GSignInButton from 'vue-google-signin-button'
+import { Script } from "vm";
+import VueExpandableImage from 'vue-expandable-image'
+import ImageUploader from 'vue-image-upload-resize'
+
+
+
+
+var polyline = require( 'google-polyline' )
+Vue.use(polyline);
+Vue.use(ImageUploader);
+
+
+
+
+Vue.use(VueExpandableImage)
+
+Vue.use(GSignInButton);
 
 Vue.use(FlagIcon);
  
@@ -22,10 +40,12 @@ Vue.use(VueAxios, axios)
 
 Vue.use(VueTypedJs)
 Vue.use(VueParticles)
+
+Vue.use(vueImages)
 Vue.use(VueGoogleMaps, {
   load: {
-    key: '',
-    libraries: 'places', 
+    key: "AIzaSyCVluAGL43uqSqE0Z5BDcUEMPKnlQbgO28",
+    libraries: "places", 
   },
  
 })
@@ -61,7 +81,21 @@ new Vue({
         this.$store.dispatch('SignInauto', user)
       }
     })
+    
+
+
     this.$store.dispatch('guidesfetch')
     this.$store.dispatch('guidesfetchfinl')
+
+ //   this.$store.dispatch('guidezfetch')
+    
+   // this.$store.dispatch('userfetch')
+  //  this.$store.dispatch('guidezfetchfinl')
+
+  //  axios.defaults.withCredentials = true
   }
 }).$mount("#app");
+
+
+
+

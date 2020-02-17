@@ -30,7 +30,7 @@ export default new Router({
 import Vue from 'vue';
 import Router from 'vue-router';
 import Home from './views/Home.vue';
-import AuGuard from './AuGuard';
+//import AuGuard from './AuGuard';
 
 
 Vue.use(Router);
@@ -56,7 +56,7 @@ export default new Router({
         {
             path: '/sign-in',
             name: 'signin',
-            component: () => import('./views/Signin.vue')
+            component: () => import('./components/SigninTest.vue')
         },
         {
             path: '/join',
@@ -86,7 +86,7 @@ export default new Router({
       {
         path: '/newhike',
         name: 'newhike',
-        component: () => import('./components/NewHike.vue'),
+        component: () => import('./components/NewHiketest.vue'),
      /*   beforeEnter(to, from, next){
          
           if (store.getters.user) {
@@ -108,6 +108,7 @@ export default new Router({
         component: () => import('./components/Guide.vue')
 
       },
+      
       {
         path: '/waiting/:title',
         name: 'Wait',
@@ -115,6 +116,16 @@ export default new Router({
         component: () => import('./components/Guide2.vue')
 
       },
+
+      {
+        path: '/waitingtest/:title',
+        name: 'Wait',
+        props: true,
+        component: () => import('./components/SingleGuide.vue')
+
+      },
+
+
       {
         path: '/adminpage/waiting',
         name: 'Waiting',
@@ -130,8 +141,70 @@ export default new Router({
       {
         path: '/signup',
         name: 'signup',
-        component: () => import('./views/SignUp.vue')
+        component: () => import('./components/SignupTest.vue')
     },
+    {
+      path: '/signtest',
+      name: 'signtest',
+      component: () => import('./components/SigninTest.vue')
+  },
+   {
+    path: '/imggallery',
+    name: 'imggallery',
+    component: () => import('./components/ImgGallery1.vue')
+},
+{
+  path: '/newhiketest',
+  name: 'newhiketest',
+  component: () => import('./components/NewHiketest.vue'),
+},
+  
+  
+  
+  
+  {
+    path: '/signuptest',
+    name: 'signuptest',
+    component: () => import('./components/SignupTest.vue')
+},
+
+{
+  path: '/waitingtest',
+  name: 'waitingtest',
+  component: () => import('./components/WaitingTest.vue'),
+},
+
+{
+  path: '/testimg',
+  name: 'TestImg',
+  component: () => import('./components/TestImg.vue'),
+},
+{
+  path: '/profile',
+  name: 'Profile',
+  component: () => import('./components/Profile.vue'),
+},
+
+{
+  path: '/creategallery',
+  name: 'creategallery',
+  component: () => import('./components/CreateGallery.vue')
+},
+{
+  path: '/imggallery1',
+  name: 'imggallery1',
+  component: () => import('./components/ImgGallery1.vue')
+},
+{
+  path: '/convertmap',
+  name: 'convert',
+  component: () => import('./components/ConvertMap.vue')
+},
+{
+  path: '/passwordforg',
+  name: 'passwordforg',
+  component: () => import('./components/PasswordForg.vue')
+},
 
        
     ]

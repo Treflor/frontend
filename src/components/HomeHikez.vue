@@ -2,12 +2,12 @@
 
 
     <v-container grid-list-lg>
-        <v-layout row>
+        <v-layout row wrap>
         <v-flex xs12 class="text-xs-center display-1 font-weight-black">
             Hike Guides
         </v-flex>
         </v-layout>
-        <v-layout row>
+        <v-layout row wrap>
             <v-flex ml2 xs12 sm4 v-for="hike in hikez" :key="hike.id" class="text-xs-center">
                 <v-card @click="hikeclick()">
                     <v-img height="468" :src="hike.img"></v-img>

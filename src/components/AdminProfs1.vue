@@ -36,7 +36,7 @@
             <v-flex xs12 sm12 md4>
                 <v-card dark>
                     <v-responsive>
-                        <v-img color="white" src="https://www.freepnglogos.com/uploads/twitter-logo-png/twitter-logo-vector-png-clipart-1.png" height="500px">
+                        <v-img color="white" src="https://library.kissclipart.com/20180831/geq/kissclipart-twitter-icon-clipart-computer-icons-social-media-c-132a23a69f409f79.jpg" height="500px">
                             <v-container fill-height fluid>
                                 <v-layout fill-height>
                                     <v-flex xs12 align-end flexbox>

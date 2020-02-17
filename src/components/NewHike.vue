@@ -98,6 +98,7 @@
                            </v-flex>
                        </v-layout>
 
+
                        <v-layout row>
                            <v-flex xs12 class="text-xs-center">
 

@@ -6,8 +6,10 @@
    <!--     <home-clip></home-clip>   -->
     <!--    <home-details></home-details>  -->
     <!--    <home-palex2></home-palex2>  -->
+    <create-gallery-icon></create-gallery-icon>
         <home-treks></home-treks>
         <home-progress></home-progress>
+        <google-download></google-download>
         <home-hikez></home-hikez>
   <!--      <home-hikesz></home-hikesz>  -->
   <!--      <home-footer></home-footer>  -->
@@ -32,6 +34,8 @@ import HomeTikl from '@/components/HomeTikl';
 //import HomeFooter from '@/components/HomeFooter';
 //import HomeFoot from '@/components/HomeFoot';
 import HomeHikez from '@/components/HomeHikez';
+import CreateGalleryIcon from '@/components/CreateGalleryIcon';
+import GoogleDownload from '@/components/GoogleDownload';
 
 
 
@@ -54,8 +58,12 @@ export default {
   //      HomeHikesz,
   //      HomeFooter,
   //      HomeFoot,
-        HomeHikez
+        HomeHikez,
+        CreateGalleryIcon,
+        GoogleDownload
   //      HomeAnime
+
+
     }
 };
 </script>

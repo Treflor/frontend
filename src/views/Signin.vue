@@ -59,6 +59,15 @@
                             </v-flex>
                         </v-layout>
 
+                        
+                        <v-layout row>
+                            <v-flex xs12 class="text-xs-center">
+                                <v-btn color="yellow" to="/PasswordForg">
+                                    I lost password</v-btn>
+
+                            </v-flex>
+                        </v-layout>
+
 
 
                     </v-form>
@@ -115,7 +124,15 @@ export default {
         onSignin () {
             this.$store.dispatch('signUserin', {email: this.email, password: this.password})
 
-        }
+        },
+
+/*
+        SignIn () {
+            let uri = 'http://localhost:4000/tiks1/new';
+            this.axios.post(uri, this.email , this.password).then((response) => {
+              console.log(response);
+            });
+        }    */
     }
 }
 </script>
@@ -125,4 +142,8 @@ export default {
     position: relative;
     top: 169px
 }
+body {
+    margin: 0
+}
+
 </style>

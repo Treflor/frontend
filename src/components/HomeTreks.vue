@@ -148,7 +148,7 @@
 <template>
     <v-container grid-list-lg>
         <v-layout row>
-            <v-flex xs12 class="text-xs-center display-1 font-weight-black my-5"><h1>GUIDES</h1></v-flex>
+            <v-flex xs12 class="text-xs-center display-1 font-weight-black my-5"><h1>Galleries</h1></v-flex>
         </v-layout>
         <v-layout row wrap>
             <v-flex xs12 sm12 md4>
@@ -171,7 +171,7 @@
                             </div>
                         </div>
                     </v-card-text>
-                    <v-btn outline block color="green" to="/explore" >Explore</v-btn>
+                    <v-btn outline block color="green" to="/imggallery" >view</v-btn>
                 </v-card>
             </v-flex>
             <v-flex xs12 sm12 md4>
@@ -197,7 +197,7 @@
                   <!--  <v-card-actions v-if="['explore'].includes($route.name)">
                         <v-btn outline block color="green" @click="showRecipes('paleo')">Select This Plan</v-btn>
                     </v-card-actions>  -->
-                     <v-btn outline block color="green" to="/explore" >Explore</v-btn>
+                     <v-btn outline block color="green" to="/imggallery" >view</v-btn>
                 </v-card>
             </v-flex>
             <v-flex xs12 sm12 md4>
@@ -223,7 +223,7 @@
                 <!--    <v-card-actions v-if="['explore'].includes($route.name)">
                         <v-btn outline block color="green" @click="showRecipes('vegan')">Select This Plan</v-btn>
                     </v-card-actions>  -->
-                     <v-btn outline block color="green" to="/explore" >Explore</v-btn>
+                     <v-btn outline block color="green" to="/imggallery" >view</v-btn>
                 </v-card>
             </v-flex>
         </v-layout>

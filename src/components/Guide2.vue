@@ -63,7 +63,7 @@ export default {
             //    date: hike.whensub
             }
             this.$store.dispatch('createnewhikefinl', hikedetails)
-            this.$router.push('/waiting')
+            this.$router.push('/adminpage')
         },
 
         }
