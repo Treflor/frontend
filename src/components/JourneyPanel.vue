@@ -1,5 +1,10 @@
 <template>
 <v-container>
+    <v-layout row>
+        <v-flex xs12 class="text-xs-center display-3 font-weight-thin">
+            Journeys for permission
+        </v-flex>
+    </v-layout>
         <v-layout class="mt-4" row v-for="journey in wholeResponse " :key="journey._id">
             <v-img height="119" :src="journey.landmarks[0].images[0]"></v-img>
             <v-btn color="#e36889" @click="publish(journey._id)">Publish</v-btn>

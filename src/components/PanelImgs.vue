@@ -1,8 +1,13 @@
 <template>
 <v-container>
+    <v-layout row>
+        <v-flex xs12 class="text-xs-center display-3 font-weight-thin">
+            Galleries for permission
+        </v-flex>
+    </v-layout>
         <v-layout class="mt-4" row v-for="gallery in wholeResponse " :key="gallery._id">
             <v-layout row>
-                <v-flex xs12 class="text-xs-center">
+                <v-flex xs12 class="text-xs-center font-weight-black">
                     {{ gallery.title }}
                 </v-flex>
             </v-layout>
