@@ -1,21 +1,35 @@
 <template>
 <v-container>
+    
+    <v-layout row>
+        <v-flex xs12 class="text-xs-center display-3 font-weight-black">
+            Admin Panel
+        </v-flex>
+    </v-layout>
     <v-layout row>
         <v-flex xs12 class="text-xs-center display-3 font-weight-thin">
             Journeys for permission
         </v-flex>
     </v-layout>
         <v-layout class="mt-4" row v-for="journey in wholeResponse " :key="journey._id">
+            <v-flex xs12>
             <v-layout row>
                 <v-flex xs12 class="text-xs-center font-weight-black">
                     
                     created by {{journey.user.given_name}}
                 </v-flex>
             </v-layout>
+            <v-layout row>
+                <v-flex xs12 >
             <v-img height="119" :src="journey.landmarks[0].images[0]"></v-img>
+                </v-flex>
+            </v-layout>
             <v-btn color="#7df08e" @click="publish(journey._id)">Publish</v-btn>
             <v-btn color="#f23343" @click="deletejourney(journey._id)">DELETE</v-btn>
+            </v-flex>
+        
         </v-layout>
+        
     
 </v-container>
 
@@ -56,11 +70,11 @@ export default {
                 }
               } 
 
-            axios.post('https://api-treflor.herokuapp.com/journey/unpublished' + id, {
-                 published: true,
+            axios.post('https://api-treflor.herokuapp.com/journey/publish/' + id /* {
+                /*  published: true,
                  //user.local : false,
-                 _method: 'patch'
-            },config)
+                 _method: 'patch' 
+            } */,config)
             .then((response) => {
                    console.log(response);
             });

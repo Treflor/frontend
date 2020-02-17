@@ -6,6 +6,7 @@
         </v-flex>
     </v-layout>
         <v-layout class="mt-4" row v-for="guide in wholeResponse " :key="guide._id">
+            <v-flex xs12>
             <v-layout row wrap>
                 <v-flex xs12 class="text-xs-center font-weight-black">
                     {{ guide.title }} - 
@@ -13,11 +14,16 @@
                 </v-flex>
             </v-layout>
             <v-layout row>
+                <v-layout row>
+                    <v-flex xs12>
             <v-img height="219" :src="guide.img"></v-img>
+                    </v-flex>
+                </v-layout>
            <!--  <v-img height="219" :src="journey.img1"></v-img>
             --> <v-btn color="#7df08e" @click="publish(guide._id)">Publish</v-btn>
             <v-btn color="#f23343" @click="deleteimgs(guide._id)">DELETE</v-btn>
             </v-layout>
+            </v-flex>
         </v-layout>
     
 </v-container>
