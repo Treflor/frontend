@@ -9,7 +9,7 @@
             <v-layout row>
             <v-flex xs12>
                 <v-layout row>
-                    <v-btn block color="#91e6be" @click="mapclick(0)" >ella</v-btn>
+                    <v-btn block color="#91e6be" @click="mapclick(0)" >{{this.wholeResponse[0].journey.title}}</v-btn>
                 </v-layout>
             </v-flex>
         </v-layout>
@@ -17,10 +17,51 @@
                     <v-layout row>
             <v-flex xs12>
                 <v-layout row>
-                    <v-btn block color="#91e6be" @click="mapclick(1)" >knuck</v-btn>
+                    <v-btn block color="#91e6be" @click="mapclick(1)" >{{this.wholeResponse[1].journey.title}}</v-btn>
                 </v-layout>
             </v-flex>
         </v-layout>
+
+        <v-container v-if="this.wholeResponse[2]">
+            <v-layout row>
+            <v-flex xs12>
+                <v-layout row>
+                    <v-btn block color="#91e6be" @click="mapclick(2)" >{{this.wholeResponse[2].journey.title}}</v-btn>
+                </v-layout>
+            </v-flex>
+        </v-layout>
+        </v-container>
+
+        <v-container v-if="this.wholeResponse[3]">
+            <v-layout row>
+            <v-flex xs12>
+                <v-layout row>
+                    <v-btn block color="#91e6be" @click="mapclick(3)" >{{this.wholeResponse[3].journey.title}}</v-btn>
+                </v-layout>
+            </v-flex>
+        </v-layout>
+        </v-container>
+
+        
+        <v-container v-if="this.wholeResponse[4]">
+            <v-layout row>
+            <v-flex xs12>
+                <v-layout row>
+                    <v-btn block color="#91e6be" @click="mapclick(4)" >{{this.wholeResponse[4].journey.title}}</v-btn>
+                </v-layout>
+            </v-flex>
+        </v-layout>
+        </v-container>
+
+         <v-container v-if="this.wholeResponse[5]">
+            <v-layout row>
+            <v-flex xs12>
+                <v-layout row>
+                    <v-btn block color="#91e6be" @click="mapclick(5)" >{{this.wholeResponse[5].journey.title}}</v-btn>
+                </v-layout>
+            </v-flex>
+        </v-layout>
+        </v-container>
             <!-- <v-layout row>
                 <v-flex xs12 class="text-xs-center font-weight-black">
                    From {{ journey.journey.origin.address }} to {{ journey.journey.destination.address }}   
@@ -48,7 +89,7 @@
               <v-flex xs12 class="text-xs-center">
                   <v-layout row>
                       <v-flex xs12 class="text-xs-center font-weight-black">
-                          From {{this.point0}} to {{this.point1}} created by - {{this.creator}}
+                          From {{this.point0}} to {{this.point1}} | created by - {{this.creator}} |
                       </v-flex>
                   </v-layout>
                 <v-card elevation="19">
