@@ -220,6 +220,12 @@ export default new Router({
   name: 'panelfinl',
   component: () => import('./views/Panel.vue')
 },
+
+{
+  path: '/convertmaptest',
+  name: 'converttest',
+  component: () => import('./components/ConvertMaptest.vue')
+},
        
     ]
 });

@@ -37,7 +37,20 @@
 
 
 
-
+<v-layout row>
+  <v-flex xs12 class="text-xs-center">
+    <v-progress-circular
+                         v-if="progress"
+                         position = "center"
+      :hidden="progress == false"                   
+      :size="168"
+      :width="19"
+      color="#74d4ae"
+      indeterminate
+      
+    ></v-progress-circular>
+  </v-flex>
+</v-layout>
  <v-layout v-for="item in wholeResponse" :key="item.index" class="mb-2">
             <v-flex xs12>
 
@@ -91,7 +104,8 @@ export default {
   data () {
     return {
       wholeResponse: [],
-      loading: true
+      loading: true,
+      progress: true
     }
   },
   mounted () {
@@ -106,6 +120,7 @@ export default {
       this.wholeResponse = response.data
       this.loading = false
       this.$store.state.hikezfinl1 = this.wholeResponse
+      this.progress = false
     })
     .catch(error => {
       console.log(error)

@@ -18,18 +18,18 @@
 <gmap-map v-bind:center="center" v-bind:zoom="12" style="width: 1200px; height: 576px" >
 
 <!--  -->
-    <GmapMarker
+   <!--  <GmapMarker
      v-bind:key="index"
     v-for="(m, index) in favorites.position"
     v-bind:position="favorites.position.m"
     v-bind:clickable="true"
     v-bind:draggable="true"
     @click="center=m"
-  />
+  /> -->
 
-         <gmap-polyline v-bind:path.sync="favorites.position" v-bind:options="{ strokeColor:'blue'}">
+     <!--     <gmap-polyline v-bind:path.sync="favorites.position" v-bind:options="{ strokeColor:'blue'}">
          </gmap-polyline>
-
+ -->
 
         <gmap-polyline v-bind:path.sync="path" v-bind:options="{ strokeColor:'#008000'}">
          </gmap-polyline>
@@ -37,7 +37,7 @@
 
       
          <gmap-polyline v-bind:path.sync="pathtracked" v-bind:options="{ strokeColor:'purple'}">  
-         </gmap-polyline>  -->
+         </gmap-polyline>  
 
 
       </gmap-map>
@@ -79,7 +79,7 @@
         </v-flex>
     </v-layout>
 
-    <v-container v-if="this.path3[0]">
+    <v-container>
        <v-layout row  >
         <v-flex xs12 class="text-xs-center font-weight-black headline">
         <!--    Ella   -->
@@ -97,7 +97,7 @@
             <v-card elevation="19">
 <gmap-map v-bind:center="center" v-bind:zoom="12" style="width: 1200px; height: 576px" >
 
-     <GmapMarker
+  <GmapMarker
     v-bind:position="favorites3"
     v-bind:clickable="true"
     v-bind:draggable="true"
@@ -208,7 +208,7 @@ export default {
           // polyline: '{oll@{n|iN}AfCgApA}BdBuHhFeDnB{AdAg@d@{CzEu@vAi@lA_@n@_@b@eC|B_EhDgCbCY`@}AhCeCbDm@dAmAhCqApCk@lAg@xAU`AMz@QbBc@jB]t@i@f@eAt@_Aj@gCvAiCdBm@j@cAjAU\\{@dAgAz@qAvAk@`As@`Ai@h@[Ve@\\m@XcA^qBb@cATk@Vi@\\oAdAo@l@]Tu@NeCDaCJe@F[J[TQNUd@ETGdAHh@d@`An@`At@jAP^VhANfBf@jGHjB?fAQnCAfBTzCHx@AlAAzAEj@Q|@Qd@y@dAm@f@s@^eBr@oAb@kBn@kIlBoE~AeBp@cAp@g@f@c@d@g@p@uAnCiCnFmCpGyBzFq@tAi@x@yA|B_AvBg@xAw@|AmAtBu@rA_BnDi@nAcArB}BtEu@`Bc@bAyAjCgBzD{BtGq@tBCTJ^bB~@`@Zt@|@j@`Aj@nA~@dCVpAP`B@`@C`AUhAu@vBOt@m@|By@xA_AlBm@pAkCjGAPOd@KZBB?D?DNVDJ@Jl@j@b@j@hAlB`@r@v@|BV|@PjAPvB@`@OvAk@zCc@nB_CjHcA`CcAtBaArB}@|AiB`Ey@dBk@~@cB`B}AfBsA|B_AhB',
             wholeResponse: [],
      //       polyline: wholeResponse[4].direction.points, 
-            center: {lat: 7.4807041, lng: 80.3227606},
+            center: {lat: 7.4407518, lng: 80.4848742},
      //   center: path[0],
             path: [],
             path1: [],
@@ -234,6 +234,7 @@ export default {
             ],
 
             pathcreator: '',
+            pathcreator1: '',
         }
     },
       mounted () {
@@ -255,15 +256,17 @@ export default {
         this.path = decodePolyline(this.wholeResponse[0].direction.points);
         this.pathtracked = decodePolyline(this.wholeResponse[0].tracked_locations);
         console.log(this.pathtracked)
-        this.favorites.position = decodePolyline(this.wholeResponse[0].landmarks[0]);
-        console.log(this.favorites.position)
-      //  this.pathcreator = wholeResponse[0].user.given_name
+     //   this.favorites.position = decodePolyline(this.wholeResponse[0].landmarks[0]);
+       // console.log(this.favorites.position)
+        this.pathcreator = this.wholeResponse[0].user.given_name
       //  console.log(this.pathcreator)
         console.log(this.wholeResponse[0].user.given_name)
       
         this.path1 = decodePolyline(this.wholeResponse[1].direction.points);
         this.pathtracked1 = decodePolyline(this.wholeResponse[1].tracked_locations);
+        console.log(this.pathtracked)
         console.log(this.pathtracked1)
+        this.pathcreator1 = this.wholeResponse[1].user.given_name
         
       
 

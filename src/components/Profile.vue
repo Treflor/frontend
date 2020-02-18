@@ -19,6 +19,7 @@
                         
                         <v-img class="mb-8" position="top" height="319" :src="this.photo"></v-img>
                          <v-progress-circular
+                         v-if="progress"
                          position = "center"
       :hidden="given_name != ''"                   
       :size="70"
@@ -78,7 +79,8 @@ export default {
        family_name: '',
        privilege: '',
        photo: '',
-       render: false
+       render: false,
+       progress: true,
 
        }
 
@@ -140,6 +142,7 @@ export default {
                         this.country = response.data.country
                         this.email = response.data.email
                         this.photo = response.data.photo
+                        this.progress = false
                      }).catch((error) => {
                          console.log(error)
                      })

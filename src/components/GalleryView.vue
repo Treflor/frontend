@@ -1,17 +1,36 @@
 <template>
     <v-container>
+        
+<v-layout row>
+  <v-flex xs12 class="text-xs-center">
+    <v-progress-circular
+                         v-if="progress"
+                         position = "center"
+      :hidden="progress == false"                   
+      :size="168"
+      :width="19"
+      color="#74d4ae"
+      indeterminate
+      
+    ></v-progress-circular>
+  </v-flex>
+</v-layout>
         <v-layout row v-for="img in wholeResponse " :key="img.id">
+            <v-flex xs12>
             <v-layout row wrap>
                 <v-flex xs12 class="text-xs-center font-weight-thin display-3">
                     {{ img.title }}
                 </v-flex>
             </v-layout>
-            <v-flex xs12 class="text-xs-center mt-5">
+            <v-layout row>
+            <v-flex xs12 class="text-xs-center mt-3">
                 
-                <v-img class="mt-1" :src="img.img0"></v-img>
-                <v-img class="mt-1" :src="img.img1"></v-img>
-                <v-img class="mt-1" :src="img.img2"></v-img>
+                 <expandable-image close-on-background-click class="mt-1" :src="img.img0"></expandable-image>
+                 <expandable-image close-on-background-click class="mt-1" :src="img.img1"></expandable-image>
+                 <expandable-image close-on-background-click class="mt-1" :src="img.img2"></expandable-image>
 
+            </v-flex>
+            </v-layout>
             </v-flex>
         </v-layout>
     </v-container>
@@ -23,7 +42,8 @@ import axios from 'axios';
 export default {
     data() {
         return {
-            wholeResponse: []
+            wholeResponse: [],
+            progress: true
         }
     },
 
@@ -40,6 +60,7 @@ export default {
       this.wholeResponse = response.data/* 
       this.loading = false */
       console.log(this.wholeResponse[3].img0)
+      this.progress = false
 
     })
     }
