@@ -143,6 +143,8 @@ export default {
                         this.email = response.data.email
                         this.photo = response.data.photo
                         this.progress = false
+                        
+                        this.privilege = response.data.privilege
                      }).catch((error) => {
                          console.log(error)
                      })

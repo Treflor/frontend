@@ -42,7 +42,8 @@
             <router-link to="/">
             
                 <v-toolbar-title data-cy="titleBtn" class="blue--text">{{appTitle}}</v-toolbar-title>
-            </router-link>
+               <!--  <v-toolbar-title data-cy="titleBtn" class="blue--text"><v-img src="https://i.imgur.com/IP5kJjE.png"></v-img></v-toolbar-title>
+         -->    </router-link>
        <!--     <v-btn flat class="hidden-sm-and-down nav-menu" to="/menu" data-cy="menuBtn">Menu</v-btn>  -->
             <v-spacer class="hidden-sm-and-down"></v-spacer>
             <v-toolbar-items class="hidden-sm-and-down">

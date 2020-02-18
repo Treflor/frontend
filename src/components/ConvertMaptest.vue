@@ -2,7 +2,7 @@
 <v-container>
     <v-layout row>
         <v-flex xs12 class="text-xs-center display-3 font-weight-thin">
-            Journeyes
+           Journeys
         </v-flex>
     </v-layout><!-- 
         <v-layout class="mt-4" row v-for="guide in wholeResponse " :key="guide._id"> -->
@@ -99,6 +99,10 @@
                  <gmap-polyline v-bind:path.sync="path" v-bind:options="{ strokeColor:'#008000'}">
                 </gmap-polyline> 
 
+                
+                 <gmap-polyline v-bind:path.sync="pathtracked" v-bind:options="{ strokeColor:'purple'}">
+                </gmap-polyline>
+
                </gmap-map>
                 </v-card>
                 <v-btn @click="clear()">clear</v-btn>
@@ -119,6 +123,7 @@ export default {
         return {
             wholeResponse: [],
             path: [],
+            pathtracked: [],
             mapcurrent: '',
             clicked: null,
             
@@ -158,7 +163,8 @@ export default {
                     this.mapcurrent = i
                 }
             }  */
-            this.path =  decodePolyline(this.wholeResponse[journeyid].direction.points )
+            this.path =  decodePolyline(this.wholeResponse[journeyid].direction.points )            
+            this.pathtracked = decodePolyline(this.wholeResponse[journeyid].tracked_locations);
             this.point0 = this.wholeResponse[journeyid].journey.origin.address
             this.point1 = this.wholeResponse[journeyid].journey.destination.address
             this.creator = this.wholeResponse[journeyid].user.given_name

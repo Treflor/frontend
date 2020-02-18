@@ -126,7 +126,8 @@ export default {
         password: '',
         token: '',
     clientId: '375151907681-p5mv02plrs46p63jjjqk1ji7btd5ussd.apps.googleusercontent.com',
-    errors: ''
+    errors: '',
+    level: ''
   }),
 
   computed: {
@@ -139,14 +140,21 @@ export default {
     watch: {
         user (value) {
             if (value !== null && value !== undefined) {
-                if(this.email == "admin@uyuyuy.com"){
-                    this.$router.push('/adminpage')
+                if(this.email == "ceejay989@yahoo.com"){
+                    this.$router.push('/panelfinl')
+                }
+                else if(this.level == 20){
+                    this.$router.push('/panelfinl')
                 }
                 else{
                 this.$router.push('/')
                 }
             }
 
+        },
+
+        usercurrent (){
+            this.level = this.$store.getters.usercurrent.privilege
         }
     },
 
