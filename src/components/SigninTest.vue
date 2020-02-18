@@ -256,6 +256,8 @@ async signin() {
       let uri = 'https://api-treflor.herokuapp.com/oauth/google';
             this.axios.post(uri, this.id_token).then((response) => {
               console.log(response);
+              this.$store.dispatch('googleuser', {token: response}) 
+
             });
     },
 

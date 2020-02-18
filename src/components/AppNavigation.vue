@@ -1,6 +1,6 @@
 <template>
     <span>
-        <v-navigation-drawer app v-model="drawer" class="brown lighten-2" dark disable-resize-watcher>
+        <v-navigation-drawer app v-model="drawer" class="cyan lighten-1" dark disable-resize-watcher>
             <v-list>
                 <template v-for="item in items">
                     <v-list-tile :key="item.title">
@@ -41,7 +41,7 @@
             <v-spacer class="hidden-md-and-up"></v-spacer>
             <router-link to="/">
             
-                <v-toolbar-title data-cy="titleBtn" class="blue--text">{{appTitle}}</v-toolbar-title>
+                <v-toolbar-title data-cy="titleBtn" class="light-green--text">{{appTitle}}</v-toolbar-title>
                <!--  <v-toolbar-title data-cy="titleBtn" class="blue--text"><v-img src="https://i.imgur.com/IP5kJjE.png"></v-img></v-toolbar-title>
          -->    </router-link>
        <!--     <v-btn flat class="hidden-sm-and-down nav-menu" to="/menu" data-cy="menuBtn">Menu</v-btn>  -->

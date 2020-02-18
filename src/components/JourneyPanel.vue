@@ -26,12 +26,17 @@
                     created by {{journey.user.given_name}}
                 </v-flex>
             </v-layout>
-            <v-layout row>
+             <v-layout row>
                 <v-flex xs12 class="text-xs-center font-weight-black">                    
-                    from {{journey.journey.origin}}  to  {{journey.journey.destination}}
+                    from {{journey.direction.start_address}}  to  {{journey.direction.end_address}}
+                </v-flex>
+            </v-layout>  
+         <!--    <v-layout row>
+                <v-flex xs12 class="text-xs-center">
+                    <v-img :src="this.img"></v-img>
                 </v-flex>
             </v-layout>
-            <v-layout row>
+          -->   <v-layout row>
                 <v-flex xs12 ><!-- 
             <v-img height="119" :src="journey.landmarks[0].images[0]"></v-img> -->
             {{journey.id}}
@@ -59,7 +64,8 @@ export default {
             wholeResponse: [],
             progress: false,
             token: '',
-            clicked: true
+            clicked: true,
+            img: ''
         }
     },
     mounted ()  {
@@ -87,8 +93,9 @@ export default {
                 headers: {
                   Authorization: this.$store.getters.token
                 }
-              }
-              let uri = 'https://api-treflor.herokuapp.com/journey/all';
+              }/* 
+              let uri = 'https://api-treflor.herokuapp.com/journey/all'; */
+              let uri = 'https://api-treflor.herokuapp.com/journey/unpublished';
                     axios.get(uri, /*this.sign*/   
                      config )
                      .then((response) => {
@@ -98,6 +105,7 @@ export default {
       this.progress = true
       
       this.clicked = false
+      this.img = this.wholeResponse
       }).catch((error) => {
                          console.log(error)
                      })
@@ -111,7 +119,7 @@ export default {
                 }
               }
               let uri = 'https://api-treflor.herokuapp.com/journey/publish/';
-                    axios.post(uri+id, /*this.sign*/   
+                    axios.post(uri+id, 
                      config )
                 .then((response) => {
                    console.log(response);

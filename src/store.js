@@ -88,6 +88,9 @@ export default new Vuex.Store({
 
 
     actions: {
+        googleuser ({commit},pay) {
+            commit('setCurrentUser',pay.token)
+        },
 
         creategallery ({getters},pay){
             let config = {
