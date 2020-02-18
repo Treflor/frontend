@@ -26,12 +26,13 @@
                                     v-model="email"
                                     type="email"
                                     required
+                                    :rules="emailRules"
                                     >
 
                                 </v-text-field>
                             </v-flex>
 
-                        </v-layout>
+                        </v-layout><!-- 
                         <v-layout row>
                             <v-flex xs12 offeset-sm3>
                                 <v-text-field
@@ -46,9 +47,24 @@
 
                                 </v-text-field>
                             </v-flex>
-                        </v-layout>
+                        </v-layout> -->
 
-
+                         <v-text-field
+            
+                                prepend-icon="lock"             
+            autocomplete="current-password"
+            :value="userPassword"
+            label="Enter password"
+         
+            :append-icon="value ? 'mdi-eye' : 'mdi-eye-off'"
+            @click:append="() => (value = !value)"
+            :type="value ? 'password' : 'text'"
+            :rules="[rules.password]"
+            @input="_=>userPassword=_"
+            v-model="password"
+          ></v-text-field>
+<!-- 
+   hint="Your password passed! Password rules are not meant to be broken!" -->
 
 
                          <v-layout row>
@@ -219,6 +235,15 @@ export default {
 
     data () {
         return {
+
+              valid: true,
+      emailRules: [
+        v => !!v || 'E-mail is required',
+        v => /.+@.+\..+/.test(v) || 'E-mail must be valid',
+      ],
+
+
+
             signupinfo: {},
 
             email : '',
@@ -229,8 +254,20 @@ export default {
             msg: "Vue Image Upload and Resize Demo",
       hasImage: false,
       img: null,
-      imgstringfinl: null
+      imgstringfinl: null,
+
+      value: true,
+      rules: {
+        required: value => !!value || "Required.",
+        password: value => {
+          const pattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/;
+          return (
+            pattern.test(value) ||
+            "Min. 8 characters with at least one capital letter, a number and a special character."
+          );
+        }
     
+    }
     }
     },
 

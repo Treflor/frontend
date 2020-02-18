@@ -67,7 +67,7 @@ export default {
                 }
               } 
 
-            axios.post('https://api-treflor.herokuapp.com/images/publish' + id, /* {
+            axios.post('https://api-treflor.herokuapp.com/images/publish/' + id, /* {
                  published: true,
                  //user.local : false,
                  _method: 'patch'

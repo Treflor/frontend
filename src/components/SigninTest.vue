@@ -27,6 +27,7 @@
                                     v-model="email"
                                     type="email"
                                     required
+                                    :rules="emailRules"
                                     >
 
                                 </v-text-field>
@@ -50,7 +51,11 @@
 
                         </v-layout>
 
-                       
+                    <!--       <v-layout row >
+                            <v-flex xs12 class="text-xs-center">
+                                {{this.errors}}
+                            </v-flex>
+                        </v-layout> -->
 
                         <v-layout row>
                             <v-flex xs12 class="text-xs-center">
@@ -81,6 +86,7 @@
                             </v-flex>
                         </v-layout>
 
+                     
 
                     </v-form>
 
@@ -109,11 +115,18 @@ export default {
 
     data: () => ({
 
+        valid: true,
+      emailRules: [
+        v => !!v || 'E-mail is required',
+        v => /.+@.+\..+/.test(v) || 'E-mail must be valid',
+      ],
+
         sign: {},
         email: '',
         password: '',
         token: '',
-    clientId: '375151907681-p5mv02plrs46p63jjjqk1ji7btd5ussd.apps.googleusercontent.com'
+    clientId: '375151907681-p5mv02plrs46p63jjjqk1ji7btd5ussd.apps.googleusercontent.com',
+    errors: ''
   }),
 
   computed: {
@@ -141,7 +154,11 @@ export default {
     methods : {
 
         signin() {
+
+
+
             this.$store.dispatch('signin', {email: this.email, password: this.password})
+            this.errors = this.$store.getters.errorcurrent
 
           //   this.$store.dispatch('signin', {email: this.email, password: this.password})
 
@@ -262,7 +279,7 @@ async signin() {
 .google-signin-button {
   color: white;
   background-color: #eeeeee;
-  height: 50px;
+  height: 0px;
   font-size: 16px;
   border-radius: 10px;
   padding: 10px 20px 25px 20px;

@@ -10,6 +10,7 @@ export default new Vuex.Store({
      /*   recipes: [],
         apiUrl: 'https://api.edamam.com/search',
     */ 
+
         hikez: [
             {img: 'https://saltinourhair.com/wp-content/uploads/2018/04/Things-to-do-Ella-Sri-Lanka-Nine-arch-bridge-couple-view.jpg', id: '1111', title: 'Ella', height: '618m', guide: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident ipsa voluptatem cupiditate sapiente at id numquam inventore fuga iure quisquam.' },
             {img: 'https://www.tripsavvy.com/thmb/dAjVDb033cOIBYtAC3Y_S7Ld5p8=/960x0/filters:no_upscale():max_bytes(150000):strip_icc()/hikinginspain-f7d12abd58584697ae354500d31ee07f.jpg', id: '2222', title: 'Bible Rock', height: '418m', guide: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident ipsa voluptatem cupiditate sapiente at id numquam inventore fuga iure quisquam.'},
@@ -33,6 +34,8 @@ export default new Vuex.Store({
                 {title: 'Ella',img1 : 'https://saltinourhair.com/wp-content/uploads/2018/04/Things-to-do-Ella-Sri-Lanka-Nine-arch-bridge-couple-view.jpg' , img2 : 'https://www.tripsavvy.com/thmb/dAjVDb033cOIBYtAC3Y_S7Ld5p8=/960x0/filters:no_upscale():max_bytes(150000):strip_icc()/hikinginspain-f7d12abd58584697ae354500d31ee07f.jpg' , img3 : 'https://veggievagabonds.com/wp-content/uploads/2019/08/IMG_20180923_094155722_HDR-1-01.jpeg' , img4 : '' , img5 : '' , img6 : 'https://saltinourhair.com/wp-content/uploads/2018/04/Things-to-do-Ella-Sri-Lanka-Nine-arch-bridge-couple-view.jpg'}
       
             ],
+
+        errors: []
 
        
 
@@ -75,6 +78,10 @@ export default new Vuex.Store({
 
         setCurrentUser (state, pay) {
             state.usercurrent.push(pay)
+        },
+
+        setError (state, pay) {
+            state.errors.push(pay)
         }
 
     },
@@ -160,6 +167,8 @@ export default new Vuex.Store({
                 commit('setToken', newtoken)
             }).catch((error) => {
                 console.log(error)
+                commit('setError', error)
+
             })
         },
 
@@ -555,9 +564,12 @@ export default new Vuex.Store({
 
         usercurrent (state) {
             return state.usercurrent
-        }
+        },
 
-        
+        errorcurrent (state) {
+            return state.errors[0]
+
+        }
     }
 })
 

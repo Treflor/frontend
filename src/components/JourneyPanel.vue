@@ -70,11 +70,11 @@ export default {
                 }
               } 
 
-            axios.post('https://api-treflor.herokuapp.com/journey/publish/' + id /* {
+            axios.post('https://api-treflor.herokuapp.com/journey/publish/' + id, /* {
                 /*  published: true,
                  //user.local : false,
                  _method: 'patch' 
-            } */,config)
+            } */config)
             .then((response) => {
                    console.log(response);
             });
@@ -88,7 +88,7 @@ export default {
                 }
               } 
 
-            axios.delete('https://api-treflor.herokuapp.com/journey/unpublished' + id, config)
+            axios.delete('https://api-treflor.herokuapp.com/journey/' + id, config)
             .then((response) => {
                    console.log(response);
             });

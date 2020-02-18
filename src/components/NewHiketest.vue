@@ -1,8 +1,12 @@
 <template>
+<v-parallax height="1329" src="https://hdqwalls.com/wallpapers/material-design-stock-4k-y7.jpg">
     <v-container>
+        
         <v-layout row>
             <v-flex xs12 class="text-xs-center">
-                <v-card>
+                
+        <v-hover v-slot:default="{ hover }">
+                <v-card :elevation="hover ? 19 : 1" :color="hover ? 'white' : '#eceff1'">
                     <v-layout row>
                         <v-flex xs12 class="text-xs-center display-1 font-weight-black my-5">Create new guide</v-flex>
                     </v-layout>
@@ -158,7 +162,7 @@
                            <v-flex xs12 class="text-center">
                                <v-btn 
                                type="submit"
-                               color="#51bfb6"
+                               color="#00574b"
                                :disabled="!formIsValid">
                                Create
                                </v-btn>
@@ -179,10 +183,12 @@
                     </v-layout>
 
                 </v-card>
+        </v-hover>
             </v-flex>
 
         </v-layout>
     </v-container>
+</v-parallax>
 </template>
 
 
