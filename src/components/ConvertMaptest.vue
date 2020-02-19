@@ -9,18 +9,30 @@
             <v-layout row>
             <v-flex xs12>
                 <v-layout row>
-                    <v-btn block color="#91e6be" @click="mapclick(0)" >{{this.wholeResponse[0].journey.title}}</v-btn>
+                    <v-btn block color="#91e6be" @click="find1" ></v-btn>
                 </v-layout>
             </v-flex>
         </v-layout>
 
-                    <v-layout row>
+           <v-container v-if="this.wholeResponse[0]"> 
+            <v-layout row>
+            <v-flex xs12>
+                <v-layout row>
+                    <v-btn block color="#91e6be" @click="mapclick(0)" >{{this.wholeResponse[0].journey.title}}</v-btn>
+                </v-layout>
+            </v-flex>
+        </v-layout>
+           </v-container>
+
+                   <v-container v-if="this.wholeResponse[1]">
+                        <v-layout row >
             <v-flex xs12>
                 <v-layout row>
                     <v-btn block color="#91e6be" @click="mapclick(1)" >{{this.wholeResponse[1].journey.title}}</v-btn>
                 </v-layout>
             </v-flex>
         </v-layout>
+                   </v-container>
 
         <v-container v-if="this.wholeResponse[2]">
             <v-layout row>
@@ -175,7 +187,31 @@ export default {
             this.clicked = false
             this.path = null
             this.mapcurrent = null
-        }
+        },
+
+        find1() {
+            
+            let config = {
+                headers: {
+                  Authorization: this.$store.getters.token
+                }
+              }/* 
+              let uri = 'https://api-treflor.herokuapp.com/journey/all'; */
+              let uri = 'https://api-treflor.herokuapp.com/journey/unpublished';
+                    axios.get(uri, /*this.sign*/   
+                     config )
+                     .then((response) => {
+      this.wholeResponse = response.data
+      console.log(this.wholeResponse)
+      this.token = config
+      this.progress = true
+      
+      this.clicked = false
+      this.img = this.wholeResponse
+      }).catch((error) => {
+                         console.log(error)
+                     })
+        },
     }
 
     /* methods : {

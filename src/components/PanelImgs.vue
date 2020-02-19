@@ -85,7 +85,7 @@ export default {
                 }
               } 
 
-            axios.delete('https://api-treflor.herokuapp.com/jimages/unpublished' + id, config)
+            axios.delete('https://api-treflor.herokuapp.com/images/' + id, config)
             .then((response) => {
                    console.log(response);
             });
