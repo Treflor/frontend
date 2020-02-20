@@ -1,12 +1,12 @@
 <template>
     <v-container>
-        
+<v-container v-if="this.progress">        
 <v-layout row>
   <v-flex xs12 class="text-xs-center">
     <v-progress-circular
                          v-if="progress"
                          position = "center"
-      :hidden="progress == false"                   
+                       
       :size="168"
       :width="19"
       color="#74d4ae"
@@ -15,6 +15,7 @@
     ></v-progress-circular>
   </v-flex>
 </v-layout>
+</v-container>
         <v-layout row v-for="img in wholeResponse " :key="img.id">
             <v-flex xs12>
             <v-layout row wrap>
@@ -59,7 +60,7 @@ export default {
       .then(response => {
       this.wholeResponse = response.data/* 
       this.loading = false */
-      console.log(this.wholeResponse[3].img0)
+     // console.log(this.wholeResponse[3].img0)
       this.progress = false
 
     })
